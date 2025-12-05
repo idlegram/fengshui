@@ -11,266 +11,273 @@
   "fairFengShui": "Fair Feng Shui (Needs Improvement)",
   "poorFengShui": "Poor Feng Shui (Layout Adjustment Recommended)",
   "badFengShui": "Bad Feng Shui (Major Adjustment or Remediation Needed)",
-  "fengShui": {
-    "door_south": {
-      "label": "Door facing south (Phoenix position)",
-      "category": "Door Orientation & Exterior Layout"
+  "fengShuiCategories": {
+    "doorOrientationExteriorLayout": "Door Orientation & Exterior Layout",
+    "entryScene": "Entry Scene",
+    "entryway": "Entryway",
+    "livingRoomLayout": "Living Room Layout",
+    "livingRoomShapeObstacles": "Living Room Shape & Obstacles",
+    "bedroomLayout": "Bedroom Layout",
+    "study": "Study",
+    "kitchenDirectionStove": "Kitchen Direction & Stove",
+    "diningRoomDiningTable": "Dining Room & Dining Table",
+    "bathroomPosition": "Bathroom Position",
+    "overallLightingVentilation": "Overall Lighting & Ventilation"
+  },
+  "fengShuiItems": {
+    "doorOrientationExteriorLayout": {
+      "doorSouth": {
+        "label": "Door facing south (Phoenix position)",
+        "advice": ""
+      },
+      "doorEast": {
+        "label": "Door facing east (Green Dragon position)",
+        "advice": ""
+      },
+      "doorMintang": {
+        "label": "Bright hall in front of door (flat ground/pond/green grass)",
+        "advice": ""
+      },
+      "doorUnluckyDirection": {
+        "label": "Door facing west or northwest",
+        "advice": "Consider adjusting the door orientation or adding barriers to improve air flow."
+      },
+      "doorLongCorridor": {
+        "label": "Door directly facing long corridor/street (piercing evil)",
+        "advice": "Set up a screen or large plant inside the door to block and reduce direct air rush."
+      },
+      "doorElevator": {
+        "label": "Door directly facing elevator",
+        "advice": "Place round, large plants or screens at the door to cushion."
+      }
     },
-    "door_east": {
-      "label": "Door facing east (Green Dragon position)",
-      "category": "Door Orientation & Exterior Layout"
+    "entryScene": {
+      "doorSeeRed": {
+        "label": "Seeing red upon entry (festive decoration)",
+        "advice": ""
+      },
+      "doorSeeGreen": {
+        "label": "Seeing green upon entry (plants)",
+        "advice": ""
+      },
+      "doorSeePainting": {
+        "label": "Seeing painting upon entry (inspiring artwork)",
+        "advice": ""
+      },
+      "doorSeeStove": {
+        "label": "Seeing stove when opening door",
+        "advice": "Use a screen or relocate the stove to avoid fire qi rushing towards the door."
+      },
+      "doorSeeToilet": {
+        "label": "Seeing toilet when opening door",
+        "advice": "Set up a partition or adjust the door orientation to reduce filthy air entering the room."
+      },
+      "doorSeeMirror": {
+        "label": "Seeing mirror when opening door",
+        "advice": "Adjust the mirror position so it doesn't directly reflect the view from the door."
+      }
     },
-    "door_mingtang": {
-      "label": "Bright hall in front of door (flat ground/pond/green grass)",
-      "category": "Door Orientation & Exterior Layout"
+    "entryway": {
+      "entryBrightClean": {
+        "label": "Entryway is bright and clean",
+        "advice": ""
+      },
+      "entryHighCeiling": {
+        "label": "High ceiling",
+        "advice": ""
+      },
+      "entryTransparent": {
+        "label": "Moderate transparency",
+        "advice": ""
+      },
+      "entryDarkMessy": {
+        "label": "Dark and messy",
+        "advice": "Add lighting or rearrange to keep clean."
+      },
+      "entrySharpCornerAttack": {
+        "label": "Sharp corner attack/hidden arrow hurting chest",
+        "advice": "Use plants or screens to block sharp corner attacks."
+      },
+      "entryLowCeiling": {
+        "label": "Entryway too low or oppressive",
+        "advice": "Redesign the ceiling or use light colors to enhance space feeling."
+      }
     },
-    "door_unlucky_direction": {
-      "label": "Door facing west or northwest",
-      "category": "Door Orientation & Exterior Layout",
-      "advice": "Consider adjusting the door orientation or adding barriers to improve air flow."
+    "livingRoomLayout": {
+      "livingSofaWall": {
+        "label": "Sofa backed against solid wall",
+        "advice": ""
+      },
+      "livingNoBeam": {
+        "label": "No beam pressing on top",
+        "advice": ""
+      },
+      "livingSofaCurve": {
+        "label": "Sofa arranged in curved shape to gather qi",
+        "advice": ""
+      },
+      "livingSofaBackWater": {
+        "label": "Sofa backed by water or aquarium",
+        "advice": "Adjust the sofa to back against solid wall or add screen for support."
+      },
+      "livingSofaFaceDoor": {
+        "label": "Sofa directly facing door",
+        "advice": "Adjust sofa angle or use partition to reduce evil qi."
+      },
+      "livingDirectLight": {
+        "label": "Overhead light shining directly on head",
+        "advice": "Relocate the light or use soft light shade."
+      }
     },
-    "door_long_corridor": {
-      "label": "Door directly facing long corridor/street (piercing evil)",
-      "category": "Door Orientation & Exterior Layout",
-      "advice": "Set up a screen or large plant inside the door to block and reduce direct air rush."
+    "livingRoomShapeObstacles": {
+      "livingSquareShape": {
+        "label": "Living room has square shape",
+        "advice": ""
+      },
+      "livingSharpCornerFixed": {
+        "label": "Sharp corner resolved with plants/cabinet",
+        "advice": ""
+      },
+      "livingIsolatedColumn": {
+        "label": "Isolated column blocking air flow",
+        "advice": "Enclose the column with furniture or attach landscape painting to resolve."
+      },
+      "livingSharpCornerUnfixed": {
+        "label": "Sharp corner not resolved",
+        "advice": "Place tall plants or set up screen at sharp corner to exorcise evil qi."
+      }
     },
-    "door_elevator": {
-      "label": "Door directly facing elevator",
-      "category": "Door Orientation & Exterior Layout",
-      "advice": "Place round, large plants or screens at the door to cushion."
+    "bedroomLayout": {
+      "bedHeadWall": {
+        "label": "Bed head against wall",
+        "advice": ""
+      },
+      "bedNorthSouth": {
+        "label": "Bed facing north-south direction",
+        "advice": ""
+      },
+      "bedChildEast": {
+        "label": "Child's bed positioned east or southeast",
+        "advice": ""
+      },
+      "bedBeamPress": {
+        "label": "Beam pressing on bed or air conditioner hanging over head",
+        "advice": "Move bed or install ceiling to block beam pressure."
+      },
+      "bedFaceWest": {
+        "label": "Bed head facing west",
+        "advice": "Adjust bed head direction to avoid blood rushing to head."
+      },
+      "bedFaceMirror": {
+        "label": "Bed facing mirror",
+        "advice": "Adjust mirror position or cover with cloth."
+      }
     },
-    "door_see_red": {
-      "label": "Seeing red upon entry (festive decoration)",
-      "category": "Entry Scene"
+    "study": {
+      "studyDeskWall": {
+        "label": "Desk backed against solid wall",
+        "advice": ""
+      },
+      "studyFacingWindow": {
+        "label": "Desk facing window with openness",
+        "advice": ""
+      },
+      "studyPlant": {
+        "label": "Water plants on desk",
+        "advice": ""
+      },
+      "studyDoorKitchenToilet": {
+        "label": "Door facing kitchen/toilet",
+        "advice": "Adjust study door orientation or add screen to block water-fire conflict."
+      },
+      "studyWallToilet": {
+        "label": "Desk back or face wall of toilet",
+        "advice": "Move desk to avoid toilet wall."
+      }
     },
-    "door_see_green": {
-      "label": "Seeing green upon entry (plants)",
-      "category": "Entry Scene"
+    "kitchenDirectionStove": {
+      "kitchenEast": {
+        "label": "Kitchen located east or southeast",
+        "advice": ""
+      },
+      "kitchenStoveWall": {
+        "label": "Stove backed against solid wall",
+        "advice": ""
+      },
+      "kitchenSouth": {
+        "label": "Kitchen facing south",
+        "advice": "Consider adjusting kitchen position or adding partition to reduce fire qi."
+      },
+      "kitchenStoveBadFacing": {
+        "label": "Stove directly facing door/bedroom/toilet",
+        "advice": "Adjust stove position to avoid collision with door."
+      },
+      "kitchenStoveNoBack": {
+        "label": "Stove without back support",
+        "advice": "Add solid wall or cabinet to enhance stability and safety."
+      }
     },
-    "door_see_painting": {
-      "label": "Seeing painting upon entry (inspiring artwork)",
-      "category": "Entry Scene"
+    "diningRoomDiningTable": {
+      "diningRoundSquare": {
+        "label": "Dining table is round or square",
+        "advice": ""
+      },
+      "diningSoftLight": {
+        "label": "Soft lighting",
+        "advice": ""
+      },
+      "diningSoftColor": {
+        "label": "Elegant color scheme",
+        "advice": ""
+      },
+      "diningSharpTable": {
+        "label": "Dining table is triangular or has sharp corners",
+        "advice": "Replace table with round or square to improve qi field."
+      },
+      "diningDoorCollision": {
+        "label": "Dining table directly hit by door/toilet",
+        "advice": "Adjust table position or set up screen to resolve evil qi."
+      }
     },
-    "door_see_stove": {
-      "label": "Seeing stove when opening door",
-      "category": "Entry Scene",
-      "advice": "Use a screen or relocate the stove to avoid fire qi rushing towards the door."
+    "bathroomPosition": {
+      "toiletGoodPosition": {
+        "label": "Toilet door not facing door/kitchen",
+        "advice": ""
+      },
+      "toiletDryVent": {
+        "label": "Dry and well-ventilated",
+        "advice": ""
+      },
+      "toiletFaceDoor": {
+        "label": "Toilet directly facing door",
+        "advice": "Change door orientation or add partition to reduce filthy air spreading."
+      },
+      "toiletSameDoorKitchen": {
+        "label": "Same door as kitchen",
+        "advice": "Change door or add partition to avoid water-fire collision."
+      }
     },
-    "door_see_toilet": {
-      "label": "Seeing toilet when opening door",
-      "category": "Entry Scene",
-      "advice": "Set up a partition or adjust the door orientation to reduce filthy air entering the room."
-    },
-    "door_see_mirror": {
-      "label": "Seeing mirror when opening door",
-      "category": "Entry Scene",
-      "advice": "Adjust the mirror position so it doesn't directly reflect the view from the door."
-    },
-    "entry_bright_clean": {
-      "label": "Entryway is bright and clean",
-      "category": "Entryway"
-    },
-    "entry_high_ceiling": {
-      "label": "High ceiling",
-      "category": "Entryway"
-    },
-    "entry_transparent": {
-      "label": "Moderate transparency",
-      "category": "Entryway"
-    },
-    "entry_dark_messy": {
-      "label": "Dark and messy",
-      "category": "Entryway",
-      "advice": "Add lighting or rearrange to keep clean."
-    },
-    "entry_sharp_corner_attack": {
-      "label": "Sharp corner attack/hidden arrow hurting chest",
-      "category": "Entryway",
-      "advice": "Use plants or screens to block sharp corner attacks."
-    },
-    "entry_low_ceiling": {
-      "label": "Entryway too low or oppressive",
-      "category": "Entryway",
-      "advice": "Redesign the ceiling or use light colors to enhance space feeling."
-    },
-    "living_sofa_wall": {
-      "label": "Sofa backed against solid wall",
-      "category": "Living Room Layout"
-    },
-    "living_no_beam": {
-      "label": "No beam pressing on top",
-      "category": "Living Room Layout"
-    },
-    "living_sofa_curve": {
-      "label": "Sofa arranged in curved shape to gather qi",
-      "category": "Living Room Layout"
-    },
-    "living_sofa_back_water": {
-      "label": "Sofa backed by water or aquarium",
-      "category": "Living Room Layout",
-      "advice": "Adjust the sofa to back against solid wall or add screen for support."
-    },
-    "living_sofa_face_door": {
-      "label": "Sofa directly facing door",
-      "category": "Living Room Layout",
-      "advice": "Adjust sofa angle or use partition to reduce evil qi."
-    },
-    "living_direct_light": {
-      "label": "Overhead light shining directly on head",
-      "category": "Living Room Layout",
-      "advice": "Relocate the light or use soft light shade."
-    },
-    "living_square_shape": {
-      "label": "Living room has square shape",
-      "category": "Living Room Shape & Obstacles"
-    },
-    "living_sharp_corner_fixed": {
-      "label": "Sharp corner resolved with plants/cabinet",
-      "category": "Living Room Shape & Obstacles"
-    },
-    "living_isolated_column": {
-      "label": "Isolated column blocking air flow",
-      "category": "Living Room Shape & Obstacles",
-      "advice": "Enclose the column with furniture or attach landscape painting to resolve."
-    },
-    "living_sharp_corner_unfixed": {
-      "label": "Sharp corner not resolved",
-      "category": "Living Room Shape & Obstacles",
-      "advice": "Place tall plants or set up screen at sharp corner to exorcise evil qi."
-    },
-    "bed_head_wall": {
-      "label": "Bed head against wall",
-      "category": "Bedroom Layout"
-    },
-    "bed_north_south": {
-      "label": "Bed facing north-south direction",
-      "category": "Bedroom Layout"
-    },
-    "bed_child_east": {
-      "label": "Child's bed positioned east or southeast",
-      "category": "Bedroom Layout"
-    },
-    "bed_beam_press": {
-      "label": "Beam pressing on bed or air conditioner hanging over head",
-      "category": "Bedroom Layout",
-      "advice": "Move bed or install ceiling to block beam pressure."
-    },
-    "bed_face_west": {
-      "label": "Bed head facing west",
-      "category": "Bedroom Layout",
-      "advice": "Adjust bed head direction to avoid blood rushing to head."
-    },
-    "bed_face_mirror": {
-      "label": "Bed facing mirror",
-      "category": "Bedroom Layout",
-      "advice": "Adjust mirror position or cover with cloth."
-    },
-    "study_desk_wall": {
-      "label": "Desk backed against solid wall",
-      "category": "Study"
-    },
-    "study_facing_window": {
-      "label": "Desk facing window with openness",
-      "category": "Study"
-    },
-    "study_plant": {
-      "label": "Water plants on desk",
-      "category": "Study"
-    },
-    "study_door_kitchen_toilet": {
-      "label": "Door facing kitchen/toilet",
-      "category": "Study",
-      "advice": "Adjust study door orientation or add screen to block water-fire conflict."
-    },
-    "study_wall_toilet": {
-      "label": "Desk back or face wall of toilet",
-      "category": "Study",
-      "advice": "Move desk to avoid toilet wall."
-    },
-    "kitchen_east": {
-      "label": "Kitchen located east or southeast",
-      "category": "Kitchen Direction & Stove"
-    },
-    "kitchen_stove_wall": {
-      "label": "Stove backed against solid wall",
-      "category": "Kitchen Direction & Stove"
-    },
-    "kitchen_south": {
-      "label": "Kitchen facing south",
-      "category": "Kitchen Direction & Stove",
-      "advice": "Consider adjusting kitchen position or adding partition to reduce fire qi."
-    },
-    "kitchen_stove_bad_facing": {
-      "label": "Stove directly facing door/bedroom/toilet",
-      "category": "Kitchen Direction & Stove",
-      "advice": "Adjust stove position to avoid collision with door."
-    },
-    "kitchen_stove_no_back": {
-      "label": "Stove without back support",
-      "category": "Kitchen Direction & Stove",
-      "advice": "Add solid wall or cabinet to enhance stability and safety."
-    },
-    "dining_round_square": {
-      "label": "Dining table is round or square",
-      "category": "Dining Room & Dining Table"
-    },
-    "dining_soft_light": {
-      "label": "Soft lighting",
-      "category": "Dining Room & Dining Table"
-    },
-    "dining_soft_color": {
-      "label": "Elegant color scheme",
-      "category": "Dining Room & Dining Table"
-    },
-    "dining_sharp_table": {
-      "label": "Dining table is triangular or has sharp corners",
-      "category": "Dining Room & Dining Table",
-      "advice": "Replace table with round or square to improve qi field."
-    },
-    "dining_door_collision": {
-      "label": "Dining table directly hit by door/toilet",
-      "category": "Dining Room & Dining Table",
-      "advice": "Adjust table position or set up screen to resolve evil qi."
-    },
-    "toilet_good_position": {
-      "label": "Toilet door not facing door/kitchen",
-      "category": "Bathroom Position"
-    },
-    "toilet_dry_vent": {
-      "label": "Dry and well-ventilated",
-      "category": "Bathroom Position"
-    },
-    "toilet_face_door": {
-      "label": "Toilet directly facing door",
-      "category": "Bathroom Position",
-      "advice": "Change door orientation or add partition to reduce filthy air spreading."
-    },
-    "toilet_same_door_kitchen": {
-      "label": "Same door as kitchen",
-      "category": "Bathroom Position",
-      "advice": "Change door or add partition to avoid water-fire collision."
-    },
-    "house_bright": {
-      "label": "Good lighting",
-      "category": "Overall Lighting & Ventilation"
-    },
-    "house_ventilation": {
-      "label": "Good ventilation",
-      "category": "Overall Lighting & Ventilation"
-    },
-    "house_smooth_layout": {
-      "label": "Overall layout is smooth",
-      "category": "Overall Lighting & Ventilation"
-    },
-    "house_dark_damp": {
-      "label": "Dark and damp",
-      "category": "Overall Lighting & Ventilation",
-      "advice": "Add windows or lighting devices, improve humidity and lighting."
-    },
-    "house_no_airflow": {
-      "label": "Air doesn't flow",
-      "category": "Overall Lighting & Ventilation",
-      "advice": "Install ventilation system or open flow channels to enhance air movement."
+    "overallLightingVentilation": {
+      "houseBright": {
+        "label": "Good lighting",
+        "advice": ""
+      },
+      "houseVentilation": {
+        "label": "Good ventilation",
+        "advice": ""
+      },
+      "houseSmoothLayout": {
+        "label": "Overall layout is smooth",
+        "advice": ""
+      },
+      "houseDarkDamp": {
+        "label": "Dark and damp",
+        "advice": "Add windows or lighting devices, improve humidity and lighting."
+      },
+      "houseNoAirflow": {
+        "label": "Air doesn't flow",
+        "advice": "Install ventilation system or open flow channels to enhance air movement."
+      }
     }
   }
 }

@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { fengShuiItemsData, type FengShuiItem } from "~/data/fengShui";
-
-const BASE_SCORE = 50;
+import {
+  fengShuiCategoryItems,
+  fengShuiItems,
+  type FengShuiItem,
+} from "~/data/fengShui";
 
 const { locale, setLocale } = useI18n();
 const { t } = useI18n();
@@ -10,63 +12,57 @@ const selectedItems = ref<string[]>([]);
 
 const itemMap = computed(() => {
   const map = new Map<string, FengShuiItem>();
-  fengShuiItemsData.forEach((item) => {
-    map.set(item.id, item);
+  fengShuiItems.forEach((item) => map.set(item.id, item));
+  return map;
+});
+
+const categories = computed(() =>
+  Object.keys(fengShuiCategoryItems).map((categoryKey) =>
+    t(`fengShuiCategories.${categoryKey}`)
+  )
+);
+
+const itemsByCategory = computed(() => {
+  const map = new Map<string, FengShuiItem[]>();
+  Object.entries(fengShuiCategoryItems).forEach(([categoryKey, items]) => {
+    map.set(t(`fengShuiCategories.${categoryKey}`), items);
   });
   return map;
 });
 
-const { categories, itemsByCategory } = computed(() => {
-  const categoriesMap = new Map<string, string>();
-  const grouped = new Map<string, FengShuiItem[]>();
-
-  fengShuiItemsData.forEach((item) => {
-    const categoryName = t(item.categoryKey);
-    if (!categoriesMap.has(categoryName)) {
-      categoriesMap.set(categoryName, item.categoryKey);
-      grouped.set(categoryName, []);
-    }
-    grouped.get(categoryName)!.push(item);
-  });
-
-  return {
-    categories: Array.from(categoriesMap.keys()),
-    itemsByCategory: grouped,
-  };
-}).value;
-
 const totalScore = computed(() => {
-  const netScore = selectedItems.value.reduce((sum, itemId) => {
-    const item = itemMap.value.get(itemId);
-    return sum + (item?.score ?? 0);
-  }, BASE_SCORE);
-
+  const netScore = selectedItems.value.reduce(
+    (sum, itemId) => sum + (itemMap.value.get(itemId)?.score ?? 0),
+    50
+  );
   return Math.max(0, Math.min(100, netScore));
 });
 
 const scoreRating = computed(() => {
   const score = totalScore.value;
-  const ratings = [
-    { threshold: 90, labelKey: "excellentFengShui", color: "emerald" },
-    { threshold: 70, labelKey: "goodFengShui", color: "emerald" },
-    { threshold: 50, labelKey: "fairFengShui", color: "yellow" },
-    { threshold: 30, labelKey: "poorFengShui", color: "orange" },
-  ];
-
-  const rating = ratings.find((r) => score >= r.threshold);
-  return rating || { labelKey: "badFengShui", color: "red" };
+  return (
+    [
+      { threshold: 90, labelKey: "excellentFengShui", color: "emerald" },
+      { threshold: 70, labelKey: "goodFengShui", color: "emerald" },
+      { threshold: 50, labelKey: "fairFengShui", color: "yellow" },
+      { threshold: 30, labelKey: "poorFengShui", color: "orange" },
+    ].find((r) => score >= r.threshold) || {
+      labelKey: "badFengShui",
+      color: "red",
+    }
+  );
 });
 
-const selectedItemsWithAdvice = computed(() => {
-  return selectedItems.value
+const selectedItemsWithAdvice = computed(() =>
+  selectedItems.value
     .map((itemId) => itemMap.value.get(itemId))
     .filter((item) => {
       if (!item?.adviceKey) return false;
       const advice = t(item.adviceKey);
       return advice && advice !== item.adviceKey;
     })
-    .sort((a, b) => (b?.score || 0) - (a?.score || 0));
-});
+    .sort((a, b) => (b?.score || 0) - (a?.score || 0))
+);
 </script>
 
 <template>
