@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { InputMenuItem } from "@nuxt/ui";
+import type { CheckboxGroupItem, InputMenuItem } from "@nuxt/ui";
 
 const inputMenuItems = ref<InputMenuItem[]>([
   {
@@ -20,16 +20,36 @@ const inputMenuItems = ref<InputMenuItem[]>([
   },
 ]);
 
+const checkboxGroupItems = ref<CheckboxGroupItem[]>([
+  {
+    label: "System",
+    description: "This is the first option.",
+    id: "system",
+  },
+  {
+    label: "Light",
+    description: "This is the second option.",
+    id: "light",
+  },
+  {
+    label: "Dark",
+    description: "This is the third option.",
+    id: "dark",
+  },
+]);
+
 type State = {
   input: string;
   inputMenu: string;
   inputNumber: number;
+  checkboxGroup: string[];
 };
 
 const state = reactive<State>({
   input: "",
   inputMenu: "todo",
   inputNumber: 0,
+  checkboxGroup: [],
 });
 </script>
 
@@ -75,11 +95,27 @@ const state = reactive<State>({
           "
         />
       </UFormField>
+      <UFormField label="CheckboxGroup" name="checkboxGroup">
+        <UCheckboxGroup
+          color="primary"
+          variant="card"
+          v-model="state.checkboxGroup"
+          value-key="id"
+          :items="checkboxGroupItems"
+          @update:model-value="
+            (value) => {
+              console.log('checkboxGroup changed:', value);
+              console.log('checkboxGroup state:', state.checkboxGroup);
+            }
+          "
+        />
+      </UFormField>
     </UForm>
     <UCard class="my-8">
       <p>Input: {{ state.input }}</p>
       <p>InputMenu: {{ state.inputMenu }}</p>
       <p>InputNumber: {{ state.inputNumber }}</p>
+      <p>CheckboxGroup: {{ state.checkboxGroup }}</p>
     </UCard>
   </UContainer>
 </template>
