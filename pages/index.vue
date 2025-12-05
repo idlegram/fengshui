@@ -1,108 +1,67 @@
 <script setup lang="ts">
 import { fengShuiItemsData, type FengShuiItem } from "~/data/fengShui";
 
+const BASE_SCORE = 50;
+
 const { locale, setLocale } = useI18n();
-
-const fengShuiItems = ref<FengShuiItem[]>(fengShuiItemsData);
-
-type State = {
-  selectedItems: string[];
-};
-
-const state = reactive<State>({
-  selectedItems: [],
-});
-
 const { t } = useI18n();
 
-const getItemLabel = (item: FengShuiItem) => {
-  return t(item.labelKey);
-};
+const selectedItems = ref<string[]>([]);
 
-const getItemAdvice = (item: FengShuiItem) => {
-  if (!item.adviceKey) return "";
-  return t(item.adviceKey);
-};
+const itemMap = computed(() => {
+  const map = new Map<string, FengShuiItem>();
+  fengShuiItemsData.forEach((item) => {
+    map.set(item.id, item);
+  });
+  return map;
+});
 
-const getCategoryName = (categoryKey: string) => {
-  return t(categoryKey);
-};
-
-const categories = computed(() => {
+const { categories, itemsByCategory } = computed(() => {
   const categoriesMap = new Map<string, string>();
-  fengShuiItems.value.forEach((item) => {
+  const grouped = new Map<string, FengShuiItem[]>();
+
+  fengShuiItemsData.forEach((item) => {
     const categoryName = t(item.categoryKey);
     if (!categoriesMap.has(categoryName)) {
       categoriesMap.set(categoryName, item.categoryKey);
-    }
-  });
-  return Array.from(categoriesMap.keys());
-});
-
-const itemsByCategory = computed(() => {
-  const grouped = new Map<string, FengShuiItem[]>();
-  fengShuiItems.value.forEach((item) => {
-    const categoryName = t(item.categoryKey);
-    if (!grouped.has(categoryName)) {
       grouped.set(categoryName, []);
     }
     grouped.get(categoryName)!.push(item);
   });
-  return grouped;
-});
+
+  return {
+    categories: Array.from(categoriesMap.keys()),
+    itemsByCategory: grouped,
+  };
+}).value;
 
 const totalScore = computed(() => {
-  const BASE_SCORE = 50;
-  let positiveScore = 0;
-  let negativeScore = 0;
+  const netScore = selectedItems.value.reduce((sum, itemId) => {
+    const item = itemMap.value.get(itemId);
+    return sum + (item?.score ?? 0);
+  }, BASE_SCORE);
 
-  state.selectedItems.forEach((itemId) => {
-    const item = fengShuiItems.value.find((i) => i.id === itemId);
-    if (item) {
-      if (item.score > 0) {
-        positiveScore += item.score;
-      } else {
-        negativeScore += Math.abs(item.score);
-      }
-    }
-  });
-
-  const score = BASE_SCORE + positiveScore - negativeScore;
-  return Math.max(0, Math.min(100, score));
-});
-
-const scoreBreakdown = computed(() => {
-  let positiveScore = 0;
-  let negativeScore = 0;
-
-  state.selectedItems.forEach((itemId) => {
-    const item = fengShuiItems.value.find((i) => i.id === itemId);
-    if (item) {
-      if (item.score > 0) {
-        positiveScore += item.score;
-      } else {
-        negativeScore += Math.abs(item.score);
-      }
-    }
-  });
-
-  return { positiveScore, negativeScore };
+  return Math.max(0, Math.min(100, netScore));
 });
 
 const scoreRating = computed(() => {
   const score = totalScore.value;
-  if (score >= 90) return { labelKey: "excellentFengShui", color: "emerald" };
-  if (score >= 70) return { labelKey: "goodFengShui", color: "emerald" };
-  if (score >= 50) return { labelKey: "fairFengShui", color: "yellow" };
-  if (score >= 30) return { labelKey: "poorFengShui", color: "orange" };
-  return { labelKey: "badFengShui", color: "red" };
+  const ratings = [
+    { threshold: 90, labelKey: "excellentFengShui", color: "emerald" },
+    { threshold: 70, labelKey: "goodFengShui", color: "emerald" },
+    { threshold: 50, labelKey: "fairFengShui", color: "yellow" },
+    { threshold: 30, labelKey: "poorFengShui", color: "orange" },
+  ];
+
+  const rating = ratings.find((r) => score >= r.threshold);
+  return rating || { labelKey: "badFengShui", color: "red" };
 });
 
 const selectedItemsWithAdvice = computed(() => {
-  return state.selectedItems
-    .map((itemId) => fengShuiItems.value.find((i) => i.id === itemId))
+  return selectedItems.value
+    .map((itemId) => itemMap.value.get(itemId))
     .filter((item) => {
-      if (!item || !item.adviceKey) return false;
+      if (!item?.adviceKey) return false;
       const advice = t(item.adviceKey);
       return advice && advice !== item.adviceKey;
     })
@@ -157,7 +116,7 @@ const selectedItemsWithAdvice = computed(() => {
         }"
       >
         <h2 class="font-semibold pb-4">
-          {{ getCategoryName(category) }}
+          {{ category }}
         </h2>
         <UCheckboxGroup
           color="primary"
@@ -167,12 +126,12 @@ const selectedItemsWithAdvice = computed(() => {
             fieldset: 'grid grid-cols-2 gap-1',
             item: 'bg-elevated',
           }"
-          v-model="state.selectedItems"
+          v-model="selectedItems"
           value-key="id"
           :items="
             (itemsByCategory.get(category) || []).map((item: FengShuiItem) => ({
               ...item,
-              label: getItemLabel(item),
+              label: t(item.labelKey),
             }))
           "
         />
@@ -236,10 +195,10 @@ const selectedItemsWithAdvice = computed(() => {
           class="border-l-4 border-primary pl-4"
         >
           <p class="font-semibold">
-            {{ item && getItemLabel(item) }}
+            {{ item && t(item.labelKey) }}
           </p>
           <p class="text-gray-400">
-            {{ item && getItemAdvice(item) }}
+            {{ item?.adviceKey ? t(item.adviceKey) : "" }}
           </p>
         </div>
       </div>
