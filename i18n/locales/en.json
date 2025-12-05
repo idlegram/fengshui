@@ -1,21 +1,18 @@
 {
   "idlegram": "idlegram",
-  "title": "Is the Feng Shui of this house good or not?",
+  "title": "Is the Feng Shui of this property good?",
+  "disclaimer": "It's just for fun. Please don't take the results too seriously!",
   "score": "Score",
-  "initialScore": "Initial Score",
-  "positiveConditions": "Good Conditions",
-  "negativeConditions": "Bad Conditions",
-  "totalScore": "Total Score",
   "suggestions": "Suggestions",
   "noSuggestions": "No suggestions",
-  "excellent": "Excellent",
-  "fair": "Fair",
-  "needsImprovement": "Needs Improvement",
-  "poor": "Poor",
+  "excellentFengShui": "Excellent Feng Shui (Prosperous Home)",
+  "goodFengShui": "Good Feng Shui (Steady Progress)",
+  "fairFengShui": "Fair Feng Shui (Needs Improvement)",
+  "poorFengShui": "Poor Feng Shui (Layout Adjustment Recommended)",
+  "badFengShui": "Bad Feng Shui (Major Adjustment or Remediation Needed)",
   "categories": {
     "door_orientation": "Door Orientation & Exterior Layout",
     "entry_scene": "Entry Scene",
-    "door_structure": "Door Exorcism & Structure",
     "entryway": "Entryway",
     "living_room_layout": "Living Room Layout",
     "living_room_shape": "Living Room Shape & Obstacles",
@@ -80,24 +77,6 @@
       "label": "Seeing mirror when opening door",
       "category": "entry_scene",
       "advice": "Adjust the mirror position so it doesn't directly reflect the view from the door."
-    },
-    "door_screen_plant": {
-      "label": "Having a screen or plants to exorcise evil qi",
-      "category": "door_structure"
-    },
-    "door_color_match_element": {
-      "label": "Door color matches owner's five elements",
-      "category": "door_structure"
-    },
-    "door_beam_press": {
-      "label": "Beam pressing on door",
-      "category": "door_structure",
-      "advice": "Adjust the door position or raise the door frame to reduce oppression."
-    },
-    "door_arch_tomb": {
-      "label": "Arched door looks like tombstone",
-      "category": "door_structure",
-      "advice": "Change the door frame design to square or circular to avoid yin house appearance."
     },
     "entry_bright_clean": {
       "label": "Entryway is bright and clean",

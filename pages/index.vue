@@ -85,10 +85,11 @@ const scoreBreakdown = computed(() => {
 
 const scoreRating = computed(() => {
   const score = totalScore.value;
-  if (score >= 80) return { labelKey: "excellent", color: "emerald" };
-  if (score >= 60) return { labelKey: "fair", color: "yellow" };
-  if (score >= 40) return { labelKey: "needsImprovement", color: "orange" };
-  return { labelKey: "poor", color: "red" };
+  if (score >= 90) return { labelKey: "excellentFengShui", color: "emerald" };
+  if (score >= 70) return { labelKey: "goodFengShui", color: "emerald" };
+  if (score >= 50) return { labelKey: "fairFengShui", color: "yellow" };
+  if (score >= 30) return { labelKey: "poorFengShui", color: "orange" };
+  return { labelKey: "badFengShui", color: "red" };
 });
 
 const selectedItemsWithAdvice = computed(() => {
@@ -108,6 +109,7 @@ const selectedItemsWithAdvice = computed(() => {
     <!-- 标题 -->
     <div class="py-6">
       <h1 class="text-3xl font-bold mb-4">{{ $t("title") }}</h1>
+      <p class="text-sm text-gray-500 mb-4">{{ $t("disclaimer") }}</p>
       <div class="flex items-center" orientation="horizontal">
         <UButton
           :color="locale === 'zh-CN' ? 'primary' : 'neutral'"
@@ -162,27 +164,19 @@ const selectedItemsWithAdvice = computed(() => {
       <h2 class="font-semibold pb-4">{{ $t("score") }}</h2>
       <div class="space-y-2">
         <div class="flex items-center justify-between">
-          <span class="text-gray-400">{{ $t("initialScore") }}</span>
-          <span class="font-semibold">50</span>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-gray-400">{{ $t("positiveConditions") }}</span>
-          <span class="font-semibold text-emerald-500"
-            >+{{ scoreBreakdown.positiveScore }}</span
+          <span
+            class="text-xl font-semibold"
+            :class="{
+              'text-emerald-500': scoreRating.color === 'emerald',
+              'text-yellow-500': scoreRating.color === 'yellow',
+              'text-orange-500': scoreRating.color === 'orange',
+              'text-red-500': scoreRating.color === 'red',
+            }"
+            >{{ totalScore }}</span
           >
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-gray-400">{{ $t("negativeConditions") }}</span>
-          <span class="font-semibold text-red-500"
-            >-{{ scoreBreakdown.negativeScore }}</span
-          >
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="font-semibold">{{ $t("totalScore") }}</span>
           <div class="flex items-center gap-2">
-            <span class="font-semibold">{{ totalScore }}</span>
             <span
-              class="font-semibold rounded-lg"
+              class="font-semibold"
               :class="{
                 'text-emerald-500': scoreRating.color === 'emerald',
                 'text-yellow-500': scoreRating.color === 'yellow',
@@ -190,7 +184,7 @@ const selectedItemsWithAdvice = computed(() => {
                 'text-red-500': scoreRating.color === 'red',
               }"
             >
-              ({{ $t(scoreRating.labelKey) }})
+              {{ $t(scoreRating.labelKey) }}
             </span>
           </div>
         </div>

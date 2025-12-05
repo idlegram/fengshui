@@ -69,29 +69,7 @@ export const fengShuiItemsData: FengShuiItem[] = [
     score: -2,
   },
 
-  // 3. Door Exorcism & Structure
-  {
-    id: "door_screen_plant",
-    categoryKey: "door_structure",
-    score: 2,
-  },
-  {
-    id: "door_color_match_element",
-    categoryKey: "door_structure",
-    score: 2,
-  },
-  {
-    id: "door_beam_press",
-    categoryKey: "door_structure",
-    score: -3,
-  },
-  {
-    id: "door_arch_tomb",
-    categoryKey: "door_structure",
-    score: -3,
-  },
-
-  // 4. Entryway
+  // 3. Entryway
   {
     id: "entry_bright_clean",
     categoryKey: "entryway",

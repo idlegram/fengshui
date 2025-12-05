@@ -1,21 +1,18 @@
 {
   "idlegram": "闲置程序",
-  "title": "这房子风水好不好",
-  "score": "评分",
-  "initialScore": "初始分",
-  "positiveConditions": "好条件分",
-  "negativeConditions": "坏条件分",
-  "totalScore": "总分",
+  "title": "这房子的风水好不好",
+  "disclaimer": "这只是为了好玩，请不要过分认真对待测算结果！",
+  "score": "分数",
   "suggestions": "建议",
   "noSuggestions": "暂无建议",
-  "excellent": "优秀",
-  "fair": "一般",
-  "needsImprovement": "需改进",
-  "poor": "较差",
+  "excellentFengShui": "极佳风水（旺宅）",
+  "goodFengShui": "良好风水（稳中有升）",
+  "fairFengShui": "一般风水（需改进）",
+  "poorFengShui": "较差风水（建议调整布局）",
+  "badFengShui": "不利风水（需大幅调整或化解）",
   "categories": {
     "door_orientation": "大门朝向与外部格局",
     "entry_scene": "大门入门景象",
-    "door_structure": "大门化煞与结构",
     "entryway": "玄关",
     "living_room_layout": "客厅布局",
     "living_room_shape": "客厅形状与障碍",
@@ -80,24 +77,6 @@
       "label": "开门见镜子",
       "category": "entry_scene",
       "advice": "调整镜子位置，使其不直接反射入门之景。"
-    },
-    "door_screen_plant": {
-      "label": "有屏风或植物化冲煞",
-      "category": "door_structure"
-    },
-    "door_color_match_element": {
-      "label": "门颜色与主人五行相配",
-      "category": "door_structure"
-    },
-    "door_beam_press": {
-      "label": "横梁压门",
-      "category": "door_structure",
-      "advice": "调整门位置或加高门框，减轻压迫感。"
-    },
-    "door_arch_tomb": {
-      "label": "拱形门似墓碑",
-      "category": "door_structure",
-      "advice": "更换门框设计为方形或圆形，避免阴宅形象。"
     },
     "entry_bright_clean": {
       "label": "玄关明亮、整洁",
