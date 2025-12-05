@@ -1,38 +1,85 @@
 <script setup lang="ts">
-import type { FormSubmitEvent } from "@nuxt/ui";
+import type { InputMenuItem } from "@nuxt/ui";
 
-const state = reactive({
-  door: undefined,
+const inputMenuItems = ref<InputMenuItem[]>([
+  {
+    label: "Backlog",
+    id: "backlog",
+  },
+  {
+    label: "Todo",
+    id: "todo",
+  },
+  {
+    label: "In Progress",
+    id: "in_progress",
+  },
+  {
+    label: "Done",
+    id: "done",
+  },
+]);
+
+type State = {
+  input: string;
+  inputMenu: string;
+  inputNumber: number;
+};
+
+const state = reactive<State>({
+  input: "",
+  inputMenu: "todo",
+  inputNumber: 0,
 });
-
-type Schema = typeof state;
-
-const toast = useToast();
-async function onSubmit(event: FormSubmitEvent<Schema>) {
-  toast.add({
-    title: "Success",
-    description: "The form has been submitted.",
-    color: "success",
-  });
-  console.log(event.data);
-}
 </script>
 
 <template>
   <UContainer class="py-8">
-    <UForm :state="state" class="space-y-4" @submit="onSubmit">
-      <h1>{{ $t("title") }}</h1>
-      <UFormField label="Door" name="door">
-        <UInput v-model="state.door" type="text" />
+    <UForm :state="state" class="space-y-4">
+      <h1 class="text-2xl font-bold">{{ $t("title") }}</h1>
+      <UFormField label="Input" name="input">
+        <UInput
+          v-model="state.input"
+          type="text"
+          @update:model-value="
+            (value) => {
+              console.log('input changed:', value);
+              console.log('input state:', state.input);
+            }
+          "
+        />
       </UFormField>
-      <UButton type="submit"> Submit </UButton>
+      <UFormField label="InputMenu" name="inputMenu">
+        <UInputMenu
+          v-model="state.inputMenu"
+          value-key="id"
+          :items="inputMenuItems"
+          @update:model-value="
+            (value) => {
+              console.log('inputMenu changed:', value);
+              console.log('inputMenu state:', state.inputMenu);
+            }
+          "
+        />
+      </UFormField>
+      <UFormField label="InputNumber" name="inputNumber">
+        <UInputNumber
+          v-model="state.inputNumber"
+          :increment="false"
+          :decrement="false"
+          @update:model-value="
+            (value) => {
+              console.log('inputNumber changed:', value);
+              console.log('inputNumber state:', state.inputNumber);
+            }
+          "
+        />
+      </UFormField>
     </UForm>
+    <UCard class="my-8">
+      <p>Input: {{ state.input }}</p>
+      <p>InputMenu: {{ state.inputMenu }}</p>
+      <p>InputNumber: {{ state.inputNumber }}</p>
+    </UCard>
   </UContainer>
 </template>
-
-<style scoped>
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
-}
-</style>
