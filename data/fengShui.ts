@@ -107,9 +107,9 @@ export const fengShuiCategoryItems: Record<string, FengShuiItem[]> = {
       score: -3,
     },
     {
-      id: "entrySharpCornerAttack",
-      labelKey: "fengShuiItems.entryway.entrySharpCornerAttack.label",
-      adviceKey: "fengShuiItems.entryway.entrySharpCornerAttack.advice",
+      id: "entrySharpCorner",
+      labelKey: "fengShuiItems.entryway.entrySharpCorner.label",
+      adviceKey: "fengShuiItems.entryway.entrySharpCorner.advice",
       score: -2,
     },
     {
@@ -125,12 +125,6 @@ export const fengShuiCategoryItems: Record<string, FengShuiItem[]> = {
       id: "livingSofaWall",
       labelKey: "fengShuiItems.livingRoom.livingSofaWall.label",
       adviceKey: "fengShuiItems.livingRoom.livingSofaWall.advice",
-      score: 3,
-    },
-    {
-      id: "livingNoBeam",
-      labelKey: "fengShuiItems.livingRoom.livingNoBeam.label",
-      adviceKey: "fengShuiItems.livingRoom.livingNoBeam.advice",
       score: 3,
     },
     {
@@ -164,21 +158,15 @@ export const fengShuiCategoryItems: Record<string, FengShuiItem[]> = {
       score: 3,
     },
     {
-      id: "livingSharpCornerFixed",
-      labelKey: "fengShuiItems.livingRoom.livingSharpCornerFixed.label",
-      adviceKey: "fengShuiItems.livingRoom.livingSharpCornerFixed.advice",
-      score: 2,
-    },
-    {
       id: "livingIsolatedColumn",
       labelKey: "fengShuiItems.livingRoom.livingIsolatedColumn.label",
       adviceKey: "fengShuiItems.livingRoom.livingIsolatedColumn.advice",
       score: -2,
     },
     {
-      id: "livingSharpCornerUnfixed",
-      labelKey: "fengShuiItems.livingRoom.livingSharpCornerUnfixed.label",
-      adviceKey: "fengShuiItems.livingRoom.livingSharpCornerUnfixed.advice",
+      id: "livingSharpCorner",
+      labelKey: "fengShuiItems.livingRoom.livingSharpCorner.label",
+      adviceKey: "fengShuiItems.livingRoom.livingSharpCorner.advice",
       score: -3,
     },
   ],
@@ -203,9 +191,9 @@ export const fengShuiCategoryItems: Record<string, FengShuiItem[]> = {
       score: 2,
     },
     {
-      id: "bedBeamPress",
-      labelKey: "fengShuiItems.bedroom.bedBeamPress.label",
-      adviceKey: "fengShuiItems.bedroom.bedBeamPress.advice",
+      id: "bedAirConditioner",
+      labelKey: "fengShuiItems.bedroom.bedAirConditioner.label",
+      adviceKey: "fengShuiItems.bedroom.bedAirConditioner.advice",
       score: -3,
     },
     {
@@ -360,12 +348,6 @@ export const fengShuiCategoryItems: Record<string, FengShuiItem[]> = {
       labelKey: "fengShuiItems.overall.houseVentilation.label",
       adviceKey: "fengShuiItems.overall.houseVentilation.advice",
       score: 3,
-    },
-    {
-      id: "houseSmoothLayout",
-      labelKey: "fengShuiItems.overall.houseSmoothLayout.label",
-      adviceKey: "fengShuiItems.overall.houseSmoothLayout.advice",
-      score: 2,
     },
     {
       id: "houseDarkDamp",

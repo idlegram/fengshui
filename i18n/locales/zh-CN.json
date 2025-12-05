@@ -25,11 +25,11 @@
   "fengShuiItems": {
     "door": {
       "doorSouth": {
-        "label": "大门朝南（朱雀位）",
+        "label": "大门朝南",
         "advice": ""
       },
       "doorEast": {
-        "label": "大门朝东（青龙位）",
+        "label": "大门朝东",
         "advice": ""
       },
       "doorMintang": {
@@ -41,7 +41,7 @@
         "advice": "考虑调整门向或增加屏障改善气流。"
       },
       "doorLongCorridor": {
-        "label": "大门直对长走廊/街道（穿心煞）",
+        "label": "大门直对长走廊/街道",
         "advice": "在门内设置屏风或大型植物阻隔，减少直冲气流。"
       },
       "doorElevator": {
@@ -90,8 +90,8 @@
         "label": "阴暗凌乱",
         "advice": "增加照明或重新布局，保持整洁。"
       },
-      "entrySharpCornerAttack": {
-        "label": "尖角冲射/暗箭伤胸",
+      "entrySharpCorner": {
+        "label": "玄关有尖角",
         "advice": "使用植物或屏风阻挡尖角冲射。"
       },
       "entryLowCeiling": {
@@ -104,12 +104,8 @@
         "label": "沙发背靠实墙",
         "advice": ""
       },
-      "livingNoBeam": {
-        "label": "无梁压顶",
-        "advice": ""
-      },
       "livingSofaCurve": {
-        "label": "沙发摆放弯形聚气",
+        "label": "沙发摆放弯形",
         "advice": ""
       },
       "livingSofaBackWater": {
@@ -128,16 +124,12 @@
         "label": "客厅方正",
         "advice": ""
       },
-      "livingSharpCornerFixed": {
-        "label": "尖角已用植物/柜化解",
-        "advice": ""
-      },
       "livingIsolatedColumn": {
         "label": "孤立柱阻碍流通",
         "advice": "用家具围合柱体或贴山水画化解。"
       },
-      "livingSharpCornerUnfixed": {
-        "label": "尖角未化解",
+      "livingSharpCorner": {
+        "label": "客厅有尖角",
         "advice": "在尖角摆放高大植物或设置屏风化解煞气。"
       }
     },
@@ -154,9 +146,9 @@
         "label": "儿童床位于东或东南",
         "advice": ""
       },
-      "bedBeamPress": {
-        "label": "横梁压床或空调挂头",
-        "advice": "移动床位或加装天花板遮挡梁压。"
+      "bedAirConditioner": {
+        "label": "空调挂头",
+        "advice": "移动床位。"
       },
       "bedFaceWest": {
         "label": "床头朝西",
@@ -177,7 +169,7 @@
         "advice": ""
       },
       "studyPlant": {
-        "label": "案头有水养植物",
+        "label": "书桌上有水养植物",
         "advice": ""
       },
       "studyDoorKitchenToilet": {
@@ -258,10 +250,6 @@
       },
       "houseVentilation": {
         "label": "通风顺畅",
-        "advice": ""
-      },
-      "houseSmoothLayout": {
-        "label": "整体格局流畅",
         "advice": ""
       },
       "houseDarkDamp": {

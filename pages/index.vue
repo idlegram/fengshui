@@ -66,9 +66,9 @@ const selectedItemsWithAdvice = computed(() =>
 </script>
 
 <template>
-  <UContainer class="">
+  <UContainer class="my-8">
     <!-- 标题 -->
-    <div class="py-6">
+    <div class="mb-8">
       <h1 class="text-3xl font-bold mb-4">{{ $t("description") }}</h1>
       <p class="text-gray-500 mb-4">{{ $t("disclaimer") }}</p>
       <div class="flex items-center" orientation="horizontal">
@@ -105,7 +105,7 @@ const selectedItemsWithAdvice = computed(() =>
     <!-- 风水选项 -->
     <div v-for="category in categories" :key="category">
       <UCard
-        class="mb-4"
+        class="mb-2"
         variant="subtle"
         :ui="{
           body: 'p-4 sm:p-4',
@@ -137,7 +137,7 @@ const selectedItemsWithAdvice = computed(() =>
 
     <!-- 评分 -->
     <UCard
-      class="mb-4"
+      class="mb-2"
       variant="subtle"
       :ui="{
         body: 'p-4 sm:p-4',
@@ -175,7 +175,7 @@ const selectedItemsWithAdvice = computed(() =>
 
     <!-- 建议 -->
     <UCard
-      class="mb-4"
+      class="mb-2"
       variant="subtle"
       :ui="{
         body: 'p-4 sm:p-4',

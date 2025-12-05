@@ -25,11 +25,11 @@
   "fengShuiItems": {
     "door": {
       "doorSouth": {
-        "label": "Door facing south (Phoenix position)",
+        "label": "Door facing south",
         "advice": ""
       },
       "doorEast": {
-        "label": "Door facing east (Green Dragon position)",
+        "label": "Door facing east",
         "advice": ""
       },
       "doorMintang": {
@@ -41,7 +41,7 @@
         "advice": "Consider adjusting the door orientation or adding barriers to improve air flow."
       },
       "doorLongCorridor": {
-        "label": "Door directly facing long corridor/street (piercing evil)",
+        "label": "Door directly facing long corridor/street",
         "advice": "Set up a screen or large plant inside the door to block and reduce direct air rush."
       },
       "doorElevator": {
@@ -90,8 +90,8 @@
         "label": "Dark and messy",
         "advice": "Add lighting or rearrange to keep clean."
       },
-      "entrySharpCornerAttack": {
-        "label": "Sharp corner attack/hidden arrow hurting chest",
+      "entrySharpCorner": {
+        "label": "Sharp corner",
         "advice": "Use plants or screens to block sharp corner attacks."
       },
       "entryLowCeiling": {
@@ -104,12 +104,8 @@
         "label": "Sofa backed against solid wall",
         "advice": ""
       },
-      "livingNoBeam": {
-        "label": "No beam pressing on top",
-        "advice": ""
-      },
       "livingSofaCurve": {
-        "label": "Sofa arranged in curved shape to gather qi",
+        "label": "Sofa arranged in curved shape",
         "advice": ""
       },
       "livingSofaBackWater": {
@@ -128,16 +124,12 @@
         "label": "Living room has square shape",
         "advice": ""
       },
-      "livingSharpCornerFixed": {
-        "label": "Sharp corner resolved with plants/cabinet",
-        "advice": ""
-      },
       "livingIsolatedColumn": {
         "label": "Isolated column blocking air flow",
         "advice": "Enclose the column with furniture or attach landscape painting to resolve."
       },
-      "livingSharpCornerUnfixed": {
-        "label": "Sharp corner not resolved",
+      "livingSharpCorner": {
+        "label": "Sharp corner",
         "advice": "Place tall plants or set up screen at sharp corner to exorcise evil qi."
       }
     },
@@ -154,9 +146,9 @@
         "label": "Child's bed positioned east or southeast",
         "advice": ""
       },
-      "bedBeamPress": {
-        "label": "Beam pressing on bed or air conditioner hanging over head",
-        "advice": "Move bed or install ceiling to block beam pressure."
+      "bedAirConditioner": {
+        "label": "Air conditioner hanging over head",
+        "advice": "Move bed."
       },
       "bedFaceWest": {
         "label": "Bed head facing west",
@@ -258,10 +250,6 @@
       },
       "houseVentilation": {
         "label": "Good ventilation",
-        "advice": ""
-      },
-      "houseSmoothLayout": {
-        "label": "Overall layout is smooth",
         "advice": ""
       },
       "houseDarkDamp": {
