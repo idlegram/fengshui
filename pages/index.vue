@@ -108,7 +108,7 @@ const selectedItemsWithAdvice = computed(() => {
   <UContainer class="">
     <!-- 标题 -->
     <div class="py-6">
-      <h1 class="text-3xl font-bold mb-4">{{ $t("title") }}</h1>
+      <h1 class="text-3xl font-bold mb-4">{{ $t("description") }}</h1>
       <p class="text-sm text-gray-500 mb-4">{{ $t("disclaimer") }}</p>
       <div class="flex items-center" orientation="horizontal">
         <UButton
