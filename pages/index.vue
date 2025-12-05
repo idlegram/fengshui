@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { fengShuiItemsData, type FengShuiItem } from "~/data/fengShui";
 
+const { locale, setLocale } = useI18n();
+
 const fengShuiItems = ref<FengShuiItem[]>(fengShuiItemsData);
 
 type State = {
@@ -102,9 +104,38 @@ const selectedItemsWithAdvice = computed(() => {
 </script>
 
 <template>
-  <UContainer class="py-6">
+  <UContainer class="">
     <!-- 标题 -->
-    <h1 class="text-2xl font-bold pb-6">{{ $t("title") }}</h1>
+    <div class="py-6">
+      <h1 class="text-3xl font-bold mb-4">{{ $t("title") }}</h1>
+      <div class="flex items-center" orientation="horizontal">
+        <UButton
+          :color="locale === 'zh-CN' ? 'primary' : 'neutral'"
+          variant="soft"
+          @click="setLocale('zh-CN')"
+        >
+          简体中文
+        </UButton>
+        <UButton
+          :color="locale === 'en' ? 'primary' : 'neutral'"
+          variant="soft"
+          @click="setLocale('en')"
+        >
+          English
+        </UButton>
+        <UColorModeButton class="ml-2" />
+        <UTooltip text="source" :kbds="['meta', 'G']">
+          <UButton
+            color="neutral"
+            variant="ghost"
+            to="https://github.com/luojiahai/fengshui"
+            target="_blank"
+            icon="i-simple-icons-github"
+            aria-label="GitHub"
+          />
+        </UTooltip>
+      </div>
+    </div>
 
     <!-- 风水选项 -->
     <div v-for="category in categories" :key="category">
