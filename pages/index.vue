@@ -15,32 +15,38 @@ const state = reactive<State>({
 
 const { t } = useI18n();
 
-const getItemLabel = (itemId: string) => {
-  return t(`fengShui.${itemId}.label`);
+const getItemLabel = (item: FengShuiItem) => {
+  return t(item.labelKey);
 };
 
-const getItemAdvice = (itemId: string) => {
-  return t(`fengShui.${itemId}.advice`);
+const getItemAdvice = (item: FengShuiItem) => {
+  if (!item.adviceKey) return "";
+  return t(item.adviceKey);
 };
 
 const getCategoryName = (categoryKey: string) => {
-  return t(`categories.${categoryKey}`);
+  return t(categoryKey);
 };
 
 const categories = computed(() => {
-  const uniqueCategories = [
-    ...new Set(fengShuiItems.value.map((item) => item.categoryKey)),
-  ];
-  return uniqueCategories;
+  const categoriesMap = new Map<string, string>();
+  fengShuiItems.value.forEach((item) => {
+    const categoryName = t(item.categoryKey);
+    if (!categoriesMap.has(categoryName)) {
+      categoriesMap.set(categoryName, item.categoryKey);
+    }
+  });
+  return Array.from(categoriesMap.keys());
 });
 
 const itemsByCategory = computed(() => {
   const grouped = new Map<string, FengShuiItem[]>();
   fengShuiItems.value.forEach((item) => {
-    if (!grouped.has(item.categoryKey)) {
-      grouped.set(item.categoryKey, []);
+    const categoryName = t(item.categoryKey);
+    if (!grouped.has(categoryName)) {
+      grouped.set(categoryName, []);
     }
-    grouped.get(item.categoryKey)!.push(item);
+    grouped.get(categoryName)!.push(item);
   });
   return grouped;
 });
@@ -96,9 +102,9 @@ const selectedItemsWithAdvice = computed(() => {
   return state.selectedItems
     .map((itemId) => fengShuiItems.value.find((i) => i.id === itemId))
     .filter((item) => {
-      if (!item) return false;
-      const advice = t(`fengShui.${item.id}.advice`);
-      return advice && advice !== `fengShui.${item.id}.advice`;
+      if (!item || !item.adviceKey) return false;
+      const advice = t(item.adviceKey);
+      return advice && advice !== item.adviceKey;
     })
     .sort((a, b) => (b?.score || 0) - (a?.score || 0));
 });
@@ -166,7 +172,7 @@ const selectedItemsWithAdvice = computed(() => {
           :items="
             (itemsByCategory.get(category) || []).map((item: FengShuiItem) => ({
               ...item,
-              label: getItemLabel(item.id),
+              label: getItemLabel(item),
             }))
           "
         />
@@ -230,10 +236,10 @@ const selectedItemsWithAdvice = computed(() => {
           class="border-l-4 border-primary pl-4"
         >
           <p class="font-semibold">
-            {{ getItemLabel(item?.id || "") }}
+            {{ item && getItemLabel(item) }}
           </p>
           <p class="text-gray-400">
-            {{ getItemAdvice(item?.id || "") }}
+            {{ item && getItemAdvice(item) }}
           </p>
         </div>
       </div>
