@@ -109,10 +109,10 @@ const selectedItemsWithAdvice = computed(() => {
     <!-- 标题 -->
     <div class="py-6">
       <h1 class="text-3xl font-bold mb-4">{{ $t("description") }}</h1>
-      <p class="text-sm text-gray-500 mb-4">{{ $t("disclaimer") }}</p>
+      <p class="text-gray-500 mb-4">{{ $t("disclaimer") }}</p>
       <div class="flex items-center" orientation="horizontal">
         <UButton
-          class="rounded-none"
+          class=""
           :color="locale === 'zh-CN' ? 'primary' : 'neutral'"
           variant="outline"
           @click="setLocale('zh-CN')"
@@ -120,7 +120,7 @@ const selectedItemsWithAdvice = computed(() => {
           简体中文
         </UButton>
         <UButton
-          class="rounded-none"
+          class=""
           :color="locale === 'en' ? 'primary' : 'neutral'"
           variant="outline"
           @click="setLocale('en')"
@@ -144,13 +144,13 @@ const selectedItemsWithAdvice = computed(() => {
     <!-- 风水选项 -->
     <div v-for="category in categories" :key="category">
       <UCard
-        class="mb-4 rounded-none"
+        class="mb-4"
         variant="subtle"
         :ui="{
           body: 'p-4 sm:p-4',
         }"
       >
-        <h2 class="text-sm font-semibold pb-4">
+        <h2 class="font-semibold pb-4">
           {{ getCategoryName(category) }}
         </h2>
         <UCheckboxGroup
@@ -159,7 +159,7 @@ const selectedItemsWithAdvice = computed(() => {
           orientation="horizontal"
           :ui="{
             fieldset: 'grid grid-cols-2 gap-1',
-            item: 'rounded-none bg-elevated',
+            item: 'bg-elevated',
           }"
           v-model="state.selectedItems"
           value-key="id"
@@ -175,13 +175,13 @@ const selectedItemsWithAdvice = computed(() => {
 
     <!-- 评分 -->
     <UCard
-      class="mb-4 rounded-none"
+      class="mb-4"
       variant="subtle"
       :ui="{
         body: 'p-4 sm:p-4',
       }"
     >
-      <h2 class="text-sm font-semibold pb-4">{{ $t("score") }}</h2>
+      <h2 class="font-semibold pb-4">{{ $t("score") }}</h2>
       <div class="space-y-2">
         <div class="flex items-center justify-between">
           <span
@@ -213,17 +213,14 @@ const selectedItemsWithAdvice = computed(() => {
 
     <!-- 建议 -->
     <UCard
-      class="mb-4 rounded-none"
+      class="mb-4"
       variant="subtle"
       :ui="{
         body: 'p-4 sm:p-4',
       }"
     >
-      <h2 class="text-sm font-semibold pb-4">{{ $t("suggestions") }}</h2>
-      <div
-        v-if="selectedItemsWithAdvice.length === 0"
-        class="text-sm text-gray-500"
-      >
+      <h2 class="font-semibold pb-4">{{ $t("suggestions") }}</h2>
+      <div v-if="selectedItemsWithAdvice.length === 0" class="text-gray-500">
         {{ $t("noSuggestions") }}
       </div>
       <div v-else class="space-y-3">
@@ -232,7 +229,7 @@ const selectedItemsWithAdvice = computed(() => {
           :key="item?.id"
           class="border-l-4 border-primary pl-4"
         >
-          <p class="text-sm font-semibold">
+          <p class="font-semibold">
             {{ getItemLabel(item?.id || "") }}
           </p>
           <p class="text-gray-400">
