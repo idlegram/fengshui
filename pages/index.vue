@@ -143,8 +143,16 @@ const selectedItemsWithAdvice = computed(() => {
 
     <!-- 风水选项 -->
     <div v-for="category in categories" :key="category">
-      <UCard class="mb-4 rounded-none" variant="subtle">
-        <h2 class="font-semibold pb-4">{{ getCategoryName(category) }}</h2>
+      <UCard
+        class="mb-4 rounded-none"
+        variant="subtle"
+        :ui="{
+          body: 'p-4 sm:p-4',
+        }"
+      >
+        <h2 class="text-sm font-semibold pb-4">
+          {{ getCategoryName(category) }}
+        </h2>
         <UCheckboxGroup
           color="primary"
           variant="table"
@@ -166,12 +174,18 @@ const selectedItemsWithAdvice = computed(() => {
     </div>
 
     <!-- 评分 -->
-    <UCard class="mb-4 rounded-none" variant="subtle">
-      <h2 class="font-semibold pb-4">{{ $t("score") }}</h2>
+    <UCard
+      class="mb-4 rounded-none"
+      variant="subtle"
+      :ui="{
+        body: 'p-4 sm:p-4',
+      }"
+    >
+      <h2 class="text-sm font-semibold pb-4">{{ $t("score") }}</h2>
       <div class="space-y-2">
         <div class="flex items-center justify-between">
           <span
-            class="text-xl font-semibold"
+            class="text-lg font-semibold"
             :class="{
               'text-emerald-500': scoreRating.color === 'emerald',
               'text-yellow-500': scoreRating.color === 'yellow',
@@ -198,18 +212,29 @@ const selectedItemsWithAdvice = computed(() => {
     </UCard>
 
     <!-- 建议 -->
-    <UCard class="mb-4 rounded-none" variant="subtle">
-      <h2 class="font-semibold pb-4">{{ $t("suggestions") }}</h2>
-      <div v-if="selectedItemsWithAdvice.length === 0" class="text-gray-500">
+    <UCard
+      class="mb-4 rounded-none"
+      variant="subtle"
+      :ui="{
+        body: 'p-4 sm:p-4',
+      }"
+    >
+      <h2 class="text-sm font-semibold pb-4">{{ $t("suggestions") }}</h2>
+      <div
+        v-if="selectedItemsWithAdvice.length === 0"
+        class="text-sm text-gray-500"
+      >
         {{ $t("noSuggestions") }}
       </div>
       <div v-else class="space-y-3">
         <div
           v-for="item in selectedItemsWithAdvice"
           :key="item?.id"
-          class="border-l-4 border-primary-500 pl-4"
+          class="border-l-4 border-primary pl-4"
         >
-          <p class="font-semibold">{{ getItemLabel(item?.id || "") }}</p>
+          <p class="text-sm font-semibold">
+            {{ getItemLabel(item?.id || "") }}
+          </p>
           <p class="text-gray-400">
             {{ getItemAdvice(item?.id || "") }}
           </p>

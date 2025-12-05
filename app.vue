@@ -19,9 +19,7 @@ useSeoMeta({
       <template #left>
         <p class="text-muted text-sm">
           Copyright © {{ new Date().getFullYear() }}
-          <span class="font-semibold text-emerald-500">{{
-            $t("idlegram")
-          }}</span>
+          <span class="font-semibold text-primary">{{ $t("idlegram") }}</span>
           by
           <a href="https://luojiahai.com" target="_blank" class="underline"
             >luojiahai</a
