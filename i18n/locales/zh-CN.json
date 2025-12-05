@@ -1,3 +1,308 @@
 {
-  "title": "测试"
+  "title": "这房子风水好不好",
+  "score": "评分",
+  "initialScore": "初始分",
+  "positiveConditions": "好条件分",
+  "negativeConditions": "坏条件分",
+  "totalScore": "总分",
+  "suggestions": "建议",
+  "noSuggestions": "暂无建议",
+  "excellent": "优秀",
+  "fair": "一般",
+  "needsImprovement": "需改进",
+  "poor": "较差",
+  "categories": {
+    "door_orientation": "大门朝向与外部格局",
+    "entry_scene": "大门入门景象",
+    "door_structure": "大门化煞与结构",
+    "entryway": "玄关",
+    "living_room_layout": "客厅布局",
+    "living_room_shape": "客厅形状与障碍",
+    "bedroom_layout": "卧室布局",
+    "study": "书房",
+    "kitchen": "厨房方向与炉灶",
+    "dining": "餐厅与餐桌",
+    "bathroom": "卫生间位置",
+    "overall": "整体采光与通风"
+  },
+  "fengShui": {
+    "door_south": {
+      "label": "大门朝南（朱雀位）",
+      "category": "door_orientation"
+    },
+    "door_east": {
+      "label": "大门朝东（青龙位）",
+      "category": "door_orientation"
+    },
+    "door_mingtang": {
+      "label": "大门前有明堂（平地/水池/绿茵）",
+      "category": "door_orientation"
+    },
+    "door_unlucky_direction": {
+      "label": "大门朝西或西北",
+      "category": "door_orientation",
+      "advice": "考虑调整门向或增加屏障改善气流。"
+    },
+    "door_long_corridor": {
+      "label": "大门直对长走廊/街道（穿心煞）",
+      "category": "door_orientation",
+      "advice": "在门内设置屏风或大型植物阻隔，减少直冲气流。"
+    },
+    "door_elevator": {
+      "label": "大门直对电梯",
+      "category": "door_orientation",
+      "advice": "在门口摆放圆润大型绿植或屏风缓冲。"
+    },
+    "door_see_red": {
+      "label": "入门见红（喜庆布置）",
+      "category": "entry_scene"
+    },
+    "door_see_green": {
+      "label": "入门见绿（植物）",
+      "category": "entry_scene"
+    },
+    "door_see_painting": {
+      "label": "入门见画（舒展字画）",
+      "category": "entry_scene"
+    },
+    "door_see_stove": {
+      "label": "开门见灶",
+      "category": "entry_scene",
+      "advice": "用屏风或移位灶台，避免火气直冲门口。"
+    },
+    "door_see_toilet": {
+      "label": "开门见厕所",
+      "category": "entry_scene",
+      "advice": "设置隔断或调整门向，减少秽气入室。"
+    },
+    "door_see_mirror": {
+      "label": "开门见镜子",
+      "category": "entry_scene",
+      "advice": "调整镜子位置，使其不直接反射入门之景。"
+    },
+    "door_screen_plant": {
+      "label": "有屏风或植物化冲煞",
+      "category": "door_structure"
+    },
+    "door_color_match_element": {
+      "label": "门颜色与主人五行相配",
+      "category": "door_structure"
+    },
+    "door_beam_press": {
+      "label": "横梁压门",
+      "category": "door_structure",
+      "advice": "调整门位置或加高门框，减轻压迫感。"
+    },
+    "door_arch_tomb": {
+      "label": "拱形门似墓碑",
+      "category": "door_structure",
+      "advice": "更换门框设计为方形或圆形，避免阴宅形象。"
+    },
+    "entry_bright_clean": {
+      "label": "玄关明亮、整洁",
+      "category": "entryway"
+    },
+    "entry_high_ceiling": {
+      "label": "天花板高",
+      "category": "entryway"
+    },
+    "entry_transparent": {
+      "label": "通透适中",
+      "category": "entryway"
+    },
+    "entry_dark_messy": {
+      "label": "阴暗凌乱",
+      "category": "entryway",
+      "advice": "增加照明或重新布局，保持整洁。"
+    },
+    "entry_sharp_corner_attack": {
+      "label": "尖角冲射/暗箭伤胸",
+      "category": "entryway",
+      "advice": "使用植物或屏风阻挡尖角冲射。"
+    },
+    "entry_low_ceiling": {
+      "label": "玄关过低或压抑",
+      "category": "entryway",
+      "advice": "重新设计天花或用浅色装饰提升空间感。"
+    },
+    "living_sofa_wall": {
+      "label": "沙发背靠实墙",
+      "category": "living_room_layout"
+    },
+    "living_no_beam": {
+      "label": "无梁压顶",
+      "category": "living_room_layout"
+    },
+    "living_sofa_curve": {
+      "label": "沙发摆放弯形聚气",
+      "category": "living_room_layout"
+    },
+    "living_sofa_back_water": {
+      "label": "沙发背水或背鱼缸",
+      "category": "living_room_layout",
+      "advice": "调整沙发让背靠实墙或添加屏风补靠。"
+    },
+    "living_sofa_face_door": {
+      "label": "沙发正对大门",
+      "category": "living_room_layout",
+      "advice": "调整沙发角度或用隔断降低冲煞。"
+    },
+    "living_direct_light": {
+      "label": "顶灯直照头部",
+      "category": "living_room_layout",
+      "advice": "更换灯具位置或使用柔光灯罩。"
+    },
+    "living_square_shape": {
+      "label": "客厅方正",
+      "category": "living_room_shape"
+    },
+    "living_sharp_corner_fixed": {
+      "label": "尖角已用植物/柜化解",
+      "category": "living_room_shape"
+    },
+    "living_isolated_column": {
+      "label": "孤立柱阻碍流通",
+      "category": "living_room_shape",
+      "advice": "用家具围合柱体或贴山水画化解。"
+    },
+    "living_sharp_corner_unfixed": {
+      "label": "尖角未化解",
+      "category": "living_room_shape",
+      "advice": "在尖角摆放高大植物或设置屏风化解煞气。"
+    },
+    "bed_head_wall": {
+      "label": "床头靠墙",
+      "category": "bedroom_layout"
+    },
+    "bed_north_south": {
+      "label": "床南北朝向",
+      "category": "bedroom_layout"
+    },
+    "bed_child_east": {
+      "label": "儿童床位于东或东南",
+      "category": "bedroom_layout"
+    },
+    "bed_beam_press": {
+      "label": "横梁压床或空调挂头",
+      "category": "bedroom_layout",
+      "advice": "移动床位或加装天花板遮挡梁压。"
+    },
+    "bed_face_west": {
+      "label": "床头朝西",
+      "category": "bedroom_layout",
+      "advice": "调整床头方向，避免血冲头部。"
+    },
+    "bed_face_mirror": {
+      "label": "床对镜",
+      "category": "bedroom_layout",
+      "advice": "调整镜子位置或加布帘遮挡。"
+    },
+    "study_desk_wall": {
+      "label": "书桌背靠实墙",
+      "category": "study"
+    },
+    "study_facing_window": {
+      "label": "桌前对窗宽敞",
+      "category": "study"
+    },
+    "study_plant": {
+      "label": "案头有水养植物",
+      "category": "study"
+    },
+    "study_door_kitchen_toilet": {
+      "label": "门对厨房/厕所",
+      "category": "study",
+      "advice": "调整书房门向或加屏风阻隔水火冲煞。"
+    },
+    "study_wall_toilet": {
+      "label": "书桌背或面对厕所墙",
+      "category": "study",
+      "advice": "移动桌位避开厕所墙面。"
+    },
+    "kitchen_east": {
+      "label": "厨房位于东或东南",
+      "category": "kitchen"
+    },
+    "kitchen_stove_wall": {
+      "label": "灶台背靠实墙",
+      "category": "kitchen"
+    },
+    "kitchen_south": {
+      "label": "厨房朝南",
+      "category": "kitchen",
+      "advice": "考虑调整厨房方位或增加隔断降低火气。"
+    },
+    "kitchen_stove_bad_facing": {
+      "label": "灶正对大门/卧室/厕所",
+      "category": "kitchen",
+      "advice": "调整灶位避免与门相冲。"
+    },
+    "kitchen_stove_no_back": {
+      "label": "灶背无靠",
+      "category": "kitchen",
+      "advice": "加设实墙或柜体增强稳定和安全性。"
+    },
+    "dining_round_square": {
+      "label": "餐桌圆形或方形",
+      "category": "dining"
+    },
+    "dining_soft_light": {
+      "label": "灯光柔和",
+      "category": "dining"
+    },
+    "dining_soft_color": {
+      "label": "色调素雅",
+      "category": "dining"
+    },
+    "dining_sharp_table": {
+      "label": "餐桌三角形或尖角形",
+      "category": "dining",
+      "advice": "更换餐桌为圆形或方形以改善气场。"
+    },
+    "dining_door_collision": {
+      "label": "餐桌被大门/厕所直冲",
+      "category": "dining",
+      "advice": "调整餐桌位置或设置隔屏化解冲煞。"
+    },
+    "toilet_good_position": {
+      "label": "卫生间门不对大门/厨房",
+      "category": "bathroom"
+    },
+    "toilet_dry_vent": {
+      "label": "干燥通风",
+      "category": "bathroom"
+    },
+    "toilet_face_door": {
+      "label": "卫生间直冲大门",
+      "category": "bathroom",
+      "advice": "改变门向或增加隔断减少秽气扩散。"
+    },
+    "toilet_same_door_kitchen": {
+      "label": "与厨房同门",
+      "category": "bathroom",
+      "advice": "改门或设置隔板避免水火相冲。"
+    },
+    "house_bright": {
+      "label": "採光良好",
+      "category": "overall"
+    },
+    "house_ventilation": {
+      "label": "通风顺畅",
+      "category": "overall"
+    },
+    "house_smooth_layout": {
+      "label": "整体格局流畅",
+      "category": "overall"
+    },
+    "house_dark_damp": {
+      "label": "阴暗潮湿",
+      "category": "overall",
+      "advice": "增加窗户或照明设备，改善湿度与采光。"
+    },
+    "house_no_airflow": {
+      "label": "空气不流通",
+      "category": "overall",
+      "advice": "安装通风系统或打开对流通道增强空气流动。"
+    }
+  }
 }

@@ -1,126 +1,189 @@
 <script setup lang="ts">
-import type { CheckboxGroupItem, InputMenuItem } from "@nuxt/ui";
+import { fengShuiItemsData, type FengShuiItem } from "~/data/fengShui";
 
-const inputMenuItems = ref<InputMenuItem[]>([
-  {
-    label: "Backlog",
-    id: "backlog",
-  },
-  {
-    label: "Todo",
-    id: "todo",
-  },
-  {
-    label: "In Progress",
-    id: "in_progress",
-  },
-  {
-    label: "Done",
-    id: "done",
-  },
-]);
-
-const checkboxGroupItems = ref<CheckboxGroupItem[]>([
-  {
-    label: "System",
-    description: "This is the first option.",
-    id: "system",
-  },
-  {
-    label: "Light",
-    description: "This is the second option.",
-    id: "light",
-  },
-  {
-    label: "Dark",
-    description: "This is the third option.",
-    id: "dark",
-  },
-]);
+const fengShuiItems = ref<FengShuiItem[]>(fengShuiItemsData);
 
 type State = {
-  input: string;
-  inputMenu: string;
-  inputNumber: number;
-  checkboxGroup: string[];
+  selectedItems: string[];
 };
 
 const state = reactive<State>({
-  input: "",
-  inputMenu: "todo",
-  inputNumber: 0,
-  checkboxGroup: [],
+  selectedItems: [],
+});
+
+const { t } = useI18n();
+
+const getItemLabel = (itemId: string) => {
+  return t(`fengShui.${itemId}.label`);
+};
+
+const getItemAdvice = (itemId: string) => {
+  return t(`fengShui.${itemId}.advice`);
+};
+
+const getCategoryName = (categoryKey: string) => {
+  return t(`categories.${categoryKey}`);
+};
+
+const categories = computed(() => {
+  const uniqueCategories = [
+    ...new Set(fengShuiItems.value.map((item) => item.categoryKey)),
+  ];
+  return uniqueCategories;
+});
+
+const itemsByCategory = computed(() => {
+  const grouped = new Map<string, FengShuiItem[]>();
+  fengShuiItems.value.forEach((item) => {
+    if (!grouped.has(item.categoryKey)) {
+      grouped.set(item.categoryKey, []);
+    }
+    grouped.get(item.categoryKey)!.push(item);
+  });
+  return grouped;
+});
+
+const totalScore = computed(() => {
+  const BASE_SCORE = 50;
+  let positiveScore = 0;
+  let negativeScore = 0;
+
+  state.selectedItems.forEach((itemId) => {
+    const item = fengShuiItems.value.find((i) => i.id === itemId);
+    if (item) {
+      if (item.score > 0) {
+        positiveScore += item.score;
+      } else {
+        negativeScore += Math.abs(item.score);
+      }
+    }
+  });
+
+  const score = BASE_SCORE + positiveScore - negativeScore;
+  return Math.max(0, Math.min(100, score));
+});
+
+const scoreBreakdown = computed(() => {
+  let positiveScore = 0;
+  let negativeScore = 0;
+
+  state.selectedItems.forEach((itemId) => {
+    const item = fengShuiItems.value.find((i) => i.id === itemId);
+    if (item) {
+      if (item.score > 0) {
+        positiveScore += item.score;
+      } else {
+        negativeScore += Math.abs(item.score);
+      }
+    }
+  });
+
+  return { positiveScore, negativeScore };
+});
+
+const scoreRating = computed(() => {
+  const score = totalScore.value;
+  if (score >= 80) return { labelKey: "excellent", color: "emerald" };
+  if (score >= 60) return { labelKey: "fair", color: "yellow" };
+  if (score >= 40) return { labelKey: "needsImprovement", color: "orange" };
+  return { labelKey: "poor", color: "red" };
+});
+
+const selectedItemsWithAdvice = computed(() => {
+  return state.selectedItems
+    .map((itemId) => fengShuiItems.value.find((i) => i.id === itemId))
+    .filter((item) => {
+      if (!item) return false;
+      const advice = t(`fengShui.${item.id}.advice`);
+      return advice && advice !== `fengShui.${item.id}.advice`;
+    })
+    .sort((a, b) => (b?.score || 0) - (a?.score || 0));
 });
 </script>
 
 <template>
   <UContainer class="py-6">
-    <h1 class="text-2xl font-bold">{{ $t("title") }}</h1>
-    <UCard class="mt-4" variant="subtle">
-      <UForm :state="state" class="space-y-4">
-        <UFormField label="Input" name="input">
-          <UInput
-            class="w-full"
-            v-model="state.input"
-            type="text"
-            @update:model-value="
-              (value) => {
-                console.log('input changed:', value);
-                console.log('input state:', state.input);
-              }
-            "
-          />
-        </UFormField>
-        <UFormField label="InputMenu" name="inputMenu">
-          <UInputMenu
-            class="w-full"
-            v-model="state.inputMenu"
-            value-key="id"
-            :items="inputMenuItems"
-            @update:model-value="
-              (value) => {
-                console.log('inputMenu changed:', value);
-                console.log('inputMenu state:', state.inputMenu);
-              }
-            "
-          />
-        </UFormField>
-        <UFormField label="InputNumber" name="inputNumber">
-          <UInputNumber
-            class="w-full"
-            v-model="state.inputNumber"
-            :increment="false"
-            :decrement="false"
-            @update:model-value="
-              (value) => {
-                console.log('inputNumber changed:', value);
-                console.log('inputNumber state:', state.inputNumber);
-              }
-            "
-          />
-        </UFormField>
-        <UFormField label="CheckboxGroup" name="checkboxGroup">
-          <UCheckboxGroup
-            color="primary"
-            variant="card"
-            v-model="state.checkboxGroup"
-            value-key="id"
-            :items="checkboxGroupItems"
-            @update:model-value="
-              (value) => {
-                console.log('checkboxGroup changed:', value);
-                console.log('checkboxGroup state:', state.checkboxGroup);
-              }
-            "
-          />
-        </UFormField>
-      </UForm>
+    <!-- 标题 -->
+    <h1 class="text-2xl font-bold pb-6">{{ $t("title") }}</h1>
+
+    <!-- 风水选项 -->
+    <div v-for="category in categories" :key="category">
+      <UCard class="mb-4" variant="subtle">
+        <h2 class="font-semibold pb-4">{{ getCategoryName(category) }}</h2>
+        <UCheckboxGroup
+          color="primary"
+          variant="table"
+          orientation="vertical"
+          v-model="state.selectedItems"
+          value-key="id"
+          :items="
+            (itemsByCategory.get(category) || []).map((item: FengShuiItem) => ({
+              ...item,
+              label: getItemLabel(item.id),
+            }))
+          "
+        />
+      </UCard>
+    </div>
+
+    <!-- 评分 -->
+    <UCard class="mb-4" variant="subtle">
+      <h2 class="font-semibold pb-4">{{ $t("score") }}</h2>
+      <div class="space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-gray-400">{{ $t("initialScore") }}</span>
+          <span class="font-semibold">50</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-gray-400">{{ $t("positiveConditions") }}</span>
+          <span class="font-semibold text-emerald-500"
+            >+{{ scoreBreakdown.positiveScore }}</span
+          >
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-gray-400">{{ $t("negativeConditions") }}</span>
+          <span class="font-semibold text-red-500"
+            >-{{ scoreBreakdown.negativeScore }}</span
+          >
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="font-semibold">{{ $t("totalScore") }}</span>
+          <div class="flex items-center gap-2">
+            <span class="font-semibold">{{ totalScore }}</span>
+            <span
+              class="font-semibold rounded-lg"
+              :class="{
+                'text-emerald-500': scoreRating.color === 'emerald',
+                'text-yellow-500': scoreRating.color === 'yellow',
+                'text-orange-500': scoreRating.color === 'orange',
+                'text-red-500': scoreRating.color === 'red',
+              }"
+            >
+              ({{ $t(scoreRating.labelKey) }})
+            </span>
+          </div>
+        </div>
+      </div>
     </UCard>
-    <UCard class="mt-4" variant="subtle">
-      <p>Input: {{ state.input }}</p>
-      <p>InputMenu: {{ state.inputMenu }}</p>
-      <p>InputNumber: {{ state.inputNumber }}</p>
-      <p>CheckboxGroup: {{ state.checkboxGroup }}</p>
+
+    <!-- 建议 -->
+    <UCard class="mb-4" variant="subtle">
+      <h2 class="font-semibold pb-4">{{ $t("suggestions") }}</h2>
+      <div v-if="selectedItemsWithAdvice.length === 0" class="text-gray-500">
+        {{ $t("noSuggestions") }}
+      </div>
+      <div v-else class="space-y-3">
+        <div
+          v-for="item in selectedItemsWithAdvice"
+          :key="item?.id"
+          class="border-l-4 border-primary-500 pl-4"
+        >
+          <p class="font-semibold">{{ getItemLabel(item?.id || "") }}</p>
+          <p class="text-gray-400">
+            {{ getItemAdvice(item?.id || "") }}
+          </p>
+        </div>
+      </div>
     </UCard>
   </UContainer>
 </template>
