@@ -112,15 +112,17 @@ const selectedItemsWithAdvice = computed(() => {
       <p class="text-sm text-gray-500 mb-4">{{ $t("disclaimer") }}</p>
       <div class="flex items-center" orientation="horizontal">
         <UButton
+          class="rounded-none"
           :color="locale === 'zh-CN' ? 'primary' : 'neutral'"
-          variant="soft"
+          variant="outline"
           @click="setLocale('zh-CN')"
         >
           简体中文
         </UButton>
         <UButton
+          class="rounded-none"
           :color="locale === 'en' ? 'primary' : 'neutral'"
-          variant="soft"
+          variant="outline"
           @click="setLocale('en')"
         >
           English
@@ -141,12 +143,16 @@ const selectedItemsWithAdvice = computed(() => {
 
     <!-- 风水选项 -->
     <div v-for="category in categories" :key="category">
-      <UCard class="mb-4" variant="subtle">
+      <UCard class="mb-4 rounded-none" variant="subtle">
         <h2 class="font-semibold pb-4">{{ getCategoryName(category) }}</h2>
         <UCheckboxGroup
           color="primary"
           variant="table"
-          orientation="vertical"
+          orientation="horizontal"
+          :ui="{
+            fieldset: 'grid grid-cols-2 gap-1 space-x-0',
+            item: 'first-of-type:rounded-l-none last-of-type:rounded-r-none',
+          }"
           v-model="state.selectedItems"
           value-key="id"
           :items="
@@ -160,7 +166,7 @@ const selectedItemsWithAdvice = computed(() => {
     </div>
 
     <!-- 评分 -->
-    <UCard class="mb-4" variant="subtle">
+    <UCard class="mb-4 rounded-none" variant="subtle">
       <h2 class="font-semibold pb-4">{{ $t("score") }}</h2>
       <div class="space-y-2">
         <div class="flex items-center justify-between">
@@ -192,7 +198,7 @@ const selectedItemsWithAdvice = computed(() => {
     </UCard>
 
     <!-- 建议 -->
-    <UCard class="mb-4" variant="subtle">
+    <UCard class="mb-4 rounded-none" variant="subtle">
       <h2 class="font-semibold pb-4">{{ $t("suggestions") }}</h2>
       <div v-if="selectedItemsWithAdvice.length === 0" class="text-gray-500">
         {{ $t("noSuggestions") }}
