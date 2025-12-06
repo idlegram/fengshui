@@ -461,28 +461,70 @@ export const fengShuiItems: FengShuiItem[] = fengShuiCategories.flatMap(
 
 /**
  * Calculate the maximum possible positive score from all items
+ * For "select" categories, only count the max score in that category
+ * For "checkbox" categories, sum all positive scores
  */
 export function getMaxPositiveScore(): number {
-  return fengShuiItems
-    .filter((item) => item.score > 0)
-    .reduce((sum, item) => sum + item.score, 0);
+  let totalScore = 0;
+
+  for (const category of fengShuiCategories) {
+    if (category.inputType === "select") {
+      // For select, find the max positive score in the category
+      const maxPositiveInCategory = category.items
+        .filter((item) => item.score > 0)
+        .reduce((max, item) => Math.max(max, item.score), -Infinity);
+      if (maxPositiveInCategory > -Infinity) {
+        totalScore += maxPositiveInCategory;
+      }
+    } else {
+      // For checkbox, sum all positive scores
+      const positiveInCategory = category.items
+        .filter((item) => item.score > 0)
+        .reduce((sum, item) => sum + item.score, 0);
+      totalScore += positiveInCategory;
+    }
+  }
+
+  return totalScore;
 }
 
 /**
  * Calculate the maximum possible negative score (absolute value) from all items
+ * For "select" categories, only count the max negative score in that category
+ * For "checkbox" categories, sum all negative scores
  */
 export function getMaxNegativeScore(): number {
-  return fengShuiItems
-    .filter((item) => item.score < 0)
-    .reduce((sum, item) => sum + Math.abs(item.score), 0);
+  let totalScore = 0;
+
+  for (const category of fengShuiCategories) {
+    if (category.inputType === "select") {
+      // For select, find the max negative score (absolute value) in the category
+      const maxNegativeInCategory = category.items
+        .filter((item) => item.score < 0)
+        .reduce((max, item) => Math.max(max, Math.abs(item.score)), -Infinity);
+      if (maxNegativeInCategory > -Infinity) {
+        totalScore += maxNegativeInCategory;
+      }
+    } else {
+      // For checkbox, sum all negative scores (absolute values)
+      const negativeInCategory = category.items
+        .filter((item) => item.score < 0)
+        .reduce((sum, item) => sum + Math.abs(item.score), 0);
+      totalScore += negativeInCategory;
+    }
+  }
+
+  return totalScore;
 }
 
 /**
  * Calculate normalized feng shui score
  * Algorithm:
  * 1. Separate selected items into positive and negative scores
- * 2. Normalize each against their maximum possible values
- * 3. Calculate final score: 50 + 0.5 * (positiveRatio - negativeRatio)
+ * 2. For select categories, count only the selected item (not all possible items)
+ * 3. For checkbox categories, sum all selected items
+ * 4. Normalize each against their maximum possible values
+ * 5. Calculate final score: 50 + 0.5 * (positiveRatio - negativeRatio)
  *
  * Result: 100 (perfect) to 0 (worst), 50 (neutral)
  */
@@ -490,20 +532,39 @@ export function calculateNormalizedScore(selectedItemIds: string[]): number {
   const itemMap = new Map<string, FengShuiItem>();
   fengShuiItems.forEach((item) => itemMap.set(item.id, item));
 
-  // Separate positive and negative scores
+  // Create a set for faster lookup
+  const selectedSet = new Set(selectedItemIds);
+
+  // Separate positive and negative scores, respecting category constraints
   let positiveSum = 0;
   let negativeSum = 0;
 
-  selectedItemIds.forEach((itemId) => {
-    const item = itemMap.get(itemId);
-    if (item) {
-      if (item.score > 0) {
-        positiveSum += item.score;
-      } else if (item.score < 0) {
-        negativeSum += Math.abs(item.score);
+  for (const category of fengShuiCategories) {
+    if (category.inputType === "select") {
+      // For select categories, find the one selected item (if any)
+      const selectedInCategory = category.items.find((item) =>
+        selectedSet.has(item.id)
+      );
+      if (selectedInCategory) {
+        if (selectedInCategory.score > 0) {
+          positiveSum += selectedInCategory.score;
+        } else if (selectedInCategory.score < 0) {
+          negativeSum += Math.abs(selectedInCategory.score);
+        }
       }
+    } else {
+      // For checkbox categories, sum all selected items
+      category.items.forEach((item) => {
+        if (selectedSet.has(item.id)) {
+          if (item.score > 0) {
+            positiveSum += item.score;
+          } else if (item.score < 0) {
+            negativeSum += Math.abs(item.score);
+          }
+        }
+      });
     }
-  });
+  }
 
   const maxPositive = getMaxPositiveScore();
   const maxNegative = getMaxNegativeScore();
