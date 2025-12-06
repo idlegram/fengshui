@@ -8,7 +8,6 @@ import {
 
 const { t, locale, setLocale } = useI18n();
 
-const selectedDoorDirection = ref<string | undefined>(undefined);
 const selectedItems = ref<string[]>([]);
 const selectedSelectItems = ref<Map<string, string | undefined>>(new Map());
 
