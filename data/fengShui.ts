@@ -16,26 +16,26 @@ export type FengShuiCategory = {
 
 export const fengShuiCategories: FengShuiCategory[] = [
   {
-    id: "naturalLight",
+    id: "light",
     inputType: "select",
-    labelKey: "fengShuiCategories.naturalLight.label",
+    labelKey: "fengShuiCategories.light.label",
     items: [
       {
         id: "lightGood",
-        labelKey: "fengShuiCategories.naturalLight.items.lightGood.label",
-        adviceKey: "fengShuiCategories.naturalLight.items.lightGood.advice",
+        labelKey: "fengShuiCategories.light.items.lightGood.label",
+        adviceKey: "fengShuiCategories.light.items.lightGood.advice",
         score: 3,
       },
       {
         id: "lightAverage",
-        labelKey: "fengShuiCategories.naturalLight.items.lightAverage.label",
-        adviceKey: "fengShuiCategories.naturalLight.items.lightAverage.advice",
+        labelKey: "fengShuiCategories.light.items.lightAverage.label",
+        adviceKey: "fengShuiCategories.light.items.lightAverage.advice",
         score: 1,
       },
       {
         id: "lightPoor",
-        labelKey: "fengShuiCategories.naturalLight.items.lightPoor.label",
-        adviceKey: "fengShuiCategories.naturalLight.items.lightPoor.advice",
+        labelKey: "fengShuiCategories.light.items.lightPoor.label",
+        adviceKey: "fengShuiCategories.light.items.lightPoor.advice",
         score: -3,
       },
     ],
@@ -87,12 +87,16 @@ export const fengShuiCategories: FengShuiCategory[] = [
         score: 2,
       },
       {
-        id: "doorUnluckyDirection",
-        labelKey:
-          "fengShuiCategories.doorDirection.items.doorUnluckyDirection.label",
-        adviceKey:
-          "fengShuiCategories.doorDirection.items.doorUnluckyDirection.advice",
+        id: "doorWest",
+        labelKey: "fengShuiCategories.doorDirection.items.doorWest.label",
+        adviceKey: "fengShuiCategories.doorDirection.items.doorWest.advice",
         score: -2,
+      },
+      {
+        id: "doorNorth",
+        labelKey: "fengShuiCategories.doorDirection.items.doorNorth.label",
+        adviceKey: "fengShuiCategories.doorDirection.items.doorNorth.advice",
+        score: -3,
       },
     ],
   },

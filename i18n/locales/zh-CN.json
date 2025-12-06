@@ -12,7 +12,7 @@
   "poorFengShui": "较差风水（建议调整布局）",
   "badFengShui": "不利风水（需大幅调整或化解）",
   "fengShuiCategories": {
-    "naturalLight": {
+    "light": {
       "label": "采光",
       "items": {
         "lightGood": {
@@ -20,7 +20,7 @@
           "advice": ""
         },
         "lightAverage": {
-          "label": "自然采光一般",
+          "label": "自然采光适中",
           "advice": ""
         },
         "lightPoor": {
@@ -37,7 +37,7 @@
           "advice": ""
         },
         "ventilationAverage": {
-          "label": "通风一般",
+          "label": "通风适中",
           "advice": ""
         },
         "ventilationPoor": {
@@ -50,16 +50,20 @@
       "label": "大门朝向",
       "items": {
         "doorSouth": {
-          "label": "大门朝南",
+          "label": "入户大门朝南（在南半球朝北）",
           "advice": ""
         },
         "doorEast": {
-          "label": "大门朝东",
+          "label": "入户大门朝东",
           "advice": ""
         },
-        "doorUnluckyDirection": {
-          "label": "大门朝西或西北",
+        "doorWest": {
+          "label": "入户大门朝西",
           "advice": "考虑调整门向或增加屏障改善气流。"
+        },
+        "doorNorth": {
+          "label": "入户大门朝北（在南半球朝南）",
+          "advice": "请咨询风水师根据实际情况来解决。"
         }
       }
     },

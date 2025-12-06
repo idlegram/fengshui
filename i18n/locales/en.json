@@ -12,19 +12,19 @@
   "poorFengShui": "Poor Feng Shui (Layout Adjustment Recommended)",
   "badFengShui": "Bad Feng Shui (Major Adjustment or Remediation Needed)",
   "fengShuiCategories": {
-    "naturalLight": {
-      "label": "Natural Light",
+    "light": {
+      "label": "Lighting",
       "items": {
         "lightGood": {
-          "label": "Good natural light",
+          "label": "Good natural lighting",
           "advice": ""
         },
         "lightAverage": {
-          "label": "Average natural light",
+          "label": "Average natural lighting",
           "advice": ""
         },
         "lightPoor": {
-          "label": "Poor natural light",
+          "label": "Poor natural lighting",
           "advice": "Add windows or lighting devices, improve lighting."
         }
       }
@@ -57,9 +57,13 @@
           "label": "Door facing east",
           "advice": ""
         },
-        "doorUnluckyDirection": {
-          "label": "Door facing west or northwest",
+        "doorWest": {
+          "label": "Door facing west",
           "advice": "Consider adjusting the door orientation or adding barriers to improve air flow."
+        },
+        "doorNorth": {
+          "label": "Door facing north",
+          "advice": "Consult a Feng Shui master for solutions based on actual situation."
         }
       }
     },
