@@ -3,6 +3,7 @@ import {
   fengShuiCategoryItems,
   fengShuiItems,
   type FengShuiItem,
+  calculateNormalizedScore,
 } from "~/data/fengShui";
 
 const { t, locale, setLocale } = useI18n();
@@ -30,11 +31,8 @@ const itemsByCategory = computed(() => {
 });
 
 const totalScore = computed(() => {
-  const netScore = selectedItems.value.reduce(
-    (sum, itemId) => sum + (itemMap.value.get(itemId)?.score ?? 0),
-    50
-  );
-  return Math.max(0, Math.min(100, netScore));
+  const score = calculateNormalizedScore(selectedItems.value);
+  return parseFloat(score.toPrecision(5));
 });
 
 const scoreRating = computed(() => {

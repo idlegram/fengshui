@@ -361,3 +361,61 @@ export const fengShuiCategoryItems: Record<string, FengShuiItem[]> = {
 export const fengShuiItems: FengShuiItem[] = Object.values(
   fengShuiCategoryItems
 ).flat();
+
+/**
+ * Calculate the maximum possible positive score from all items
+ */
+export function getMaxPositiveScore(): number {
+  return fengShuiItems
+    .filter((item) => item.score > 0)
+    .reduce((sum, item) => sum + item.score, 0);
+}
+
+/**
+ * Calculate the maximum possible negative score (absolute value) from all items
+ */
+export function getMaxNegativeScore(): number {
+  return fengShuiItems
+    .filter((item) => item.score < 0)
+    .reduce((sum, item) => sum + Math.abs(item.score), 0);
+}
+
+/**
+ * Calculate normalized feng shui score
+ * Algorithm:
+ * 1. Separate selected items into positive and negative scores
+ * 2. Normalize each against their maximum possible values
+ * 3. Calculate final score: 50 + 0.5 * (positiveRatio - negativeRatio)
+ *
+ * Result: 100 (perfect) to 0 (worst), 50 (neutral)
+ */
+export function calculateNormalizedScore(selectedItemIds: string[]): number {
+  const itemMap = new Map<string, FengShuiItem>();
+  fengShuiItems.forEach((item) => itemMap.set(item.id, item));
+
+  // Separate positive and negative scores
+  let positiveSum = 0;
+  let negativeSum = 0;
+
+  selectedItemIds.forEach((itemId) => {
+    const item = itemMap.get(itemId);
+    if (item) {
+      if (item.score > 0) {
+        positiveSum += item.score;
+      } else if (item.score < 0) {
+        negativeSum += Math.abs(item.score);
+      }
+    }
+  });
+
+  const maxPositive = getMaxPositiveScore();
+  const maxNegative = getMaxNegativeScore();
+
+  // Calculate normalization ratios (0 to 100%)
+  const positiveRatio = maxPositive > 0 ? (positiveSum / maxPositive) * 100 : 0;
+  const negativeRatio = maxNegative > 0 ? (negativeSum / maxNegative) * 100 : 0;
+
+  // Final score: 50 is neutral, range 0-100
+  const score = 50 + 0.5 * (positiveRatio - negativeRatio);
+  return Math.max(0, Math.min(100, score));
+}
