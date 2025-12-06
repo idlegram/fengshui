@@ -110,6 +110,7 @@ const selectedItemsWithAdvice = computed(() => {
         <!-- USelect for doorDirection category -->
         <USelect
           class="w-full"
+          size="xl"
           v-if="category.id === 'doorDirection'"
           v-model="selectedDoorDirection"
           :items="

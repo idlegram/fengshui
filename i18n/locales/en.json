@@ -32,7 +32,7 @@
     "door": {
       "label": "Door",
       "items": {
-        "doorMintang": {
+        "doorMingTang": {
           "label": "Bright hall in front of door (flat ground/pond/green grass)",
           "advice": ""
         },

@@ -13,7 +13,7 @@
   "badFengShui": "不利风水（需大幅调整或化解）",
   "fengShuiCategories": {
     "doorDirection": {
-      "label": "大门方向",
+      "label": "大门朝向",
       "items": {
         "doorSouth": {
           "label": "大门朝南",
@@ -32,7 +32,7 @@
     "door": {
       "label": "大门",
       "items": {
-        "doorMintang": {
+        "doorMingTang": {
           "label": "大门前有明堂（平地/水池/绿茵）",
           "advice": ""
         },

@@ -48,9 +48,9 @@ export const fengShuiCategories: FengShuiCategory[] = [
     labelKey: "fengShuiCategories.door.label",
     items: [
       {
-        id: "doorMintang",
-        labelKey: "fengShuiCategories.door.items.doorMintang.label",
-        adviceKey: "fengShuiCategories.door.items.doorMintang.advice",
+        id: "doorMingTang",
+        labelKey: "fengShuiCategories.door.items.doorMingTang.label",
+        adviceKey: "fengShuiCategories.door.items.doorMingTang.advice",
         score: 3,
       },
       {
