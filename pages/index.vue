@@ -69,7 +69,12 @@ const selectedItemsWithAdvice = computed(() =>
   <UContainer class="my-6">
     <!-- 标题 -->
     <div class="my-6">
-      <h1 class="text-3xl font-bold mb-3">{{ $t("description") }}</h1>
+      <h1 v-if="locale === 'zh-CN'" class="text-3xl font-bold mb-3">
+        这<span class="text-primary-400">风水</span>好不好
+      </h1>
+      <h1 v-else class="text-3xl font-bold mb-3">
+        Is the <span class="text-primary-400">Feng Shui</span> good?
+      </h1>
       <p class="text-gray-400 mb-3">{{ $t("disclaimer") }}</p>
       <div class="flex items-center" orientation="horizontal">
         <UButton
