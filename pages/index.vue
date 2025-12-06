@@ -10,6 +10,15 @@ const { t, locale, setLocale } = useI18n();
 
 const selectedDoorDirection = ref<string | undefined>(undefined);
 const selectedItems = ref<string[]>([]);
+const selectedSelectItems = ref<Map<string, string | undefined>>(new Map());
+
+onMounted(() => {
+  fengShuiCategories.forEach((category) => {
+    if (category.inputType === "select") {
+      selectedSelectItems.value.set(category.id, undefined);
+    }
+  });
+});
 
 const itemMap = computed(() => {
   const map = new Map<string, FengShuiItem>();
@@ -18,9 +27,12 @@ const itemMap = computed(() => {
 });
 
 const totalScore = computed(() => {
-  const allSelectedItems = selectedDoorDirection.value
-    ? [...selectedItems.value, selectedDoorDirection.value]
-    : selectedItems.value;
+  const allSelectedItems = [
+    ...selectedItems.value,
+    ...Array.from(selectedSelectItems.value.values()).filter(
+      (item) => item !== undefined
+    ),
+  ];
   const score = calculateNormalizedScore(allSelectedItems);
   return parseFloat(score.toPrecision(5));
 });
@@ -41,9 +53,12 @@ const scoreRating = computed(() => {
 });
 
 const selectedItemsWithAdvice = computed(() => {
-  const allSelectedItems = selectedDoorDirection.value
-    ? [...selectedItems.value, selectedDoorDirection.value]
-    : selectedItems.value;
+  const allSelectedItems = [
+    ...selectedItems.value,
+    ...Array.from(selectedSelectItems.value.values()).filter(
+      (item) => item !== undefined
+    ),
+  ];
   return allSelectedItems
     .map((itemId) => itemMap.value.get(itemId))
     .filter((item) => {
@@ -107,12 +122,13 @@ const selectedItemsWithAdvice = computed(() => {
         <h2 class="font-semibold mb-3">
           {{ t(category.labelKey) }}
         </h2>
-        <!-- USelect for doorDirection category -->
+        <!-- USelect for select inputType -->
         <USelect
           class="w-full"
           size="xl"
-          v-if="category.id === 'doorDirection'"
-          v-model="selectedDoorDirection"
+          v-if="category.inputType === 'select'"
+          :model-value="selectedSelectItems.get(category.id)"
+          @update:model-value="selectedSelectItems.set(category.id, $event)"
           :items="
             category.items.map((item: FengShuiItem) => ({
               value: item.id,
@@ -122,9 +138,9 @@ const selectedItemsWithAdvice = computed(() => {
           color="primary"
           :placeholder="`${t(category.labelKey)}`"
         />
-        <!-- UCheckboxGroup for other categories -->
+        <!-- UCheckboxGroup for checkbox inputType -->
         <UCheckboxGroup
-          v-else
+          v-else-if="category.inputType === 'checkbox'"
           color="primary"
           variant="card"
           orientation="horizontal"

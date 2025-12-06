@@ -44,7 +44,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "door",
-    inputType: "select",
+    inputType: "checkbox",
     labelKey: "fengShuiCategories.door.label",
     items: [
       {
@@ -105,7 +105,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "entryway",
-    inputType: "select",
+    inputType: "checkbox",
     labelKey: "fengShuiCategories.entryway.label",
     items: [
       {
@@ -148,7 +148,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "livingRoom",
-    inputType: "select",
+    inputType: "checkbox",
     labelKey: "fengShuiCategories.livingRoom.label",
     items: [
       {
@@ -212,7 +212,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "bedroom",
-    inputType: "select",
+    inputType: "checkbox",
     labelKey: "fengShuiCategories.bedroom.label",
     items: [
       {
@@ -249,7 +249,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "study",
-    inputType: "select",
+    inputType: "checkbox",
     labelKey: "fengShuiCategories.study.label",
     items: [
       {
@@ -287,7 +287,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "kitchen",
-    inputType: "select",
+    inputType: "checkbox",
     labelKey: "fengShuiCategories.kitchen.label",
     items: [
       {
@@ -326,7 +326,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "diningRoom",
-    inputType: "select",
+    inputType: "checkbox",
     labelKey: "fengShuiCategories.diningRoom.label",
     items: [
       {
@@ -367,7 +367,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "bathroom",
-    inputType: "select",
+    inputType: "checkbox",
     labelKey: "fengShuiCategories.bathroom.label",
     items: [
       {
@@ -401,7 +401,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "overall",
-    inputType: "select",
+    inputType: "checkbox",
     labelKey: "fengShuiCategories.overall.label",
     items: [
       {
