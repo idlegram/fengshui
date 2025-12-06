@@ -12,6 +12,40 @@
   "poorFengShui": "较差风水（建议调整布局）",
   "badFengShui": "不利风水（需大幅调整或化解）",
   "fengShuiCategories": {
+    "naturalLight": {
+      "label": "采光",
+      "items": {
+        "lightGood": {
+          "label": "自然采光良好",
+          "advice": ""
+        },
+        "lightAverage": {
+          "label": "自然采光一般",
+          "advice": ""
+        },
+        "lightPoor": {
+          "label": "自然采光较差",
+          "advice": "增加窗户或照明设备，改善采光。"
+        }
+      }
+    },
+    "ventilation": {
+      "label": "通风",
+      "items": {
+        "ventilationGood": {
+          "label": "通风良好",
+          "advice": ""
+        },
+        "ventilationAverage": {
+          "label": "通风一般",
+          "advice": ""
+        },
+        "ventilationPoor": {
+          "label": "通风较差",
+          "advice": "安装通风系统或打开对流通道增强空气流动。"
+        }
+      }
+    },
     "doorDirection": {
       "label": "大门朝向",
       "items": {
@@ -254,27 +288,6 @@
         "toiletSameDoorKitchen": {
           "label": "与厨房同门",
           "advice": "改门或设置隔板避免水火相冲。"
-        }
-      }
-    },
-    "overall": {
-      "label": "整体",
-      "items": {
-        "houseBright": {
-          "label": "採光良好",
-          "advice": ""
-        },
-        "houseVentilation": {
-          "label": "通风顺畅",
-          "advice": ""
-        },
-        "houseDarkDamp": {
-          "label": "阴暗潮湿",
-          "advice": "增加窗户或照明设备，改善湿度与采光。"
-        },
-        "houseNoAirflow": {
-          "label": "空气不流通",
-          "advice": "安装通风系统或打开对流通道增强空气流动。"
         }
       }
     }

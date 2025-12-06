@@ -12,6 +12,40 @@
   "poorFengShui": "Poor Feng Shui (Layout Adjustment Recommended)",
   "badFengShui": "Bad Feng Shui (Major Adjustment or Remediation Needed)",
   "fengShuiCategories": {
+    "naturalLight": {
+      "label": "Natural Light",
+      "items": {
+        "lightGood": {
+          "label": "Good natural light",
+          "advice": ""
+        },
+        "lightAverage": {
+          "label": "Average natural light",
+          "advice": ""
+        },
+        "lightPoor": {
+          "label": "Poor natural light",
+          "advice": "Add windows or lighting devices, improve lighting."
+        }
+      }
+    },
+    "ventilation": {
+      "label": "Ventilation",
+      "items": {
+        "ventilationGood": {
+          "label": "Good ventilation",
+          "advice": ""
+        },
+        "ventilationAverage": {
+          "label": "Average ventilation",
+          "advice": ""
+        },
+        "ventilationPoor": {
+          "label": "Poor ventilation",
+          "advice": "Install ventilation system or open flow channels to enhance air movement."
+        }
+      }
+    },
     "doorDirection": {
       "label": "Door Direction",
       "items": {
@@ -254,27 +288,6 @@
         "toiletSameDoorKitchen": {
           "label": "Same door as kitchen",
           "advice": "Change door or add partition to avoid water-fire collision."
-        }
-      }
-    },
-    "overall": {
-      "label": "Overall",
-      "items": {
-        "houseBright": {
-          "label": "Good lighting",
-          "advice": ""
-        },
-        "houseVentilation": {
-          "label": "Good ventilation",
-          "advice": ""
-        },
-        "houseDarkDamp": {
-          "label": "Dark and damp",
-          "advice": "Add windows or lighting devices, improve humidity and lighting."
-        },
-        "houseNoAirflow": {
-          "label": "Air doesn't flow",
-          "advice": "Install ventilation system or open flow channels to enhance air movement."
         }
       }
     }

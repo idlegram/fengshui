@@ -124,7 +124,6 @@ const selectedItemsWithAdvice = computed(() => {
         <!-- USelect for select inputType -->
         <USelect
           class="w-full"
-          size="xl"
           v-if="category.inputType === 'select'"
           :model-value="selectedSelectItems.get(category.id)"
           @update:model-value="selectedSelectItems.set(category.id, $event)"
@@ -135,6 +134,7 @@ const selectedItemsWithAdvice = computed(() => {
             }))
           "
           color="primary"
+          variant="subtle"
           :placeholder="`${t(category.labelKey)}`"
         />
         <!-- UCheckboxGroup for checkbox inputType -->

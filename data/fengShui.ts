@@ -1,4 +1,4 @@
-export type FengShuiInputType = "select" | "checkbox";
+export type FengShuiInputType = "select" | "checkbox" | "slider";
 
 export type FengShuiItem = {
   id: string;
@@ -15,6 +15,60 @@ export type FengShuiCategory = {
 };
 
 export const fengShuiCategories: FengShuiCategory[] = [
+  {
+    id: "naturalLight",
+    inputType: "select",
+    labelKey: "fengShuiCategories.naturalLight.label",
+    items: [
+      {
+        id: "lightGood",
+        labelKey: "fengShuiCategories.naturalLight.items.lightGood.label",
+        adviceKey: "fengShuiCategories.naturalLight.items.lightGood.advice",
+        score: 3,
+      },
+      {
+        id: "lightAverage",
+        labelKey: "fengShuiCategories.naturalLight.items.lightAverage.label",
+        adviceKey: "fengShuiCategories.naturalLight.items.lightAverage.advice",
+        score: 1,
+      },
+      {
+        id: "lightPoor",
+        labelKey: "fengShuiCategories.naturalLight.items.lightPoor.label",
+        adviceKey: "fengShuiCategories.naturalLight.items.lightPoor.advice",
+        score: -3,
+      },
+    ],
+  },
+  {
+    id: "ventilation",
+    inputType: "select",
+    labelKey: "fengShuiCategories.ventilation.label",
+    items: [
+      {
+        id: "ventilationGood",
+        labelKey: "fengShuiCategories.ventilation.items.ventilationGood.label",
+        adviceKey:
+          "fengShuiCategories.ventilation.items.ventilationGood.advice",
+        score: 3,
+      },
+      {
+        id: "ventilationAverage",
+        labelKey:
+          "fengShuiCategories.ventilation.items.ventilationAverage.label",
+        adviceKey:
+          "fengShuiCategories.ventilation.items.ventilationAverage.advice",
+        score: 1,
+      },
+      {
+        id: "ventilationPoor",
+        labelKey: "fengShuiCategories.ventilation.items.ventilationPoor.label",
+        adviceKey:
+          "fengShuiCategories.ventilation.items.ventilationPoor.advice",
+        score: -3,
+      },
+    ],
+  },
   {
     id: "doorDirection",
     inputType: "select",
@@ -395,37 +449,6 @@ export const fengShuiCategories: FengShuiCategory[] = [
           "fengShuiCategories.bathroom.items.toiletSameDoorKitchen.label",
         adviceKey:
           "fengShuiCategories.bathroom.items.toiletSameDoorKitchen.advice",
-        score: -3,
-      },
-    ],
-  },
-  {
-    id: "overall",
-    inputType: "checkbox",
-    labelKey: "fengShuiCategories.overall.label",
-    items: [
-      {
-        id: "houseBright",
-        labelKey: "fengShuiCategories.overall.items.houseBright.label",
-        adviceKey: "fengShuiCategories.overall.items.houseBright.advice",
-        score: 3,
-      },
-      {
-        id: "houseVentilation",
-        labelKey: "fengShuiCategories.overall.items.houseVentilation.label",
-        adviceKey: "fengShuiCategories.overall.items.houseVentilation.advice",
-        score: 3,
-      },
-      {
-        id: "houseDarkDamp",
-        labelKey: "fengShuiCategories.overall.items.houseDarkDamp.label",
-        adviceKey: "fengShuiCategories.overall.items.houseDarkDamp.advice",
-        score: -3,
-      },
-      {
-        id: "houseNoAirflow",
-        labelKey: "fengShuiCategories.overall.items.houseNoAirflow.label",
-        adviceKey: "fengShuiCategories.overall.items.houseNoAirflow.advice",
         score: -3,
       },
     ],
