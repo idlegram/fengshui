@@ -1,3 +1,5 @@
+export type FengShuiInputType = "select" | "checkbox";
+
 export type FengShuiItem = {
   id: string;
   labelKey: string;
@@ -5,362 +7,434 @@ export type FengShuiItem = {
   score: number;
 };
 
-export const fengShuiCategoryItems: Record<string, FengShuiItem[]> = {
-  door: [
-    {
-      id: "doorSouth",
-      labelKey: "fengShuiItems.door.doorSouth.label",
-      adviceKey: "fengShuiItems.door.doorSouth.advice",
-      score: 3,
-    },
-    {
-      id: "doorEast",
-      labelKey: "fengShuiItems.door.doorEast.label",
-      adviceKey: "fengShuiItems.door.doorEast.advice",
-      score: 2,
-    },
-    {
-      id: "doorMintang",
-      labelKey: "fengShuiItems.door.doorMintang.label",
-      adviceKey: "fengShuiItems.door.doorMintang.advice",
-      score: 3,
-    },
-    {
-      id: "doorUnluckyDirection",
-      labelKey: "fengShuiItems.door.doorUnluckyDirection.label",
-      adviceKey: "fengShuiItems.door.doorUnluckyDirection.advice",
-      score: -2,
-    },
-    {
-      id: "doorLongCorridor",
-      labelKey: "fengShuiItems.door.doorLongCorridor.label",
-      adviceKey: "fengShuiItems.door.doorLongCorridor.advice",
-      score: -3,
-    },
-    {
-      id: "doorElevator",
-      labelKey: "fengShuiItems.door.doorElevator.label",
-      adviceKey: "fengShuiItems.door.doorElevator.advice",
-      score: -2,
-    },
-    {
-      id: "doorSeeRed",
-      labelKey: "fengShuiItems.door.doorSeeRed.label",
-      adviceKey: "fengShuiItems.door.doorSeeRed.advice",
-      score: 2,
-    },
-    {
-      id: "doorSeeGreen",
-      labelKey: "fengShuiItems.door.doorSeeGreen.label",
-      adviceKey: "fengShuiItems.door.doorSeeGreen.advice",
-      score: 2,
-    },
-    {
-      id: "doorSeePainting",
-      labelKey: "fengShuiItems.door.doorSeePainting.label",
-      adviceKey: "fengShuiItems.door.doorSeePainting.advice",
-      score: 2,
-    },
-    {
-      id: "doorSeeStove",
-      labelKey: "fengShuiItems.door.doorSeeStove.label",
-      adviceKey: "fengShuiItems.door.doorSeeStove.advice",
-      score: -3,
-    },
-    {
-      id: "doorSeeToilet",
-      labelKey: "fengShuiItems.door.doorSeeToilet.label",
-      adviceKey: "fengShuiItems.door.doorSeeToilet.advice",
-      score: -3,
-    },
-    {
-      id: "doorSeeMirror",
-      labelKey: "fengShuiItems.door.doorSeeMirror.label",
-      adviceKey: "fengShuiItems.door.doorSeeMirror.advice",
-      score: -2,
-    },
-  ],
-
-  entryway: [
-    {
-      id: "entryBrightClean",
-      labelKey: "fengShuiItems.entryway.entryBrightClean.label",
-      adviceKey: "fengShuiItems.entryway.entryBrightClean.advice",
-      score: 3,
-    },
-    {
-      id: "entryHighCeiling",
-      labelKey: "fengShuiItems.entryway.entryHighCeiling.label",
-      adviceKey: "fengShuiItems.entryway.entryHighCeiling.advice",
-      score: 2,
-    },
-    {
-      id: "entryTransparent",
-      labelKey: "fengShuiItems.entryway.entryTransparent.label",
-      adviceKey: "fengShuiItems.entryway.entryTransparent.advice",
-      score: 2,
-    },
-    {
-      id: "entryDarkMessy",
-      labelKey: "fengShuiItems.entryway.entryDarkMessy.label",
-      adviceKey: "fengShuiItems.entryway.entryDarkMessy.advice",
-      score: -3,
-    },
-    {
-      id: "entrySharpCorner",
-      labelKey: "fengShuiItems.entryway.entrySharpCorner.label",
-      adviceKey: "fengShuiItems.entryway.entrySharpCorner.advice",
-      score: -2,
-    },
-    {
-      id: "entryLowCeiling",
-      labelKey: "fengShuiItems.entryway.entryLowCeiling.label",
-      adviceKey: "fengShuiItems.entryway.entryLowCeiling.advice",
-      score: -2,
-    },
-  ],
-
-  livingRoom: [
-    {
-      id: "livingSofaWall",
-      labelKey: "fengShuiItems.livingRoom.livingSofaWall.label",
-      adviceKey: "fengShuiItems.livingRoom.livingSofaWall.advice",
-      score: 3,
-    },
-    {
-      id: "livingSofaCurve",
-      labelKey: "fengShuiItems.livingRoom.livingSofaCurve.label",
-      adviceKey: "fengShuiItems.livingRoom.livingSofaCurve.advice",
-      score: 2,
-    },
-    {
-      id: "livingSofaBackWater",
-      labelKey: "fengShuiItems.livingRoom.livingSofaBackWater.label",
-      adviceKey: "fengShuiItems.livingRoom.livingSofaBackWater.advice",
-      score: -3,
-    },
-    {
-      id: "livingSofaFaceDoor",
-      labelKey: "fengShuiItems.livingRoom.livingSofaFaceDoor.label",
-      adviceKey: "fengShuiItems.livingRoom.livingSofaFaceDoor.advice",
-      score: -2,
-    },
-    {
-      id: "livingDirectLight",
-      labelKey: "fengShuiItems.livingRoom.livingDirectLight.label",
-      adviceKey: "fengShuiItems.livingRoom.livingDirectLight.advice",
-      score: -2,
-    },
-    {
-      id: "livingSquareShape",
-      labelKey: "fengShuiItems.livingRoom.livingSquareShape.label",
-      adviceKey: "fengShuiItems.livingRoom.livingSquareShape.advice",
-      score: 3,
-    },
-    {
-      id: "livingIsolatedColumn",
-      labelKey: "fengShuiItems.livingRoom.livingIsolatedColumn.label",
-      adviceKey: "fengShuiItems.livingRoom.livingIsolatedColumn.advice",
-      score: -2,
-    },
-    {
-      id: "livingSharpCorner",
-      labelKey: "fengShuiItems.livingRoom.livingSharpCorner.label",
-      adviceKey: "fengShuiItems.livingRoom.livingSharpCorner.advice",
-      score: -3,
-    },
-  ],
-
-  bedroom: [
-    {
-      id: "bedHeadWall",
-      labelKey: "fengShuiItems.bedroom.bedHeadWall.label",
-      adviceKey: "fengShuiItems.bedroom.bedHeadWall.advice",
-      score: 3,
-    },
-    {
-      id: "bedNorthSouth",
-      labelKey: "fengShuiItems.bedroom.bedNorthSouth.label",
-      adviceKey: "fengShuiItems.bedroom.bedNorthSouth.advice",
-      score: 3,
-    },
-    {
-      id: "bedAirConditioner",
-      labelKey: "fengShuiItems.bedroom.bedAirConditioner.label",
-      adviceKey: "fengShuiItems.bedroom.bedAirConditioner.advice",
-      score: -3,
-    },
-    {
-      id: "bedFaceWest",
-      labelKey: "fengShuiItems.bedroom.bedFaceWest.label",
-      adviceKey: "fengShuiItems.bedroom.bedFaceWest.advice",
-      score: -2,
-    },
-    {
-      id: "bedFaceMirror",
-      labelKey: "fengShuiItems.bedroom.bedFaceMirror.label",
-      adviceKey: "fengShuiItems.bedroom.bedFaceMirror.advice",
-      score: -3,
-    },
-  ],
-
-  study: [
-    {
-      id: "studyDeskWall",
-      labelKey: "fengShuiItems.study.studyDeskWall.label",
-      adviceKey: "fengShuiItems.study.studyDeskWall.advice",
-      score: 3,
-    },
-    {
-      id: "studyFacingWindow",
-      labelKey: "fengShuiItems.study.studyFacingWindow.label",
-      adviceKey: "fengShuiItems.study.studyFacingWindow.advice",
-      score: 2,
-    },
-    {
-      id: "studyPlant",
-      labelKey: "fengShuiItems.study.studyPlant.label",
-      adviceKey: "fengShuiItems.study.studyPlant.advice",
-      score: 2,
-    },
-    {
-      id: "studyDoorKitchenToilet",
-      labelKey: "fengShuiItems.study.studyDoorKitchenToilet.label",
-      adviceKey: "fengShuiItems.study.studyDoorKitchenToilet.advice",
-      score: -3,
-    },
-    {
-      id: "studyWallToilet",
-      labelKey: "fengShuiItems.study.studyWallToilet.label",
-      adviceKey: "fengShuiItems.study.studyWallToilet.advice",
-      score: -2,
-    },
-  ],
-
-  kitchen: [
-    {
-      id: "kitchenEast",
-      labelKey: "fengShuiItems.kitchen.kitchenEast.label",
-      adviceKey: "fengShuiItems.kitchen.kitchenEast.advice",
-      score: 3,
-    },
-    {
-      id: "kitchenStoveWall",
-      labelKey: "fengShuiItems.kitchen.kitchenStoveWall.label",
-      adviceKey: "fengShuiItems.kitchen.kitchenStoveWall.advice",
-      score: 2,
-    },
-    {
-      id: "kitchenSouth",
-      labelKey: "fengShuiItems.kitchen.kitchenSouth.label",
-      adviceKey: "fengShuiItems.kitchen.kitchenSouth.advice",
-      score: -3,
-    },
-    {
-      id: "kitchenStoveBadFacing",
-      labelKey: "fengShuiItems.kitchen.kitchenStoveBadFacing.label",
-      adviceKey: "fengShuiItems.kitchen.kitchenStoveBadFacing.advice",
-      score: -3,
-    },
-    {
-      id: "kitchenStoveNoBack",
-      labelKey: "fengShuiItems.kitchen.kitchenStoveNoBack.label",
-      adviceKey: "fengShuiItems.kitchen.kitchenStoveNoBack.advice",
-      score: -2,
-    },
-  ],
-
-  diningRoom: [
-    {
-      id: "diningRoundSquare",
-      labelKey: "fengShuiItems.diningRoom.diningRoundSquare.label",
-      adviceKey: "fengShuiItems.diningRoom.diningRoundSquare.advice",
-      score: 3,
-    },
-    {
-      id: "diningSoftLight",
-      labelKey: "fengShuiItems.diningRoom.diningSoftLight.label",
-      adviceKey: "fengShuiItems.diningRoom.diningSoftLight.advice",
-      score: 2,
-    },
-    {
-      id: "diningSoftColor",
-      labelKey: "fengShuiItems.diningRoom.diningSoftColor.label",
-      adviceKey: "fengShuiItems.diningRoom.diningSoftColor.advice",
-      score: 2,
-    },
-    {
-      id: "diningSharpTable",
-      labelKey: "fengShuiItems.diningRoom.diningSharpTable.label",
-      adviceKey: "fengShuiItems.diningRoom.diningSharpTable.advice",
-      score: -3,
-    },
-    {
-      id: "diningDoorCollision",
-      labelKey: "fengShuiItems.diningRoom.diningDoorCollision.label",
-      adviceKey: "fengShuiItems.diningRoom.diningDoorCollision.advice",
-      score: -2,
-    },
-  ],
-
-  bathroom: [
-    {
-      id: "toiletGoodPosition",
-      labelKey: "fengShuiItems.bathroom.toiletGoodPosition.label",
-      adviceKey: "fengShuiItems.bathroom.toiletGoodPosition.advice",
-      score: 3,
-    },
-    {
-      id: "toiletDryVent",
-      labelKey: "fengShuiItems.bathroom.toiletDryVent.label",
-      adviceKey: "fengShuiItems.bathroom.toiletDryVent.advice",
-      score: 3,
-    },
-    {
-      id: "toiletFaceDoor",
-      labelKey: "fengShuiItems.bathroom.toiletFaceDoor.label",
-      adviceKey: "fengShuiItems.bathroom.toiletFaceDoor.advice",
-      score: -3,
-    },
-    {
-      id: "toiletSameDoorKitchen",
-      labelKey: "fengShuiItems.bathroom.toiletSameDoorKitchen.label",
-      adviceKey: "fengShuiItems.bathroom.toiletSameDoorKitchen.advice",
-      score: -3,
-    },
-  ],
-
-  overall: [
-    {
-      id: "houseBright",
-      labelKey: "fengShuiItems.overall.houseBright.label",
-      adviceKey: "fengShuiItems.overall.houseBright.advice",
-      score: 3,
-    },
-    {
-      id: "houseVentilation",
-      labelKey: "fengShuiItems.overall.houseVentilation.label",
-      adviceKey: "fengShuiItems.overall.houseVentilation.advice",
-      score: 3,
-    },
-    {
-      id: "houseDarkDamp",
-      labelKey: "fengShuiItems.overall.houseDarkDamp.label",
-      adviceKey: "fengShuiItems.overall.houseDarkDamp.advice",
-      score: -3,
-    },
-    {
-      id: "houseNoAirflow",
-      labelKey: "fengShuiItems.overall.houseNoAirflow.label",
-      adviceKey: "fengShuiItems.overall.houseNoAirflow.advice",
-      score: -3,
-    },
-  ],
+export type FengShuiCategory = {
+  id: string;
+  inputType: FengShuiInputType;
+  labelKey: string;
+  items: FengShuiItem[];
 };
 
-export const fengShuiItems: FengShuiItem[] = Object.values(
-  fengShuiCategoryItems
-).flat();
+export const fengShuiCategories: FengShuiCategory[] = [
+  {
+    id: "doorDirection",
+    inputType: "select",
+    labelKey: "fengShuiCategories.doorDirection.label",
+    items: [
+      {
+        id: "doorSouth",
+        labelKey: "fengShuiCategories.doorDirection.items.doorSouth.label",
+        adviceKey: "fengShuiCategories.doorDirection.items.doorSouth.advice",
+        score: 3,
+      },
+      {
+        id: "doorEast",
+        labelKey: "fengShuiCategories.doorDirection.items.doorEast.label",
+        adviceKey: "fengShuiCategories.doorDirection.items.doorEast.advice",
+        score: 2,
+      },
+      {
+        id: "doorUnluckyDirection",
+        labelKey:
+          "fengShuiCategories.doorDirection.items.doorUnluckyDirection.label",
+        adviceKey:
+          "fengShuiCategories.doorDirection.items.doorUnluckyDirection.advice",
+        score: -2,
+      },
+    ],
+  },
+  {
+    id: "door",
+    inputType: "select",
+    labelKey: "fengShuiCategories.door.label",
+    items: [
+      {
+        id: "doorMintang",
+        labelKey: "fengShuiCategories.door.items.doorMintang.label",
+        adviceKey: "fengShuiCategories.door.items.doorMintang.advice",
+        score: 3,
+      },
+      {
+        id: "doorLongCorridor",
+        labelKey: "fengShuiCategories.door.items.doorLongCorridor.label",
+        adviceKey: "fengShuiCategories.door.items.doorLongCorridor.advice",
+        score: -3,
+      },
+      {
+        id: "doorElevator",
+        labelKey: "fengShuiCategories.door.items.doorElevator.label",
+        adviceKey: "fengShuiCategories.door.items.doorElevator.advice",
+        score: -2,
+      },
+      {
+        id: "doorSeeRed",
+        labelKey: "fengShuiCategories.door.items.doorSeeRed.label",
+        adviceKey: "fengShuiCategories.door.items.doorSeeRed.advice",
+        score: 2,
+      },
+      {
+        id: "doorSeeGreen",
+        labelKey: "fengShuiCategories.door.items.doorSeeGreen.label",
+        adviceKey: "fengShuiCategories.door.items.doorSeeGreen.advice",
+        score: 2,
+      },
+      {
+        id: "doorSeePainting",
+        labelKey: "fengShuiCategories.door.items.doorSeePainting.label",
+        adviceKey: "fengShuiCategories.door.items.doorSeePainting.advice",
+        score: 2,
+      },
+      {
+        id: "doorSeeStove",
+        labelKey: "fengShuiCategories.door.items.doorSeeStove.label",
+        adviceKey: "fengShuiCategories.door.items.doorSeeStove.advice",
+        score: -3,
+      },
+      {
+        id: "doorSeeToilet",
+        labelKey: "fengShuiCategories.door.items.doorSeeToilet.label",
+        adviceKey: "fengShuiCategories.door.items.doorSeeToilet.advice",
+        score: -3,
+      },
+      {
+        id: "doorSeeMirror",
+        labelKey: "fengShuiCategories.door.items.doorSeeMirror.label",
+        adviceKey: "fengShuiCategories.door.items.doorSeeMirror.advice",
+        score: -2,
+      },
+    ],
+  },
+  {
+    id: "entryway",
+    inputType: "select",
+    labelKey: "fengShuiCategories.entryway.label",
+    items: [
+      {
+        id: "entryBrightClean",
+        labelKey: "fengShuiCategories.entryway.items.entryBrightClean.label",
+        adviceKey: "fengShuiCategories.entryway.items.entryBrightClean.advice",
+        score: 3,
+      },
+      {
+        id: "entryHighCeiling",
+        labelKey: "fengShuiCategories.entryway.items.entryHighCeiling.label",
+        adviceKey: "fengShuiCategories.entryway.items.entryHighCeiling.advice",
+        score: 2,
+      },
+      {
+        id: "entryTransparent",
+        labelKey: "fengShuiCategories.entryway.items.entryTransparent.label",
+        adviceKey: "fengShuiCategories.entryway.items.entryTransparent.advice",
+        score: 2,
+      },
+      {
+        id: "entryDarkMessy",
+        labelKey: "fengShuiCategories.entryway.items.entryDarkMessy.label",
+        adviceKey: "fengShuiCategories.entryway.items.entryDarkMessy.advice",
+        score: -3,
+      },
+      {
+        id: "entrySharpCorner",
+        labelKey: "fengShuiCategories.entryway.items.entrySharpCorner.label",
+        adviceKey: "fengShuiCategories.entryway.items.entrySharpCorner.advice",
+        score: -2,
+      },
+      {
+        id: "entryLowCeiling",
+        labelKey: "fengShuiCategories.entryway.items.entryLowCeiling.label",
+        adviceKey: "fengShuiCategories.entryway.items.entryLowCeiling.advice",
+        score: -2,
+      },
+    ],
+  },
+  {
+    id: "livingRoom",
+    inputType: "select",
+    labelKey: "fengShuiCategories.livingRoom.label",
+    items: [
+      {
+        id: "livingSofaWall",
+        labelKey: "fengShuiCategories.livingRoom.items.livingSofaWall.label",
+        adviceKey: "fengShuiCategories.livingRoom.items.livingSofaWall.advice",
+        score: 3,
+      },
+      {
+        id: "livingSofaCurve",
+        labelKey: "fengShuiCategories.livingRoom.items.livingSofaCurve.label",
+        adviceKey: "fengShuiCategories.livingRoom.items.livingSofaCurve.advice",
+        score: 2,
+      },
+      {
+        id: "livingSofaBackWater",
+        labelKey:
+          "fengShuiCategories.livingRoom.items.livingSofaBackWater.label",
+        adviceKey:
+          "fengShuiCategories.livingRoom.items.livingSofaBackWater.advice",
+        score: -3,
+      },
+      {
+        id: "livingSofaFaceDoor",
+        labelKey:
+          "fengShuiCategories.livingRoom.items.livingSofaFaceDoor.label",
+        adviceKey:
+          "fengShuiCategories.livingRoom.items.livingSofaFaceDoor.advice",
+        score: -2,
+      },
+      {
+        id: "livingDirectLight",
+        labelKey: "fengShuiCategories.livingRoom.items.livingDirectLight.label",
+        adviceKey:
+          "fengShuiCategories.livingRoom.items.livingDirectLight.advice",
+        score: -2,
+      },
+      {
+        id: "livingSquareShape",
+        labelKey: "fengShuiCategories.livingRoom.items.livingSquareShape.label",
+        adviceKey:
+          "fengShuiCategories.livingRoom.items.livingSquareShape.advice",
+        score: 3,
+      },
+      {
+        id: "livingIsolatedColumn",
+        labelKey:
+          "fengShuiCategories.livingRoom.items.livingIsolatedColumn.label",
+        adviceKey:
+          "fengShuiCategories.livingRoom.items.livingIsolatedColumn.advice",
+        score: -2,
+      },
+      {
+        id: "livingSharpCorner",
+        labelKey: "fengShuiCategories.livingRoom.items.livingSharpCorner.label",
+        adviceKey:
+          "fengShuiCategories.livingRoom.items.livingSharpCorner.advice",
+        score: -3,
+      },
+    ],
+  },
+  {
+    id: "bedroom",
+    inputType: "select",
+    labelKey: "fengShuiCategories.bedroom.label",
+    items: [
+      {
+        id: "bedHeadWall",
+        labelKey: "fengShuiCategories.bedroom.items.bedHeadWall.label",
+        adviceKey: "fengShuiCategories.bedroom.items.bedHeadWall.advice",
+        score: 3,
+      },
+      {
+        id: "bedNorthSouth",
+        labelKey: "fengShuiCategories.bedroom.items.bedNorthSouth.label",
+        adviceKey: "fengShuiCategories.bedroom.items.bedNorthSouth.advice",
+        score: 3,
+      },
+      {
+        id: "bedAirConditioner",
+        labelKey: "fengShuiCategories.bedroom.items.bedAirConditioner.label",
+        adviceKey: "fengShuiCategories.bedroom.items.bedAirConditioner.advice",
+        score: -3,
+      },
+      {
+        id: "bedFaceWest",
+        labelKey: "fengShuiCategories.bedroom.items.bedFaceWest.label",
+        adviceKey: "fengShuiCategories.bedroom.items.bedFaceWest.advice",
+        score: -2,
+      },
+      {
+        id: "bedFaceMirror",
+        labelKey: "fengShuiCategories.bedroom.items.bedFaceMirror.label",
+        adviceKey: "fengShuiCategories.bedroom.items.bedFaceMirror.advice",
+        score: -3,
+      },
+    ],
+  },
+  {
+    id: "study",
+    inputType: "select",
+    labelKey: "fengShuiCategories.study.label",
+    items: [
+      {
+        id: "studyDeskWall",
+        labelKey: "fengShuiCategories.study.items.studyDeskWall.label",
+        adviceKey: "fengShuiCategories.study.items.studyDeskWall.advice",
+        score: 3,
+      },
+      {
+        id: "studyFacingWindow",
+        labelKey: "fengShuiCategories.study.items.studyFacingWindow.label",
+        adviceKey: "fengShuiCategories.study.items.studyFacingWindow.advice",
+        score: 2,
+      },
+      {
+        id: "studyPlant",
+        labelKey: "fengShuiCategories.study.items.studyPlant.label",
+        adviceKey: "fengShuiCategories.study.items.studyPlant.advice",
+        score: 2,
+      },
+      {
+        id: "studyDoorKitchenToilet",
+        labelKey: "fengShuiCategories.study.items.studyDoorKitchenToilet.label",
+        adviceKey:
+          "fengShuiCategories.study.items.studyDoorKitchenToilet.advice",
+        score: -3,
+      },
+      {
+        id: "studyWallToilet",
+        labelKey: "fengShuiCategories.study.items.studyWallToilet.label",
+        adviceKey: "fengShuiCategories.study.items.studyWallToilet.advice",
+        score: -2,
+      },
+    ],
+  },
+  {
+    id: "kitchen",
+    inputType: "select",
+    labelKey: "fengShuiCategories.kitchen.label",
+    items: [
+      {
+        id: "kitchenEast",
+        labelKey: "fengShuiCategories.kitchen.items.kitchenEast.label",
+        adviceKey: "fengShuiCategories.kitchen.items.kitchenEast.advice",
+        score: 3,
+      },
+      {
+        id: "kitchenStoveWall",
+        labelKey: "fengShuiCategories.kitchen.items.kitchenStoveWall.label",
+        adviceKey: "fengShuiCategories.kitchen.items.kitchenStoveWall.advice",
+        score: 2,
+      },
+      {
+        id: "kitchenSouth",
+        labelKey: "fengShuiCategories.kitchen.items.kitchenSouth.label",
+        adviceKey: "fengShuiCategories.kitchen.items.kitchenSouth.advice",
+        score: -3,
+      },
+      {
+        id: "kitchenStoveBadFacing",
+        labelKey:
+          "fengShuiCategories.kitchen.items.kitchenStoveBadFacing.label",
+        adviceKey:
+          "fengShuiCategories.kitchen.items.kitchenStoveBadFacing.advice",
+        score: -3,
+      },
+      {
+        id: "kitchenStoveNoBack",
+        labelKey: "fengShuiCategories.kitchen.items.kitchenStoveNoBack.label",
+        adviceKey: "fengShuiCategories.kitchen.items.kitchenStoveNoBack.advice",
+        score: -2,
+      },
+    ],
+  },
+  {
+    id: "diningRoom",
+    inputType: "select",
+    labelKey: "fengShuiCategories.diningRoom.label",
+    items: [
+      {
+        id: "diningRoundSquare",
+        labelKey: "fengShuiCategories.diningRoom.items.diningRoundSquare.label",
+        adviceKey:
+          "fengShuiCategories.diningRoom.items.diningRoundSquare.advice",
+        score: 3,
+      },
+      {
+        id: "diningSoftLight",
+        labelKey: "fengShuiCategories.diningRoom.items.diningSoftLight.label",
+        adviceKey: "fengShuiCategories.diningRoom.items.diningSoftLight.advice",
+        score: 2,
+      },
+      {
+        id: "diningSoftColor",
+        labelKey: "fengShuiCategories.diningRoom.items.diningSoftColor.label",
+        adviceKey: "fengShuiCategories.diningRoom.items.diningSoftColor.advice",
+        score: 2,
+      },
+      {
+        id: "diningSharpTable",
+        labelKey: "fengShuiCategories.diningRoom.items.diningSharpTable.label",
+        adviceKey:
+          "fengShuiCategories.diningRoom.items.diningSharpTable.advice",
+        score: -3,
+      },
+      {
+        id: "diningDoorCollision",
+        labelKey:
+          "fengShuiCategories.diningRoom.items.diningDoorCollision.label",
+        adviceKey:
+          "fengShuiCategories.diningRoom.items.diningDoorCollision.advice",
+        score: -2,
+      },
+    ],
+  },
+  {
+    id: "bathroom",
+    inputType: "select",
+    labelKey: "fengShuiCategories.bathroom.label",
+    items: [
+      {
+        id: "toiletGoodPosition",
+        labelKey: "fengShuiCategories.bathroom.items.toiletGoodPosition.label",
+        adviceKey:
+          "fengShuiCategories.bathroom.items.toiletGoodPosition.advice",
+        score: 3,
+      },
+      {
+        id: "toiletDryVent",
+        labelKey: "fengShuiCategories.bathroom.items.toiletDryVent.label",
+        adviceKey: "fengShuiCategories.bathroom.items.toiletDryVent.advice",
+        score: 3,
+      },
+      {
+        id: "toiletFaceDoor",
+        labelKey: "fengShuiCategories.bathroom.items.toiletFaceDoor.label",
+        adviceKey: "fengShuiCategories.bathroom.items.toiletFaceDoor.advice",
+        score: -3,
+      },
+      {
+        id: "toiletSameDoorKitchen",
+        labelKey:
+          "fengShuiCategories.bathroom.items.toiletSameDoorKitchen.label",
+        adviceKey:
+          "fengShuiCategories.bathroom.items.toiletSameDoorKitchen.advice",
+        score: -3,
+      },
+    ],
+  },
+  {
+    id: "overall",
+    inputType: "select",
+    labelKey: "fengShuiCategories.overall.label",
+    items: [
+      {
+        id: "houseBright",
+        labelKey: "fengShuiCategories.overall.items.houseBright.label",
+        adviceKey: "fengShuiCategories.overall.items.houseBright.advice",
+        score: 3,
+      },
+      {
+        id: "houseVentilation",
+        labelKey: "fengShuiCategories.overall.items.houseVentilation.label",
+        adviceKey: "fengShuiCategories.overall.items.houseVentilation.advice",
+        score: 3,
+      },
+      {
+        id: "houseDarkDamp",
+        labelKey: "fengShuiCategories.overall.items.houseDarkDamp.label",
+        adviceKey: "fengShuiCategories.overall.items.houseDarkDamp.advice",
+        score: -3,
+      },
+      {
+        id: "houseNoAirflow",
+        labelKey: "fengShuiCategories.overall.items.houseNoAirflow.label",
+        adviceKey: "fengShuiCategories.overall.items.houseNoAirflow.advice",
+        score: -3,
+      },
+    ],
+  },
+];
+
+export const fengShuiItems: FengShuiItem[] = fengShuiCategories.flatMap(
+  (category) => category.items
+);
 
 /**
  * Calculate the maximum possible positive score from all items

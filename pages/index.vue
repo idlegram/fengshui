@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {
-  fengShuiCategoryItems,
+  fengShuiCategories,
   fengShuiItems,
   type FengShuiItem,
   calculateNormalizedScore,
@@ -8,6 +8,7 @@ import {
 
 const { t, locale, setLocale } = useI18n();
 
+const selectedDoorDirection = ref<string | undefined>(undefined);
 const selectedItems = ref<string[]>([]);
 
 const itemMap = computed(() => {
@@ -16,22 +17,11 @@ const itemMap = computed(() => {
   return map;
 });
 
-const categories = computed(() =>
-  Object.keys(fengShuiCategoryItems).map((categoryKey) =>
-    t(`fengShuiCategories.${categoryKey}`)
-  )
-);
-
-const itemsByCategory = computed(() => {
-  const map = new Map<string, FengShuiItem[]>();
-  Object.entries(fengShuiCategoryItems).forEach(([categoryKey, items]) => {
-    map.set(t(`fengShuiCategories.${categoryKey}`), items);
-  });
-  return map;
-});
-
 const totalScore = computed(() => {
-  const score = calculateNormalizedScore(selectedItems.value);
+  const allSelectedItems = selectedDoorDirection.value
+    ? [...selectedItems.value, selectedDoorDirection.value]
+    : selectedItems.value;
+  const score = calculateNormalizedScore(allSelectedItems);
   return parseFloat(score.toPrecision(5));
 });
 
@@ -50,16 +40,19 @@ const scoreRating = computed(() => {
   );
 });
 
-const selectedItemsWithAdvice = computed(() =>
-  selectedItems.value
+const selectedItemsWithAdvice = computed(() => {
+  const allSelectedItems = selectedDoorDirection.value
+    ? [...selectedItems.value, selectedDoorDirection.value]
+    : selectedItems.value;
+  return allSelectedItems
     .map((itemId) => itemMap.value.get(itemId))
     .filter((item) => {
       if (!item?.adviceKey) return false;
       const advice = t(item.adviceKey);
       return advice && advice !== item.adviceKey;
     })
-    .sort((a, b) => (b?.score || 0) - (a?.score || 0))
-);
+    .sort((a, b) => (b?.score || 0) - (a?.score || 0));
+});
 </script>
 
 <template>
@@ -108,13 +101,29 @@ const selectedItemsWithAdvice = computed(() =>
     <UCard class="mb-3" variant="subtle">
       <div
         class="not-last-of-type:mb-4"
-        v-for="category in categories"
-        :key="category"
+        v-for="category in fengShuiCategories"
+        :key="category.id"
       >
         <h2 class="font-semibold mb-3">
-          {{ category }}
+          {{ t(category.labelKey) }}
         </h2>
+        <!-- USelect for doorDirection category -->
+        <USelect
+          class="w-full"
+          v-if="category.id === 'doorDirection'"
+          v-model="selectedDoorDirection"
+          :items="
+            category.items.map((item: FengShuiItem) => ({
+              value: item.id,
+              label: t(item.labelKey),
+            }))
+          "
+          color="primary"
+          :placeholder="`${t(category.labelKey)}`"
+        />
+        <!-- UCheckboxGroup for other categories -->
         <UCheckboxGroup
+          v-else
           color="primary"
           variant="card"
           orientation="horizontal"
@@ -126,7 +135,7 @@ const selectedItemsWithAdvice = computed(() =>
           v-model="selectedItems"
           value-key="id"
           :items="
-            (itemsByCategory.get(category) || []).map((item: FengShuiItem) => ({
+            category.items.map((item: FengShuiItem) => ({
               ...item,
               label: t(item.labelKey),
             }))
