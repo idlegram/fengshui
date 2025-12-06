@@ -5,8 +5,7 @@ import {
   type FengShuiItem,
 } from "~/data/fengShui";
 
-const { locale, setLocale } = useI18n();
-const { t } = useI18n();
+const { t, locale, setLocale } = useI18n();
 
 const selectedItems = ref<string[]>([]);
 

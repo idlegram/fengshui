@@ -1,12 +1,18 @@
 <script setup lang="ts">
+import { Analytics } from "@vercel/analytics/nuxt";
+
+const { t } = useI18n();
+
 useSeoMeta({
-  title: $t("title"),
-  description: $t("description"),
+  title: t("title"),
+  description: t("description"),
 });
 </script>
 
 <template>
   <UApp>
+    <Analytics />
+
     <UMain>
       <NuxtLayout>
         <NuxtPage />
