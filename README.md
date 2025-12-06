@@ -5,36 +5,19 @@
 <a href="https://tailwindcss.com" target="_blank"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"></a>
 <a href="https://www.typescriptlang.org" target="_blank"><img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
 
+<a href="https://fengshui.idlegram.com" target="_blank"><img src="https://img.shields.io/website?style=for-the-badge&url=https%3A%2F%2Ffengshui.idlegram.com" alt="GitHub package.json version"></a>
 <a href="https://github.com/idlegram/fengshui" target="_blank"><img src="https://img.shields.io/github/package-json/v/idlegram/fengshui?style=for-the-badge" alt="GitHub package.json version"></a>
 <a href="https://github.com/idlegram/fengshui/deployments" target="_blank"><img src="https://img.shields.io/github/deployments/idlegram/fengshui/production?style=for-the-badge&label=deployments" alt="GitHub deployments"></a>
 
-## Setup
+## Features
 
-Make sure to install the dependencies:
+- **Feng Shui Analysis**: Get a Feng Shui score based on your property layout and orientation.
+- **Personalized Recommendations**: Receive actionable Feng Shui solutions to improve your Feng Shui.
+- **Multi-language Support**: Available in Simplified Chinese and English.
+- **Responsive Design**: Seamlessly works across desktop, tablet, and mobile devices.
 
-```bash
-nvm use
-pnpm install --shamefully-hoist
-```
+## Usage
 
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-pnpm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-pnpm run build
-```
-
-Locally preview production build:
-
-```bash
-pnpm run preview
-```
+- Answer questions about your property layout and orientation.
+- Review your personalized Feng Shui score and recommendations.
+- Apply the suggested improvements to your space.
