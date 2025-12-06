@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Analytics } from "@vercel/analytics/nuxt";
+import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 
 const { t } = useI18n();
 
@@ -12,6 +13,7 @@ useSeoMeta({
 <template>
   <UApp>
     <Analytics />
+    <SpeedInsights />
 
     <UMain>
       <NuxtLayout>
