@@ -66,11 +66,11 @@ const selectedItemsWithAdvice = computed(() =>
 </script>
 
 <template>
-  <UContainer class="my-8">
+  <UContainer class="my-6">
     <!-- 标题 -->
-    <div class="mb-8">
-      <h1 class="text-3xl font-bold mb-4">{{ $t("description") }}</h1>
-      <p class="text-gray-500 mb-4">{{ $t("disclaimer") }}</p>
+    <div class="my-6">
+      <h1 class="text-3xl font-bold mb-3">{{ $t("description") }}</h1>
+      <p class="text-gray-400 mb-3">{{ $t("disclaimer") }}</p>
       <div class="flex items-center" orientation="horizontal">
         <UButton
           class=""
@@ -103,15 +103,13 @@ const selectedItemsWithAdvice = computed(() =>
     </div>
 
     <!-- 风水选项 -->
-    <div v-for="category in categories" :key="category">
-      <UCard
-        class="mb-2"
-        variant="subtle"
-        :ui="{
-          body: 'p-4 sm:p-4',
-        }"
+    <UCard class="mb-3" variant="subtle">
+      <div
+        class="not-last-of-type:mb-4"
+        v-for="category in categories"
+        :key="category"
       >
-        <h2 class="font-semibold pb-4">
+        <h2 class="font-semibold mb-3">
           {{ category }}
         </h2>
         <UCheckboxGroup
@@ -132,27 +130,21 @@ const selectedItemsWithAdvice = computed(() =>
             }))
           "
         />
-      </UCard>
-    </div>
+      </div>
+    </UCard>
 
     <!-- 评分 -->
-    <UCard
-      class="mb-2"
-      variant="subtle"
-      :ui="{
-        body: 'p-4 sm:p-4',
-      }"
-    >
+    <UCard class="mb-3" variant="subtle">
       <h2 class="font-semibold pb-4">{{ $t("score") }}</h2>
       <div class="space-y-2">
         <div class="flex items-center justify-between">
           <span
             class="text-lg font-semibold"
             :class="{
-              'text-emerald-500': scoreRating.color === 'emerald',
-              'text-yellow-500': scoreRating.color === 'yellow',
-              'text-orange-500': scoreRating.color === 'orange',
-              'text-red-500': scoreRating.color === 'red',
+              'text-emerald-400': scoreRating.color === 'emerald',
+              'text-yellow-400': scoreRating.color === 'yellow',
+              'text-orange-400': scoreRating.color === 'orange',
+              'text-red-400': scoreRating.color === 'red',
             }"
             >{{ totalScore }}</span
           >
@@ -160,10 +152,10 @@ const selectedItemsWithAdvice = computed(() =>
             <span
               class="font-semibold"
               :class="{
-                'text-emerald-500': scoreRating.color === 'emerald',
-                'text-yellow-500': scoreRating.color === 'yellow',
-                'text-orange-500': scoreRating.color === 'orange',
-                'text-red-500': scoreRating.color === 'red',
+                'text-emerald-400': scoreRating.color === 'emerald',
+                'text-yellow-400': scoreRating.color === 'yellow',
+                'text-orange-400': scoreRating.color === 'orange',
+                'text-red-400': scoreRating.color === 'red',
               }"
             >
               {{ $t(scoreRating.labelKey) }}
@@ -174,15 +166,9 @@ const selectedItemsWithAdvice = computed(() =>
     </UCard>
 
     <!-- 建议 -->
-    <UCard
-      class="mb-2"
-      variant="subtle"
-      :ui="{
-        body: 'p-4 sm:p-4',
-      }"
-    >
+    <UCard class="mb-3" variant="subtle">
       <h2 class="font-semibold pb-4">{{ $t("suggestions") }}</h2>
-      <div v-if="selectedItemsWithAdvice.length === 0" class="text-gray-500">
+      <div v-if="selectedItemsWithAdvice.length === 0" class="text-gray-400">
         {{ $t("noSuggestions") }}
       </div>
       <div v-else class="space-y-3">
