@@ -185,12 +185,6 @@ export const fengShuiCategoryItems: Record<string, FengShuiItem[]> = {
       score: 3,
     },
     {
-      id: "bedChildEast",
-      labelKey: "fengShuiItems.bedroom.bedChildEast.label",
-      adviceKey: "fengShuiItems.bedroom.bedChildEast.advice",
-      score: 2,
-    },
-    {
       id: "bedAirConditioner",
       labelKey: "fengShuiItems.bedroom.bedAirConditioner.label",
       adviceKey: "fengShuiItems.bedroom.bedAirConditioner.advice",

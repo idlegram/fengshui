@@ -75,7 +75,7 @@
     },
     "entryway": {
       "entryBrightClean": {
-        "label": "Entryway is bright and clean",
+        "label": "Bright and clean",
         "advice": ""
       },
       "entryHighCeiling": {
@@ -91,11 +91,11 @@
         "advice": "Add lighting or rearrange to keep clean."
       },
       "entrySharpCorner": {
-        "label": "Sharp corner",
+        "label": "Sharp corner (non-right angle wall or object)",
         "advice": "Use plants or screens to block sharp corner attacks."
       },
       "entryLowCeiling": {
-        "label": "Entryway too low or oppressive",
+        "label": "Low ceiling and oppressive",
         "advice": "Redesign the ceiling or use light colors to enhance space feeling."
       }
     },
@@ -129,7 +129,7 @@
         "advice": "Enclose the column with furniture or attach landscape painting to resolve."
       },
       "livingSharpCorner": {
-        "label": "Sharp corner",
+        "label": "Sharp corner (non-right angle wall or object)",
         "advice": "Place tall plants or set up screen at sharp corner to exorcise evil qi."
       }
     },
@@ -140,10 +140,6 @@
       },
       "bedNorthSouth": {
         "label": "Bed facing north-south direction",
-        "advice": ""
-      },
-      "bedChildEast": {
-        "label": "Child's bed positioned east or southeast",
         "advice": ""
       },
       "bedAirConditioner": {

@@ -46,7 +46,7 @@ const scoreRating = computed(() => {
       { threshold: 70, labelKey: "goodFengShui", color: "emerald" },
       { threshold: 50, labelKey: "fairFengShui", color: "yellow" },
       { threshold: 30, labelKey: "poorFengShui", color: "orange" },
-    ].find((r) => score >= r.threshold) || {
+    ].find((rating) => score >= rating.threshold) || {
       labelKey: "badFengShui",
       color: "red",
     }

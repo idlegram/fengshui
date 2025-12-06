@@ -79,23 +79,23 @@
         "advice": ""
       },
       "entryHighCeiling": {
-        "label": "天花板高",
+        "label": "玄关天花板高",
         "advice": ""
       },
       "entryTransparent": {
-        "label": "通透适中",
+        "label": "玄关通透适中",
         "advice": ""
       },
       "entryDarkMessy": {
-        "label": "阴暗凌乱",
+        "label": "玄关阴暗、凌乱",
         "advice": "增加照明或重新布局，保持整洁。"
       },
       "entrySharpCorner": {
-        "label": "玄关有尖角",
+        "label": "玄关有尖角（非直角墙或物品）",
         "advice": "使用植物或屏风阻挡尖角冲射。"
       },
       "entryLowCeiling": {
-        "label": "玄关过低或压抑",
+        "label": "玄关天花板过低、压抑",
         "advice": "重新设计天花或用浅色装饰提升空间感。"
       }
     },
@@ -129,7 +129,7 @@
         "advice": "用家具围合柱体或贴山水画化解。"
       },
       "livingSharpCorner": {
-        "label": "客厅有尖角",
+        "label": "客厅有尖角（非直角墙或物品）",
         "advice": "在尖角摆放高大植物或设置屏风化解煞气。"
       }
     },
@@ -140,10 +140,6 @@
       },
       "bedNorthSouth": {
         "label": "床南北朝向",
-        "advice": ""
-      },
-      "bedChildEast": {
-        "label": "儿童床位于东或东南",
         "advice": ""
       },
       "bedAirConditioner": {
