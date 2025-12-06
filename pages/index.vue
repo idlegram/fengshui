@@ -93,7 +93,7 @@ const selectedItemsWithAdvice = computed(() =>
           <UButton
             color="neutral"
             variant="ghost"
-            to="https://github.com/luojiahai/fengshui"
+            to="https://github.com/idlegram/fengshui"
             target="_blank"
             icon="i-simple-icons-github"
             aria-label="GitHub"
