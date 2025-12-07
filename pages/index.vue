@@ -118,7 +118,7 @@ const selectedItemsWithAdvice = computed(() => {
         v-for="category in fengShuiCategories"
         :key="category.id"
       >
-        <div class="flex items-center gap-1 mb-2">
+        <div class="flex items-center gap-1 mb-1">
           <h2 class="font-semibold">
             {{ t(category.labelKey) }}
           </h2>
