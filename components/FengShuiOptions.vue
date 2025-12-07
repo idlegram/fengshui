@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { FengShuiCategory, FengShuiItem } from "~/types/fengShui";
+import type { FengShuiCategory, FengShuiItem } from "~/types/fengshui";
 
 defineProps<{
   categories: FengShuiCategory[];
