@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Rating } from "~/types/fengshui";
+import type { Rating } from "~/types/fengShui";
 
 defineProps<{
   score: number;

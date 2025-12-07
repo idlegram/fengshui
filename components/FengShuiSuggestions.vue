@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { FengShuiItem } from "~/types/fengshui";
+import type { FengShuiItem } from "~/types/fengShui";
 
 defineProps<{
   suggestions: (FengShuiItem | undefined)[];

@@ -1,4 +1,4 @@
-import type { FengShuiItem, Rating } from "~/types/fengshui";
+import type { FengShuiItem, Rating } from "~/types/fengShui";
 import {
   fengShuiCategories,
   fengShuiItems,
