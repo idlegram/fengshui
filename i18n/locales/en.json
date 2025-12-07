@@ -103,31 +103,6 @@
         }
       }
     },
-    "entryway": {
-      "label": "Entryway",
-      "items": {
-        "entryBrightClean": {
-          "label": "Bright and clean",
-          "suggestion": ""
-        },
-        "entryHighCeiling": {
-          "label": "High ceiling",
-          "suggestion": ""
-        },
-        "entryDarkMessy": {
-          "label": "Dark and messy",
-          "suggestion": "Add lighting or rearrange to keep clean."
-        },
-        "entrySharpCorner": {
-          "label": "Sharp corner (non-right angle wall or object)",
-          "suggestion": "Use plants or screens to block sharp corner attacks."
-        },
-        "entryLowCeiling": {
-          "label": "Low ceiling",
-          "suggestion": "Redesign the ceiling or use light colors to enhance space feeling."
-        }
-      }
-    },
     "livingRoom": {
       "label": "Living Room",
       "items": {

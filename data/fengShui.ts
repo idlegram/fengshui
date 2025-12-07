@@ -161,48 +161,6 @@ export const fengShuiCategories: FengShuiCategory[] = [
     ],
   },
   {
-    id: "entryway",
-    inputType: "checkbox",
-    labelKey: "fengShuiCategories.entryway.label",
-    items: [
-      {
-        id: "entryBrightClean",
-        labelKey: "fengShuiCategories.entryway.items.entryBrightClean.label",
-        suggestionKey:
-          "fengShuiCategories.entryway.items.entryBrightClean.suggestion",
-        score: 3,
-      },
-      {
-        id: "entryHighCeiling",
-        labelKey: "fengShuiCategories.entryway.items.entryHighCeiling.label",
-        suggestionKey:
-          "fengShuiCategories.entryway.items.entryHighCeiling.suggestion",
-        score: 2,
-      },
-      {
-        id: "entryDarkMessy",
-        labelKey: "fengShuiCategories.entryway.items.entryDarkMessy.label",
-        suggestionKey:
-          "fengShuiCategories.entryway.items.entryDarkMessy.suggestion",
-        score: -3,
-      },
-      {
-        id: "entrySharpCorner",
-        labelKey: "fengShuiCategories.entryway.items.entrySharpCorner.label",
-        suggestionKey:
-          "fengShuiCategories.entryway.items.entrySharpCorner.suggestion",
-        score: -2,
-      },
-      {
-        id: "entryLowCeiling",
-        labelKey: "fengShuiCategories.entryway.items.entryLowCeiling.label",
-        suggestionKey:
-          "fengShuiCategories.entryway.items.entryLowCeiling.suggestion",
-        score: -2,
-      },
-    ],
-  },
-  {
     id: "livingRoom",
     inputType: "checkbox",
     labelKey: "fengShuiCategories.livingRoom.label",

@@ -103,31 +103,6 @@
         }
       }
     },
-    "entryway": {
-      "label": "玄关",
-      "items": {
-        "entryBrightClean": {
-          "label": "玄关明亮、整洁",
-          "suggestion": ""
-        },
-        "entryHighCeiling": {
-          "label": "玄关天花板高",
-          "suggestion": ""
-        },
-        "entryDarkMessy": {
-          "label": "玄关阴暗、凌乱",
-          "suggestion": "增加照明或重新布局，保持整洁。"
-        },
-        "entrySharpCorner": {
-          "label": "玄关有尖角（不包括直角墙、直角物品）",
-          "suggestion": "使用植物或屏风阻挡尖角冲射。"
-        },
-        "entryLowCeiling": {
-          "label": "玄关天花板低",
-          "suggestion": "重新设计天花或用浅色装饰提升空间感。"
-        }
-      }
-    },
     "livingRoom": {
       "label": "客厅",
       "items": {
