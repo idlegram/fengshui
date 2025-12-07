@@ -3,7 +3,7 @@ export type FengShuiInputType = "select" | "checkbox";
 export type FengShuiItem = {
   id: string;
   labelKey: string;
-  adviceKey: string;
+  suggestionKey: string;
   score: number;
 };
 
@@ -15,7 +15,7 @@ export type FengShuiCategory = {
   items: FengShuiItem[];
 };
 
-export type ScoreRating = {
+export type Rating = {
   threshold?: number;
   labelKey: string;
   color: "emerald" | "yellow" | "orange" | "red";

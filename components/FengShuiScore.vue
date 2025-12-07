@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { ScoreRating } from "~/types/fengshui";
+import type { Rating } from "~/types/fengshui";
 
 defineProps<{
-  totalScore: number;
-  scoreRating: ScoreRating;
+  score: number;
+  rating: Rating;
 }>();
 
 const getColorClass = (color: string) => {
@@ -23,13 +23,13 @@ const getColorClass = (color: string) => {
       <div class="flex items-center justify-between">
         <span
           class="text-lg font-semibold"
-          :class="getColorClass(scoreRating.color)"
+          :class="getColorClass(rating.color)"
         >
-          {{ totalScore }}
+          {{ score }}
         </span>
         <div class="flex items-center gap-2">
-          <span class="font-semibold" :class="getColorClass(scoreRating.color)">
-            {{ $t(scoreRating.labelKey) }}
+          <span class="font-semibold" :class="getColorClass(rating.color)">
+            {{ $t(rating.labelKey) }}
           </span>
         </div>
       </div>

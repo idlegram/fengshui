@@ -1,4 +1,4 @@
-import type { FengShuiItem, ScoreRating } from "~/types/fengshui";
+import type { FengShuiItem, Rating } from "~/types/fengshui";
 import {
   fengShuiCategories,
   fengShuiItems,
@@ -31,15 +31,14 @@ export function useFengShui() {
   });
 
   // Calculate total score
-  const totalScore = computed(() => {
+  const score = computed(() => {
     const score = calculateNormalizedScore(allSelectedItems.value);
     return parseFloat(score.toPrecision(5));
   });
 
   // Get score rating based on total score
-  const scoreRating = computed<ScoreRating>(() => {
-    const score = totalScore.value;
-    const ratings: ScoreRating[] = [
+  const rating = computed<Rating>(() => {
+    const ratings: Rating[] = [
       { threshold: 90, labelKey: "excellentFengShui", color: "emerald" },
       { threshold: 70, labelKey: "goodFengShui", color: "emerald" },
       { threshold: 50, labelKey: "fairFengShui", color: "yellow" },
@@ -47,30 +46,29 @@ export function useFengShui() {
     ];
 
     return (
-      ratings.find((rating) => score >= rating.threshold!) || {
+      ratings.find((rating) => score.value >= rating.threshold!) || {
         labelKey: "badFengShui",
         color: "red",
       }
     );
   });
 
-  // Get selected items with advice, sorted by score
-  const selectedItemsWithAdvice = computed(() => {
+  // Get selected items with suggestion
+  const suggestions = computed(() => {
     return allSelectedItems.value
       .map((itemId) => itemMap.value.get(itemId))
       .filter((item) => {
-        if (!item?.adviceKey) return false;
-        const advice = t(item.adviceKey);
-        return advice && advice !== item.adviceKey;
-      })
-      .sort((a, b) => (b?.score || 0) - (a?.score || 0));
+        if (!item?.suggestionKey) return false;
+        const suggestion = t(item.suggestionKey);
+        return suggestion && suggestion !== item.suggestionKey;
+      });
   });
 
   return {
     selections,
-    totalScore,
-    scoreRating,
-    selectedItemsWithAdvice,
+    score,
+    rating,
+    suggestions,
     fengShuiCategories,
   };
 }

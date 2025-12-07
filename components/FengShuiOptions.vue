@@ -2,7 +2,7 @@
 import type { FengShuiCategory, FengShuiItem } from "~/types/fengshui";
 
 defineProps<{
-  fengShuiCategories: FengShuiCategory[];
+  categories: FengShuiCategory[];
 }>();
 
 const { t } = useI18n();
@@ -39,7 +39,7 @@ const getCheckboxModel = (categoryId: string) =>
   <UCard class="mb-3" variant="subtle">
     <div
       class="not-last-of-type:mb-4"
-      v-for="category in fengShuiCategories"
+      v-for="category in categories"
       :key="category.id"
     >
       <div class="flex items-center gap-1 mb-1">

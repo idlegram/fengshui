@@ -2,7 +2,7 @@
 import type { FengShuiItem } from "~/types/fengshui";
 
 defineProps<{
-  selectedItemsWithAdvice: (FengShuiItem | undefined)[];
+  suggestions: (FengShuiItem | undefined)[];
 }>();
 
 const { t } = useI18n();
@@ -12,13 +12,13 @@ const { t } = useI18n();
   <UCard class="mb-3" variant="subtle">
     <h2 class="font-semibold pb-4">{{ $t("suggestions") }}</h2>
 
-    <div v-if="selectedItemsWithAdvice.length === 0" class="text-gray-400">
+    <div v-if="suggestions.length === 0" class="text-gray-400">
       {{ $t("noSuggestions") }}
     </div>
 
     <div v-else class="space-y-3">
       <div
-        v-for="item in selectedItemsWithAdvice"
+        v-for="item in suggestions"
         :key="item?.id"
         class="border-l-4 border-primary pl-4"
       >
@@ -26,7 +26,7 @@ const { t } = useI18n();
           {{ item && t(item.labelKey) }}
         </p>
         <p class="text-gray-400">
-          {{ item?.adviceKey ? t(item.adviceKey) : "" }}
+          {{ item?.suggestionKey ? t(item.suggestionKey) : "" }}
         </p>
       </div>
     </div>

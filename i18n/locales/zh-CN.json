@@ -18,15 +18,15 @@
       "items": {
         "lightGood": {
           "label": "采光良好（自然光线覆盖全屋大于70%）",
-          "advice": ""
+          "suggestion": ""
         },
         "lightAverage": {
           "label": "采光适中（自然光线覆盖全屋30%-70%）",
-          "advice": ""
+          "suggestion": ""
         },
         "lightPoor": {
           "label": "采光较差（自然光线覆盖全屋小于30%）",
-          "advice": "增加窗户或照明设备，改善采光。"
+          "suggestion": "增加窗户或照明设备，改善采光。"
         }
       }
     },
@@ -36,15 +36,15 @@
       "items": {
         "ventilationGood": {
           "label": "通风良好（空气流通顺畅）",
-          "advice": ""
+          "suggestion": ""
         },
         "ventilationAverage": {
           "label": "通风适中（空气流通一般）",
-          "advice": ""
+          "suggestion": ""
         },
         "ventilationPoor": {
           "label": "通风较差（空气流通不畅）",
-          "advice": "安装通风系统或打开对流通道增强空气流动。"
+          "suggestion": "安装通风系统或打开对流通道增强空气流动。"
         }
       }
     },
@@ -54,19 +54,19 @@
       "items": {
         "doorSouth": {
           "label": "入户大门朝南（在南半球朝北）",
-          "advice": ""
+          "suggestion": ""
         },
         "doorEast": {
           "label": "入户大门朝东",
-          "advice": ""
+          "suggestion": ""
         },
         "doorWest": {
           "label": "入户大门朝西",
-          "advice": "考虑调整门向或增加屏障改善气流。"
+          "suggestion": "考虑调整门向或增加屏障改善气流。"
         },
         "doorNorth": {
           "label": "入户大门朝北（在南半球朝南）",
-          "advice": "请咨询风水师根据实际情况来解决。"
+          "suggestion": "请咨询风水师根据实际情况来解决。"
         }
       }
     },
@@ -75,31 +75,31 @@
       "items": {
         "doorMingTang": {
           "label": "大门前有明堂（平地、水池、绿茵）",
-          "advice": ""
+          "suggestion": ""
         },
         "doorLongCorridorStreet": {
           "label": "大门直对长走廊、街道（包括门前和门后）",
-          "advice": "在门内设置屏风或大型植物阻隔，减少直冲气流。"
+          "suggestion": "在门内设置屏风或大型植物阻隔，减少直冲气流。"
         },
         "doorElevatorStaircase": {
           "label": "大门直对电梯、楼梯（包括门前和门后）",
-          "advice": "在门口摆放圆润大型绿植或屏风缓冲。"
+          "suggestion": "在门口摆放圆润大型绿植或屏风缓冲。"
         },
         "doorPlantPainting": {
           "label": "入门见植物、字画",
-          "advice": ""
+          "suggestion": ""
         },
         "doorSeeStove": {
           "label": "入门见灶台",
-          "advice": "用屏风或移位灶台，避免火气直冲门口。"
+          "suggestion": "用屏风或移位灶台，避免火气直冲门口。"
         },
         "doorSeeToilet": {
           "label": "入门见厕所",
-          "advice": "设置隔断或调整门向，减少秽气入室。"
+          "suggestion": "设置隔断或调整门向，减少秽气入室。"
         },
         "doorSeeMirror": {
           "label": "入门见镜子",
-          "advice": "调整镜子位置，使其不直接反射入门之景。"
+          "suggestion": "调整镜子位置，使其不直接反射入门之景。"
         }
       }
     },
@@ -108,23 +108,23 @@
       "items": {
         "entryBrightClean": {
           "label": "玄关明亮、整洁",
-          "advice": ""
+          "suggestion": ""
         },
         "entryHighCeiling": {
           "label": "玄关天花板高",
-          "advice": ""
+          "suggestion": ""
         },
         "entryDarkMessy": {
           "label": "玄关阴暗、凌乱",
-          "advice": "增加照明或重新布局，保持整洁。"
+          "suggestion": "增加照明或重新布局，保持整洁。"
         },
         "entrySharpCorner": {
           "label": "玄关有尖角（不包括直角墙、直角物品）",
-          "advice": "使用植物或屏风阻挡尖角冲射。"
+          "suggestion": "使用植物或屏风阻挡尖角冲射。"
         },
         "entryLowCeiling": {
           "label": "玄关天花板过低、压抑",
-          "advice": "重新设计天花或用浅色装饰提升空间感。"
+          "suggestion": "重新设计天花或用浅色装饰提升空间感。"
         }
       }
     },
@@ -133,35 +133,35 @@
       "items": {
         "livingSofaWall": {
           "label": "沙发背靠实墙",
-          "advice": ""
+          "suggestion": ""
         },
         "livingSofaCurve": {
           "label": "沙发摆放弯形（L形、U形）",
-          "advice": ""
+          "suggestion": ""
         },
         "livingSofaBackWater": {
           "label": "沙发背对水、鱼缸",
-          "advice": "调整沙发让背靠实墙或添加屏风补靠。"
+          "suggestion": "调整沙发让背靠实墙或添加屏风补靠。"
         },
         "livingSofaFaceDoor": {
           "label": "沙发正对大门",
-          "advice": "调整沙发角度或用隔断降低冲煞。"
+          "suggestion": "调整沙发角度或用隔断降低冲煞。"
         },
         "livingDirectLight": {
           "label": "顶灯直照头部",
-          "advice": "更换灯具位置或使用柔光灯罩。"
+          "suggestion": "更换灯具位置或使用柔光灯罩。"
         },
         "livingSquareShape": {
           "label": "客厅方正",
-          "advice": ""
+          "suggestion": ""
         },
         "livingIsolatedColumn": {
           "label": "孤立柱阻碍流通",
-          "advice": "用家具围合柱体或贴山水画化解。"
+          "suggestion": "用家具围合柱体或贴山水画化解。"
         },
         "livingSharpCorner": {
           "label": "客厅有尖角（不包括直角墙、直角物品）",
-          "advice": "在尖角摆放高大植物或设置屏风化解煞气。"
+          "suggestion": "在尖角摆放高大植物或设置屏风化解煞气。"
         }
       }
     },
@@ -170,23 +170,23 @@
       "items": {
         "bedHeadWall": {
           "label": "床头靠墙",
-          "advice": ""
+          "suggestion": ""
         },
         "bedNorthSouth": {
           "label": "床南北朝向",
-          "advice": ""
+          "suggestion": ""
         },
         "bedAirConditioner": {
           "label": "空调挂头",
-          "advice": "移动床位。"
+          "suggestion": "移动床位。"
         },
         "bedFaceWest": {
           "label": "床头朝西",
-          "advice": "调整床头方向，避免血冲头部。"
+          "suggestion": "调整床头方向，避免血冲头部。"
         },
         "bedFaceMirror": {
           "label": "床对镜",
-          "advice": "调整镜子位置或加布帘遮挡。"
+          "suggestion": "调整镜子位置或加布帘遮挡。"
         }
       }
     },
@@ -195,23 +195,23 @@
       "items": {
         "studyDeskWall": {
           "label": "书桌背靠实墙",
-          "advice": ""
+          "suggestion": ""
         },
         "studyFacingWindow": {
           "label": "桌前对窗宽敞",
-          "advice": ""
+          "suggestion": ""
         },
         "studyPlant": {
           "label": "书桌上有水养植物",
-          "advice": ""
+          "suggestion": ""
         },
         "studyDoorKitchenToilet": {
           "label": "书房门对厨房、厕所",
-          "advice": "调整书房门向或加屏风阻隔水火冲煞。"
+          "suggestion": "调整书房门向或加屏风阻隔水火冲煞。"
         },
         "studyWallToilet": {
           "label": "书桌背或面对厕所墙",
-          "advice": "移动桌位避开厕所墙面。"
+          "suggestion": "移动桌位避开厕所墙面。"
         }
       }
     },
@@ -220,23 +220,23 @@
       "items": {
         "kitchenEast": {
           "label": "厨房位于东或东南",
-          "advice": ""
+          "suggestion": ""
         },
         "kitchenStoveWall": {
           "label": "灶台背靠实墙",
-          "advice": ""
+          "suggestion": ""
         },
         "kitchenSouth": {
           "label": "厨房朝南",
-          "advice": "考虑调整厨房方位或增加隔断降低火气。"
+          "suggestion": "考虑调整厨房方位或增加隔断降低火气。"
         },
         "kitchenStoveBadFacing": {
           "label": "灶正对大门、卧室、厕所",
-          "advice": "调整灶位避免与门相冲。"
+          "suggestion": "调整灶位避免与门相冲。"
         },
         "kitchenStoveNoBack": {
           "label": "灶台后背无靠",
-          "advice": "加设实墙或柜体增强稳定和安全性。"
+          "suggestion": "加设实墙或柜体增强稳定和安全性。"
         }
       }
     },
@@ -245,23 +245,23 @@
       "items": {
         "diningRoundSquare": {
           "label": "餐桌圆形、方形",
-          "advice": ""
+          "suggestion": ""
         },
         "diningSoftLight": {
           "label": "灯光柔和（暖色温）",
-          "advice": ""
+          "suggestion": ""
         },
         "diningSoftColor": {
           "label": "色调素雅（灰色、白色、暖色调）",
-          "advice": ""
+          "suggestion": ""
         },
         "diningSharpTable": {
           "label": "餐桌三角形、尖角形",
-          "advice": "更换餐桌为圆形或方形以改善气场。"
+          "suggestion": "更换餐桌为圆形或方形以改善气场。"
         },
         "diningDoorCollision": {
           "label": "餐桌对大门、厕所",
-          "advice": "调整餐桌位置或设置隔屏化解冲煞。"
+          "suggestion": "调整餐桌位置或设置隔屏化解冲煞。"
         }
       }
     },
@@ -270,15 +270,15 @@
       "items": {
         "toiletGoodPosition": {
           "label": "卫生间门不对大门、厨房",
-          "advice": ""
+          "suggestion": ""
         },
         "toiletDryVent": {
           "label": "干燥通风",
-          "advice": ""
+          "suggestion": ""
         },
         "toiletSameDoorKitchen": {
           "label": "卫生间与厨房同门",
-          "advice": "改门或设置隔板避免水火相冲。"
+          "suggestion": "改门或设置隔板避免水火相冲。"
         }
       }
     }
