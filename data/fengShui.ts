@@ -1,4 +1,4 @@
-export type FengShuiInputType = "select" | "checkbox" | "slider";
+export type FengShuiInputType = "select" | "checkbox";
 
 export type FengShuiItem = {
   id: string;
