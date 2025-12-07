@@ -151,6 +151,7 @@ const selectedItemsWithAdvice = computed(() => {
           "
           color="primary"
           variant="subtle"
+          size="lg"
           :placeholder="`${t(category.labelKey)}`"
         />
         <!-- UCheckboxGroup for checkbox inputType -->
