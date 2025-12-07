@@ -11,6 +11,7 @@ export type FengShuiCategory = {
   id: string;
   inputType: FengShuiInputType;
   labelKey: string;
+  infoKey?: string;
   items: FengShuiItem[];
 };
 
@@ -19,6 +20,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
     id: "light",
     inputType: "select",
     labelKey: "fengShuiCategories.light.label",
+    infoKey: "fengShuiCategories.light.info",
     items: [
       {
         id: "lightGood",
@@ -44,6 +46,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
     id: "ventilation",
     inputType: "select",
     labelKey: "fengShuiCategories.ventilation.label",
+    infoKey: "fengShuiCategories.ventilation.info",
     items: [
       {
         id: "ventilationGood",
@@ -73,6 +76,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
     id: "doorDirection",
     inputType: "select",
     labelKey: "fengShuiCategories.doorDirection.label",
+    infoKey: "fengShuiCategories.doorDirection.info",
     items: [
       {
         id: "doorSouth",
@@ -112,33 +116,22 @@ export const fengShuiCategories: FengShuiCategory[] = [
         score: 3,
       },
       {
-        id: "doorLongCorridor",
-        labelKey: "fengShuiCategories.door.items.doorLongCorridor.label",
-        adviceKey: "fengShuiCategories.door.items.doorLongCorridor.advice",
+        id: "doorLongCorridorStreet",
+        labelKey: "fengShuiCategories.door.items.doorLongCorridorStreet.label",
+        adviceKey:
+          "fengShuiCategories.door.items.doorLongCorridorStreet.advice",
         score: -3,
       },
       {
-        id: "doorElevator",
-        labelKey: "fengShuiCategories.door.items.doorElevator.label",
-        adviceKey: "fengShuiCategories.door.items.doorElevator.advice",
+        id: "doorElevatorStaircase",
+        labelKey: "fengShuiCategories.door.items.doorElevatorStaircase.label",
+        adviceKey: "fengShuiCategories.door.items.doorElevatorStaircase.advice",
         score: -2,
       },
       {
-        id: "doorSeeRed",
-        labelKey: "fengShuiCategories.door.items.doorSeeRed.label",
-        adviceKey: "fengShuiCategories.door.items.doorSeeRed.advice",
-        score: 2,
-      },
-      {
-        id: "doorSeeGreen",
-        labelKey: "fengShuiCategories.door.items.doorSeeGreen.label",
-        adviceKey: "fengShuiCategories.door.items.doorSeeGreen.advice",
-        score: 2,
-      },
-      {
-        id: "doorSeePainting",
-        labelKey: "fengShuiCategories.door.items.doorSeePainting.label",
-        adviceKey: "fengShuiCategories.door.items.doorSeePainting.advice",
+        id: "doorPlantPainting",
+        labelKey: "fengShuiCategories.door.items.doorPlantPainting.label",
+        adviceKey: "fengShuiCategories.door.items.doorPlantPainting.advice",
         score: 2,
       },
       {
@@ -176,12 +169,6 @@ export const fengShuiCategories: FengShuiCategory[] = [
         id: "entryHighCeiling",
         labelKey: "fengShuiCategories.entryway.items.entryHighCeiling.label",
         adviceKey: "fengShuiCategories.entryway.items.entryHighCeiling.advice",
-        score: 2,
-      },
-      {
-        id: "entryTransparent",
-        labelKey: "fengShuiCategories.entryway.items.entryTransparent.label",
-        adviceKey: "fengShuiCategories.entryway.items.entryTransparent.advice",
         score: 2,
       },
       {

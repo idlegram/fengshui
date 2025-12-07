@@ -14,40 +14,43 @@
   "fengShuiCategories": {
     "light": {
       "label": "采光",
+      "info": "打开所有窗户和窗帘，评估自然光线覆盖面积。",
       "items": {
         "lightGood": {
-          "label": "自然采光良好",
+          "label": "采光良好（自然光线覆盖全屋大于70%）",
           "advice": ""
         },
         "lightAverage": {
-          "label": "自然采光适中",
+          "label": "采光适中（自然光线覆盖全屋30%-70%）",
           "advice": ""
         },
         "lightPoor": {
-          "label": "自然采光较差",
+          "label": "采光较差（自然光线覆盖全屋小于30%）",
           "advice": "增加窗户或照明设备，改善采光。"
         }
       }
     },
     "ventilation": {
       "label": "通风",
+      "info": "打开所有门窗，贴近感受风流，评估空气流通情况。",
       "items": {
         "ventilationGood": {
-          "label": "通风良好",
+          "label": "通风良好（空气流通顺畅）",
           "advice": ""
         },
         "ventilationAverage": {
-          "label": "通风适中",
+          "label": "通风适中（空气流通一般）",
           "advice": ""
         },
         "ventilationPoor": {
-          "label": "通风较差",
+          "label": "通风较差（空气流通不畅）",
           "advice": "安装通风系统或打开对流通道增强空气流动。"
         }
       }
     },
     "doorDirection": {
       "label": "大门朝向",
+      "info": "从屋内打开大门的方向。",
       "items": {
         "doorSouth": {
           "label": "入户大门朝南（在南半球朝北）",
@@ -74,36 +77,28 @@
           "label": "大门前有明堂（平地/水池/绿茵）",
           "advice": ""
         },
-        "doorLongCorridor": {
-          "label": "大门直对长走廊/街道",
+        "doorLongCorridorStreet": {
+          "label": "大门直对长走廊或街道（包括门前和门后）",
           "advice": "在门内设置屏风或大型植物阻隔，减少直冲气流。"
         },
-        "doorElevator": {
-          "label": "大门直对电梯",
+        "doorElevatorStaircase": {
+          "label": "大门直对电梯或楼梯（包括门前和门后）",
           "advice": "在门口摆放圆润大型绿植或屏风缓冲。"
         },
-        "doorSeeRed": {
-          "label": "入门见红（喜庆布置）",
-          "advice": ""
-        },
-        "doorSeeGreen": {
-          "label": "入门见绿（植物）",
-          "advice": ""
-        },
-        "doorSeePainting": {
-          "label": "入门见画（舒展字画）",
+        "doorPlantPainting": {
+          "label": "入门见植物或字画",
           "advice": ""
         },
         "doorSeeStove": {
-          "label": "开门见灶",
+          "label": "入门见灶台",
           "advice": "用屏风或移位灶台，避免火气直冲门口。"
         },
         "doorSeeToilet": {
-          "label": "开门见厕所",
+          "label": "入门见厕所",
           "advice": "设置隔断或调整门向，减少秽气入室。"
         },
         "doorSeeMirror": {
-          "label": "开门见镜子",
+          "label": "入门见镜子",
           "advice": "调整镜子位置，使其不直接反射入门之景。"
         }
       }
@@ -117,10 +112,6 @@
         },
         "entryHighCeiling": {
           "label": "玄关天花板高",
-          "advice": ""
-        },
-        "entryTransparent": {
-          "label": "玄关通透适中",
           "advice": ""
         },
         "entryDarkMessy": {

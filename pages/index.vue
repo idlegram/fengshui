@@ -118,9 +118,25 @@ const selectedItemsWithAdvice = computed(() => {
         v-for="category in fengShuiCategories"
         :key="category.id"
       >
-        <h2 class="font-semibold mb-3">
-          {{ t(category.labelKey) }}
-        </h2>
+        <div class="flex items-center gap-2 mb-3">
+          <h2 class="font-semibold">
+            {{ t(category.labelKey) }}
+          </h2>
+          <UPopover v-if:="category.infoKey">
+            <UIcon
+              name="i-lucide-info"
+              class="size-5 text-muted cursor-pointer"
+            />
+
+            <template #content>
+              <div class="p-4 max-w-xs">
+                <p>
+                  {{ t(category.infoKey) }}
+                </p>
+              </div>
+            </template>
+          </UPopover>
+        </div>
         <!-- USelect for select inputType -->
         <USelect
           class="w-full"

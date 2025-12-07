@@ -14,40 +14,43 @@
   "fengShuiCategories": {
     "light": {
       "label": "Lighting",
+      "info": "Open all windows and curtains to assess the coverage of natural light.",
       "items": {
         "lightGood": {
-          "label": "Good natural lighting",
+          "label": "Good natural lighting (over 70% of the house)",
           "advice": ""
         },
         "lightAverage": {
-          "label": "Average natural lighting",
+          "label": "Average natural lighting (30%-70% of the house)",
           "advice": ""
         },
         "lightPoor": {
-          "label": "Poor natural lighting",
+          "label": "Poor natural lighting (less than 30% of the house)",
           "advice": "Add windows or lighting devices, improve lighting."
         }
       }
     },
     "ventilation": {
       "label": "Ventilation",
+      "info": "Open all doors and windows, feel the airflow closely, and assess air circulation.",
       "items": {
         "ventilationGood": {
-          "label": "Good ventilation",
+          "label": "Good ventilation (air circulates smoothly)",
           "advice": ""
         },
         "ventilationAverage": {
-          "label": "Average ventilation",
+          "label": "Average ventilation (air circulation is moderate)",
           "advice": ""
         },
         "ventilationPoor": {
-          "label": "Poor ventilation",
+          "label": "Poor ventilation (air circulation is poor)",
           "advice": "Install ventilation system or open flow channels to enhance air movement."
         }
       }
     },
     "doorDirection": {
       "label": "Door Direction",
+      "info": "The direction the main door opens from inside the house.",
       "items": {
         "doorSouth": {
           "label": "Door facing south",
@@ -74,36 +77,28 @@
           "label": "Bright hall in front of door (flat ground/pond/green grass)",
           "advice": ""
         },
-        "doorLongCorridor": {
-          "label": "Door directly facing long corridor/street",
+        "doorLongCorridorStreet": {
+          "label": "Door directly facing long corridor or street (including both inside and outside)",
           "advice": "Set up a screen or large plant inside the door to block and reduce direct air rush."
         },
-        "doorElevator": {
-          "label": "Door directly facing elevator",
+        "doorElevatorStaircase": {
+          "label": "Door directly facing elevator or staircase (including both inside and outside)",
           "advice": "Place round, large plants or screens at the door to cushion."
         },
-        "doorSeeRed": {
-          "label": "Seeing red upon entry (festive decoration)",
-          "advice": ""
-        },
-        "doorSeeGreen": {
-          "label": "Seeing green upon entry (plants)",
-          "advice": ""
-        },
-        "doorSeePainting": {
-          "label": "Seeing painting upon entry (inspiring artwork)",
+        "doorPlantPainting": {
+          "label": "Seeing plants or inspiring artwork upon entry",
           "advice": ""
         },
         "doorSeeStove": {
-          "label": "Seeing stove when opening door",
+          "label": "Seeing stove upon entry",
           "advice": "Use a screen or relocate the stove to avoid fire qi rushing towards the door."
         },
         "doorSeeToilet": {
-          "label": "Seeing toilet when opening door",
+          "label": "Seeing toilet upon entry",
           "advice": "Set up a partition or adjust the door orientation to reduce filthy air entering the room."
         },
         "doorSeeMirror": {
-          "label": "Seeing mirror when opening door",
+          "label": "Seeing mirror upon entry",
           "advice": "Adjust the mirror position so it doesn't directly reflect the view from the door."
         }
       }
@@ -117,10 +112,6 @@
         },
         "entryHighCeiling": {
           "label": "High ceiling",
-          "advice": ""
-        },
-        "entryTransparent": {
-          "label": "Moderate transparency",
           "advice": ""
         },
         "entryDarkMessy": {
