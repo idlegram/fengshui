@@ -1,4 +1,4 @@
-export type FengShuiInputType = "select" | "checkbox";
+export type FengShuiInputType = "radio" | "checkbox";
 
 export type FengShuiItem = {
   id: string;
@@ -18,7 +18,7 @@ export type FengShuiCategory = {
 export const fengShuiCategories: FengShuiCategory[] = [
   {
     id: "light",
-    inputType: "select",
+    inputType: "radio",
     labelKey: "fengShuiCategories.light.label",
     infoKey: "fengShuiCategories.light.info",
     items: [
@@ -44,7 +44,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "ventilation",
-    inputType: "select",
+    inputType: "radio",
     labelKey: "fengShuiCategories.ventilation.label",
     infoKey: "fengShuiCategories.ventilation.info",
     items: [
@@ -74,7 +74,7 @@ export const fengShuiCategories: FengShuiCategory[] = [
   },
   {
     id: "doorDirection",
-    inputType: "select",
+    inputType: "radio",
     labelKey: "fengShuiCategories.doorDirection.label",
     infoKey: "fengShuiCategories.doorDirection.info",
     items: [
@@ -474,15 +474,15 @@ export const fengShuiItems: FengShuiItem[] = fengShuiCategories.flatMap(
 
 /**
  * Calculate the maximum possible positive score from all items
- * For "select" categories, only count the max score in that category
+ * For "radio" categories, only count the max score in that category
  * For "checkbox" categories, sum all positive scores
  */
 export function getMaxPositiveScore(): number {
   let totalScore = 0;
 
   for (const category of fengShuiCategories) {
-    if (category.inputType === "select") {
-      // For select, find the max positive score in the category
+    if (category.inputType === "radio") {
+      // For radio, find the max positive score in the category
       const maxPositiveInCategory = category.items
         .filter((item) => item.score > 0)
         .reduce((max, item) => Math.max(max, item.score), -Infinity);
@@ -503,15 +503,15 @@ export function getMaxPositiveScore(): number {
 
 /**
  * Calculate the maximum possible negative score (absolute value) from all items
- * For "select" categories, only count the max negative score in that category
+ * For "radio" categories, only count the max negative score in that category
  * For "checkbox" categories, sum all negative scores
  */
 export function getMaxNegativeScore(): number {
   let totalScore = 0;
 
   for (const category of fengShuiCategories) {
-    if (category.inputType === "select") {
-      // For select, find the max negative score (absolute value) in the category
+    if (category.inputType === "radio") {
+      // For radio, find the max negative score (absolute value) in the category
       const maxNegativeInCategory = category.items
         .filter((item) => item.score < 0)
         .reduce((max, item) => Math.max(max, Math.abs(item.score)), -Infinity);
@@ -534,7 +534,7 @@ export function getMaxNegativeScore(): number {
  * Calculate normalized feng shui score
  * Algorithm:
  * 1. Separate selected items into positive and negative scores
- * 2. For select categories, count only the selected item (not all possible items)
+ * 2. For radio categories, count only the selected item (not all possible items)
  * 3. For checkbox categories, sum all selected items
  * 4. Normalize each against their maximum possible values
  * 5. Calculate final score: 50 + 0.5 * (positiveRatio - negativeRatio)
@@ -553,8 +553,8 @@ export function calculateNormalizedScore(selectedItemIds: string[]): number {
   let negativeSum = 0;
 
   for (const category of fengShuiCategories) {
-    if (category.inputType === "select") {
-      // For select categories, find the one selected item (if any)
+    if (category.inputType === "radio") {
+      // For radio categories, find the one selected item (if any)
       const selectedInCategory = category.items.find((item) =>
         selectedSet.has(item.id)
       );

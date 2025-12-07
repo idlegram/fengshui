@@ -8,8 +8,8 @@ defineProps<{
 const { t } = useI18n();
 const { selections } = useFengShui();
 
-// Computed v-model for select (single value)
-const getSelectModel = (categoryId: string) =>
+// Computed v-model for radio (single value)
+const getRadioModel = (categoryId: string) =>
   computed({
     get: () => selections.value.get(categoryId)?.[0],
     set: (value: string | undefined) => {
@@ -59,21 +59,25 @@ const getCheckboxModel = (categoryId: string) =>
         </UPopover>
       </div>
 
-      <!-- Select Input -->
-      <USelect
-        v-if="category.inputType === 'select'"
-        class="w-full"
-        v-model="getSelectModel(category.id).value"
+      <!-- Radio Group -->
+      <URadioGroup
+        v-if="category.inputType === 'radio'"
+        v-model="getRadioModel(category.id).value"
+        color="primary"
+        variant="card"
+        orientation="vertical"
+        indicator="start"
+        :ui="{
+          fieldset: 'grid grid-cols-1 sm:grid-cols-2 gap-1',
+          item: 'bg-elevated',
+        }"
+        value-key="id"
         :items="
           category.items.map((item: FengShuiItem) => ({
-            value: item.id,
+            ...item,
             label: t(item.labelKey),
           }))
         "
-        color="primary"
-        variant="subtle"
-        size="lg"
-        :placeholder="`${t(category.labelKey)}`"
       />
 
       <!-- Checkbox Group -->
