@@ -248,11 +248,11 @@
           "advice": ""
         },
         "diningSoftLight": {
-          "label": "灯光柔和",
+          "label": "灯光柔和（暖色温）",
           "advice": ""
         },
         "diningSoftColor": {
-          "label": "色调素雅",
+          "label": "色调素雅（灰色、白色、暖色调）",
           "advice": ""
         },
         "diningSharpTable": {
