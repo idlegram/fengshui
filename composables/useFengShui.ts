@@ -2,7 +2,7 @@ import type { FengShuiItem, Rating } from "~/types/fengshui";
 import {
   fengShuiCategories,
   fengShuiItems,
-  calculateNormalizedScore,
+  calculateScore,
 } from "~/data/fengShui";
 
 export function useFengShui() {
@@ -32,7 +32,7 @@ export function useFengShui() {
 
   // Calculate total score
   const score = computed(() => {
-    const score = calculateNormalizedScore(allSelectedItems.value);
+    const score = calculateScore(allSelectedItems.value);
     return parseFloat(score.toPrecision(5));
   });
 

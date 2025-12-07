@@ -431,120 +431,46 @@ export const fengShuiItems: FengShuiItem[] = fengShuiCategories.flatMap(
 );
 
 /**
- * Calculate the maximum possible positive score from all items
- * For "radio" categories, only count the max score in that category
- * For "checkbox" categories, sum all positive scores
- */
-export function getMaxPositiveScore(): number {
-  let totalScore = 0;
-
-  for (const category of fengShuiCategories) {
-    if (category.inputType === "radio") {
-      // For radio, find the max positive score in the category
-      const maxPositiveInCategory = category.items
-        .filter((item) => item.score > 0)
-        .reduce((max, item) => Math.max(max, item.score), -Infinity);
-      if (maxPositiveInCategory > -Infinity) {
-        totalScore += maxPositiveInCategory;
-      }
-    } else {
-      // For checkbox, sum all positive scores
-      const positiveInCategory = category.items
-        .filter((item) => item.score > 0)
-        .reduce((sum, item) => sum + item.score, 0);
-      totalScore += positiveInCategory;
-    }
-  }
-
-  return totalScore;
-}
-
-/**
- * Calculate the maximum possible negative score (absolute value) from all items
- * For "radio" categories, only count the max negative score in that category
- * For "checkbox" categories, sum all negative scores
- */
-export function getMaxNegativeScore(): number {
-  let totalScore = 0;
-
-  for (const category of fengShuiCategories) {
-    if (category.inputType === "radio") {
-      // For radio, find the max negative score (absolute value) in the category
-      const maxNegativeInCategory = category.items
-        .filter((item) => item.score < 0)
-        .reduce((max, item) => Math.max(max, Math.abs(item.score)), -Infinity);
-      if (maxNegativeInCategory > -Infinity) {
-        totalScore += maxNegativeInCategory;
-      }
-    } else {
-      // For checkbox, sum all negative scores (absolute values)
-      const negativeInCategory = category.items
-        .filter((item) => item.score < 0)
-        .reduce((sum, item) => sum + Math.abs(item.score), 0);
-      totalScore += negativeInCategory;
-    }
-  }
-
-  return totalScore;
-}
-
-/**
- * Calculate normalized feng shui score
+ * Calculate feng shui score using weighted scoring
  * Algorithm:
- * 1. Separate selected items into positive and negative scores
- * 2. For radio categories, count only the selected item (not all possible items)
- * 3. For checkbox categories, sum all selected items
- * 4. Normalize each against their maximum possible values
- * 5. Calculate final score: 50 + 0.5 * (positiveRatio - negativeRatio)
+ * 1. Sum all selected item scores directly
+ * 2. Map raw score to 0-100 range using sigmoid-like transformation
+ * 3. Scores are additive - more positive choices = higher score
  *
- * Result: 100 (perfect) to 0 (worst), 50 (neutral)
+ * Score mapping:
+ * - Raw score 0 → 50 (neutral baseline)
+ * - Positive scores increase toward 100
+ * - Negative scores decrease toward 0
+ * - Uses smooth exponential curve for natural feel
+ *
+ * Result: 100 (excellent) to 0 (poor), 50 (neutral)
  */
-export function calculateNormalizedScore(selectedItemIds: string[]): number {
+export function calculateScore(selectedItemIds: string[]): number {
+  if (selectedItemIds.length === 0) return 50; // Neutral if nothing selected
+
   const itemMap = new Map<string, FengShuiItem>();
   fengShuiItems.forEach((item) => itemMap.set(item.id, item));
 
-  // Create a set for faster lookup
-  const selectedSet = new Set(selectedItemIds);
-
-  // Separate positive and negative scores, respecting category constraints
-  let positiveSum = 0;
-  let negativeSum = 0;
-
-  for (const category of fengShuiCategories) {
-    if (category.inputType === "radio") {
-      // For radio categories, find the one selected item (if any)
-      const selectedInCategory = category.items.find((item) =>
-        selectedSet.has(item.id)
-      );
-      if (selectedInCategory) {
-        if (selectedInCategory.score > 0) {
-          positiveSum += selectedInCategory.score;
-        } else if (selectedInCategory.score < 0) {
-          negativeSum += Math.abs(selectedInCategory.score);
-        }
-      }
-    } else {
-      // For checkbox categories, sum all selected items
-      category.items.forEach((item) => {
-        if (selectedSet.has(item.id)) {
-          if (item.score > 0) {
-            positiveSum += item.score;
-          } else if (item.score < 0) {
-            negativeSum += Math.abs(item.score);
-          }
-        }
-      });
+  // Sum all selected item scores
+  let rawScore = 0;
+  selectedItemIds.forEach((itemId) => {
+    const item = itemMap.get(itemId);
+    if (item) {
+      rawScore += item.score;
     }
-  }
+  });
 
-  const maxPositive = getMaxPositiveScore();
-  const maxNegative = getMaxNegativeScore();
+  // Transform raw score to 0-100 scale
+  // Using exponential transformation for smooth curve
+  // rawScore of 0 → 50, positive scores → 100, negative scores → 0
 
-  // Calculate normalization ratios (0 to 100%)
-  const positiveRatio = maxPositive > 0 ? (positiveSum / maxPositive) * 100 : 0;
-  const negativeRatio = maxNegative > 0 ? (negativeSum / maxNegative) * 100 : 0;
+  // Scaling factor - adjust this to control sensitivity
+  // Higher value = slower score change, lower value = faster score change
+  const scalingFactor = 20;
 
-  // Final score: 50 is neutral, range 0-100
-  const score = 50 + 0.5 * (positiveRatio - negativeRatio);
-  return Math.max(0, Math.min(100, score));
+  // Exponential transformation: 100 / (1 + e^(-x/k))
+  // Shifted to center at 50 instead of 50
+  const normalizedScore = 100 / (1 + Math.exp(-rawScore / scalingFactor));
+
+  return parseFloat(normalizedScore.toFixed(2));
 }
