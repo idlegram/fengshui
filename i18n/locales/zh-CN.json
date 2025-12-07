@@ -74,19 +74,19 @@
       "label": "大门",
       "items": {
         "doorMingTang": {
-          "label": "大门前有明堂（平地/水池/绿茵）",
+          "label": "大门前有明堂（平地、水池、绿茵）",
           "advice": ""
         },
         "doorLongCorridorStreet": {
-          "label": "大门直对长走廊或街道（包括门前和门后）",
+          "label": "大门直对长走廊、街道（包括门前和门后）",
           "advice": "在门内设置屏风或大型植物阻隔，减少直冲气流。"
         },
         "doorElevatorStaircase": {
-          "label": "大门直对电梯或楼梯（包括门前和门后）",
+          "label": "大门直对电梯、楼梯（包括门前和门后）",
           "advice": "在门口摆放圆润大型绿植或屏风缓冲。"
         },
         "doorPlantPainting": {
-          "label": "入门见植物或字画",
+          "label": "入门见植物、字画",
           "advice": ""
         },
         "doorSeeStove": {
@@ -119,7 +119,7 @@
           "advice": "增加照明或重新布局，保持整洁。"
         },
         "entrySharpCorner": {
-          "label": "玄关有尖角（非直角墙或物品）",
+          "label": "玄关有尖角（不包括直角墙、直角物品）",
           "advice": "使用植物或屏风阻挡尖角冲射。"
         },
         "entryLowCeiling": {
@@ -140,7 +140,7 @@
           "advice": ""
         },
         "livingSofaBackWater": {
-          "label": "沙发背水或背鱼缸",
+          "label": "沙发背水、背鱼缸",
           "advice": "调整沙发让背靠实墙或添加屏风补靠。"
         },
         "livingSofaFaceDoor": {
@@ -160,7 +160,7 @@
           "advice": "用家具围合柱体或贴山水画化解。"
         },
         "livingSharpCorner": {
-          "label": "客厅有尖角（非直角墙或物品）",
+          "label": "客厅有尖角（不包括直角墙、直角物品）",
           "advice": "在尖角摆放高大植物或设置屏风化解煞气。"
         }
       }
@@ -206,7 +206,7 @@
           "advice": ""
         },
         "studyDoorKitchenToilet": {
-          "label": "门对厨房/厕所",
+          "label": "书房门对厨房、厕所",
           "advice": "调整书房门向或加屏风阻隔水火冲煞。"
         },
         "studyWallToilet": {
@@ -231,7 +231,7 @@
           "advice": "考虑调整厨房方位或增加隔断降低火气。"
         },
         "kitchenStoveBadFacing": {
-          "label": "灶正对大门/卧室/厕所",
+          "label": "灶正对大门、卧室、厕所",
           "advice": "调整灶位避免与门相冲。"
         },
         "kitchenStoveNoBack": {
@@ -244,7 +244,7 @@
       "label": "餐厅",
       "items": {
         "diningRoundSquare": {
-          "label": "餐桌圆形或方形",
+          "label": "餐桌圆形、方形",
           "advice": ""
         },
         "diningSoftLight": {
@@ -256,11 +256,11 @@
           "advice": ""
         },
         "diningSharpTable": {
-          "label": "餐桌三角形或尖角形",
+          "label": "餐桌三角形、尖角形",
           "advice": "更换餐桌为圆形或方形以改善气场。"
         },
         "diningDoorCollision": {
-          "label": "餐桌被大门/厕所直冲",
+          "label": "餐桌对大门、厕所",
           "advice": "调整餐桌位置或设置隔屏化解冲煞。"
         }
       }
@@ -269,19 +269,15 @@
       "label": "卫生间",
       "items": {
         "toiletGoodPosition": {
-          "label": "卫生间门不对大门/厨房",
+          "label": "卫生间门不对大门、厨房",
           "advice": ""
         },
         "toiletDryVent": {
           "label": "干燥通风",
           "advice": ""
         },
-        "toiletFaceDoor": {
-          "label": "卫生间直冲大门",
-          "advice": "改变门向或增加隔断减少秽气扩散。"
-        },
         "toiletSameDoorKitchen": {
-          "label": "与厨房同门",
+          "label": "卫生间与厨房同门",
           "advice": "改门或设置隔板避免水火相冲。"
         }
       }

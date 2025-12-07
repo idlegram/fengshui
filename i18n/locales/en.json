@@ -74,7 +74,7 @@
       "label": "Door",
       "items": {
         "doorMingTang": {
-          "label": "Bright hall in front of door (flat ground/pond/green grass)",
+          "label": "Bright hall in front of door (flat ground, pond, or green grass)",
           "advice": ""
         },
         "doorLongCorridorStreet": {
@@ -206,7 +206,7 @@
           "advice": ""
         },
         "studyDoorKitchenToilet": {
-          "label": "Door facing kitchen/toilet",
+          "label": "Door facing kitchen or toilet",
           "advice": "Adjust study door orientation or add screen to block water-fire conflict."
         },
         "studyWallToilet": {
@@ -231,7 +231,7 @@
           "advice": "Consider adjusting kitchen position or adding partition to reduce fire qi."
         },
         "kitchenStoveBadFacing": {
-          "label": "Stove directly facing door/bedroom/toilet",
+          "label": "Stove directly facing door, bedroom, or toilet",
           "advice": "Adjust stove position to avoid collision with door."
         },
         "kitchenStoveNoBack": {
@@ -260,7 +260,7 @@
           "advice": "Replace table with round or square to improve qi field."
         },
         "diningDoorCollision": {
-          "label": "Dining table directly hit by door/toilet",
+          "label": "Dining table directly hit by door or toilet",
           "advice": "Adjust table position or set up screen to resolve evil qi."
         }
       }
@@ -269,16 +269,12 @@
       "label": "Bathroom",
       "items": {
         "toiletGoodPosition": {
-          "label": "Toilet door not facing door/kitchen",
+          "label": "Toilet door not facing door or kitchen",
           "advice": ""
         },
         "toiletDryVent": {
           "label": "Dry and well-ventilated",
           "advice": ""
-        },
-        "toiletFaceDoor": {
-          "label": "Toilet directly facing door",
-          "advice": "Change door orientation or add partition to reduce filthy air spreading."
         },
         "toiletSameDoorKitchen": {
           "label": "Same door as kitchen",

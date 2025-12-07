@@ -429,12 +429,6 @@ export const fengShuiCategories: FengShuiCategory[] = [
         score: 3,
       },
       {
-        id: "toiletFaceDoor",
-        labelKey: "fengShuiCategories.bathroom.items.toiletFaceDoor.label",
-        adviceKey: "fengShuiCategories.bathroom.items.toiletFaceDoor.advice",
-        score: -3,
-      },
-      {
         id: "toiletSameDoorKitchen",
         labelKey:
           "fengShuiCategories.bathroom.items.toiletSameDoorKitchen.label",
