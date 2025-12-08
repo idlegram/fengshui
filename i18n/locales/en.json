@@ -53,17 +53,13 @@
           "label": "Seeing plants or inspiring artwork upon entry",
           "suggestion": ""
         },
-        "doorSeeStove": {
-          "label": "Seeing stove upon entry",
-          "suggestion": "Use a screen or relocate the stove to avoid fire qi rushing towards the door."
-        },
-        "doorSeeBathroom": {
-          "label": "Seeing bathroom upon entry",
-          "suggestion": "Set up a partition or adjust the door orientation to reduce filthy air entering the room."
-        },
         "doorSeeMirror": {
           "label": "Seeing mirror upon entry",
           "suggestion": "Adjust the mirror position so it doesn't directly reflect the view from the door."
+        },
+        "entrywaySharpCorner": {
+          "label": "Sharp corner in entryway (excluding right-angle walls or objects)",
+          "suggestion": "Place tall plants or set up a screen at the sharp corner to neutralize negative energy."
         }
       }
     },
@@ -90,13 +86,9 @@
           "label": "Living room has square shape",
           "suggestion": ""
         },
-        "livingIsolatedColumn": {
+        "livingColumn": {
           "label": "Isolated column blocking air flow",
           "suggestion": "Enclose the column with furniture or attach landscape painting to resolve."
-        },
-        "livingSharpCorner": {
-          "label": "Sharp corner (non-right angle wall or object)",
-          "suggestion": "Place tall plants or set up screen at sharp corner to exorcise evil qi."
         }
       }
     },
@@ -130,10 +122,6 @@
       "items": {
         "studyDeskWall": {
           "label": "Desk backed against solid wall",
-          "suggestion": ""
-        },
-        "studyFacingWindow": {
-          "label": "Desk facing window with openness",
           "suggestion": ""
         },
         "studyPlant": {
@@ -185,19 +173,6 @@
         "diningDoorCollision": {
           "label": "Dining table directly hit by door or bathroom",
           "suggestion": "Adjust table position or set up screen to resolve evil qi."
-        }
-      }
-    },
-    "bathroom": {
-      "label": "Bathroom",
-      "items": {
-        "bathroomGoodPosition": {
-          "label": "Bathroom door not facing door or kitchen",
-          "suggestion": ""
-        },
-        "bathroomSameDoorKitchen": {
-          "label": "Same door as kitchen",
-          "suggestion": "Change door or add partition to avoid water-fire collision."
         }
       }
     }

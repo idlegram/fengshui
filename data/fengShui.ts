@@ -85,23 +85,17 @@ export const fengShuiCategories: FengShuiCategory[] = [
         score: 2,
       },
       {
-        id: "doorSeeStove",
-        labelKey: "fengShuiCategories.door.items.doorSeeStove.label",
-        suggestionKey: "fengShuiCategories.door.items.doorSeeStove.suggestion",
-        score: -3,
-      },
-      {
-        id: "doorSeeBathroom",
-        labelKey: "fengShuiCategories.door.items.doorSeeBathroom.label",
-        suggestionKey:
-          "fengShuiCategories.door.items.doorSeeBathroom.suggestion",
-        score: -3,
-      },
-      {
         id: "doorSeeMirror",
         labelKey: "fengShuiCategories.door.items.doorSeeMirror.label",
         suggestionKey: "fengShuiCategories.door.items.doorSeeMirror.suggestion",
         score: -2,
+      },
+      {
+        id: "entrywaySharpCorner",
+        labelKey: "fengShuiCategories.door.items.entrywaySharpCorner.label",
+        suggestionKey:
+          "fengShuiCategories.door.items.entrywaySharpCorner.suggestion",
+        score: -3,
       },
     ],
   },
@@ -148,19 +142,11 @@ export const fengShuiCategories: FengShuiCategory[] = [
         score: 3,
       },
       {
-        id: "livingIsolatedColumn",
-        labelKey:
-          "fengShuiCategories.livingRoom.items.livingIsolatedColumn.label",
+        id: "livingColumn",
+        labelKey: "fengShuiCategories.livingRoom.items.livingColumn.label",
         suggestionKey:
-          "fengShuiCategories.livingRoom.items.livingIsolatedColumn.suggestion",
+          "fengShuiCategories.livingRoom.items.livingColumn.suggestion",
         score: -2,
-      },
-      {
-        id: "livingSharpCorner",
-        labelKey: "fengShuiCategories.livingRoom.items.livingSharpCorner.label",
-        suggestionKey:
-          "fengShuiCategories.livingRoom.items.livingSharpCorner.suggestion",
-        score: -3,
       },
     ],
   },
@@ -217,13 +203,6 @@ export const fengShuiCategories: FengShuiCategory[] = [
         suggestionKey:
           "fengShuiCategories.study.items.studyDeskWall.suggestion",
         score: 3,
-      },
-      {
-        id: "studyFacingWindow",
-        labelKey: "fengShuiCategories.study.items.studyFacingWindow.label",
-        suggestionKey:
-          "fengShuiCategories.study.items.studyFacingWindow.suggestion",
-        score: 2,
       },
       {
         id: "studyPlant",
@@ -313,29 +292,6 @@ export const fengShuiCategories: FengShuiCategory[] = [
       },
     ],
   },
-  {
-    id: "bathroom",
-    inputType: "checkbox",
-    labelKey: "fengShuiCategories.bathroom.label",
-    items: [
-      {
-        id: "bathroomGoodPosition",
-        labelKey:
-          "fengShuiCategories.bathroom.items.bathroomGoodPosition.label",
-        suggestionKey:
-          "fengShuiCategories.bathroom.items.bathroomGoodPosition.suggestion",
-        score: 3,
-      },
-      {
-        id: "bathroomSameDoorKitchen",
-        labelKey:
-          "fengShuiCategories.bathroom.items.bathroomSameDoorKitchen.label",
-        suggestionKey:
-          "fengShuiCategories.bathroom.items.bathroomSameDoorKitchen.suggestion",
-        score: -3,
-      },
-    ],
-  },
 ];
 
 export const fengShuiItems: FengShuiItem[] = fengShuiCategories.flatMap(
@@ -378,7 +334,7 @@ export function calculateScore(selectedItemIds: string[]): number {
 
   // Scaling factor - adjust this to control sensitivity
   // Higher value = slower score change, lower value = faster score change
-  const scalingFactor = 20;
+  const scalingFactor = 10;
 
   // Exponential transformation: 100 / (1 + e^(-x/k))
   // Shifted to center at 50 instead of 50

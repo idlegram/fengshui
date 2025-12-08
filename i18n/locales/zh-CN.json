@@ -53,17 +53,13 @@
           "label": "入门见植物、字画",
           "suggestion": ""
         },
-        "doorSeeStove": {
-          "label": "入门见灶台",
-          "suggestion": "用屏风或移位灶台，避免火气直冲门口。"
-        },
-        "doorSeeBathroom": {
-          "label": "入门见卫生间",
-          "suggestion": "设置隔断或调整门向，减少秽气入室。"
-        },
         "doorSeeMirror": {
           "label": "入门见镜子",
           "suggestion": "调整镜子位置，使其不直接反射入门之景。"
+        },
+        "entrywaySharpCorner": {
+          "label": "玄关有尖角（不包括直角墙、直角物品）",
+          "suggestion": "在尖角摆放高大植物或设置屏风化解煞气。"
         }
       }
     },
@@ -90,13 +86,9 @@
           "label": "客厅方正",
           "suggestion": ""
         },
-        "livingIsolatedColumn": {
-          "label": "孤立柱阻碍流通",
+        "livingColumn": {
+          "label": "柱子阻碍流通",
           "suggestion": "用家具围合柱体或贴山水画化解。"
-        },
-        "livingSharpCorner": {
-          "label": "客厅有尖角（不包括直角墙、直角物品）",
-          "suggestion": "在尖角摆放高大植物或设置屏风化解煞气。"
         }
       }
     },
@@ -120,7 +112,7 @@
           "suggestion": "调整床头方向，避免血冲头部。"
         },
         "bedFaceMirror": {
-          "label": "床对镜",
+          "label": "床对镜子",
           "suggestion": "调整镜子位置或加布帘遮挡。"
         }
       }
@@ -130,10 +122,6 @@
       "items": {
         "studyDeskWall": {
           "label": "书桌背靠实墙",
-          "suggestion": ""
-        },
-        "studyFacingWindow": {
-          "label": "桌前对窗宽敞",
           "suggestion": ""
         },
         "studyPlant": {
@@ -185,19 +173,6 @@
         "diningDoorCollision": {
           "label": "餐桌对大门、卫生间",
           "suggestion": "调整餐桌位置或设置隔屏化解冲煞。"
-        }
-      }
-    },
-    "bathroom": {
-      "label": "卫生间",
-      "items": {
-        "bathroomGoodPosition": {
-          "label": "卫生间门不对大门、厨房",
-          "suggestion": ""
-        },
-        "bathroomSameDoorKitchen": {
-          "label": "卫生间与厨房同门",
-          "suggestion": "改门或设置隔板避免水火相冲。"
         }
       }
     }
