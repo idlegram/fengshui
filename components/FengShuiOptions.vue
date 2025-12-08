@@ -66,10 +66,11 @@ const getCheckboxModel = (categoryId: string) =>
         color="primary"
         variant="card"
         orientation="vertical"
-        indicator="start"
+        indicator="hidden"
         :ui="{
           fieldset: 'grid grid-cols-1 sm:grid-cols-2 gap-1',
           item: 'bg-elevated',
+          wrapper: 'text-left',
         }"
         value-key="id"
         :items="
@@ -87,10 +88,11 @@ const getCheckboxModel = (categoryId: string) =>
         color="primary"
         variant="card"
         orientation="horizontal"
-        indicator="start"
+        indicator="hidden"
         :ui="{
           fieldset: 'grid grid-cols-1 sm:grid-cols-2 gap-1',
           item: 'bg-elevated',
+          wrapper: 'text-left',
         }"
         value-key="id"
         :items="

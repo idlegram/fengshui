@@ -12,42 +12,6 @@
   "poorFengShui": "Poor Feng Shui (Layout Adjustment Recommended)",
   "badFengShui": "Bad Feng Shui (Major Adjustment or Remediation Needed)",
   "fengShuiCategories": {
-    "light": {
-      "label": "Lighting",
-      "info": "Open all windows and curtains to assess the coverage of natural light.",
-      "items": {
-        "lightGood": {
-          "label": "Good natural lighting (over 70% of the house)",
-          "suggestion": ""
-        },
-        "lightAverage": {
-          "label": "Average natural lighting (30%-70% of the house)",
-          "suggestion": ""
-        },
-        "lightPoor": {
-          "label": "Poor natural lighting (less than 30% of the house)",
-          "suggestion": "Add windows or lighting devices, improve lighting."
-        }
-      }
-    },
-    "ventilation": {
-      "label": "Ventilation",
-      "info": "Open all doors and windows, feel the airflow closely, and assess air circulation.",
-      "items": {
-        "ventilationGood": {
-          "label": "Good ventilation (air circulates smoothly)",
-          "suggestion": ""
-        },
-        "ventilationAverage": {
-          "label": "Average ventilation (air circulation is moderate)",
-          "suggestion": ""
-        },
-        "ventilationPoor": {
-          "label": "Poor ventilation (air circulation is poor)",
-          "suggestion": "Install ventilation system or open flow channels to enhance air movement."
-        }
-      }
-    },
     "doorDirection": {
       "label": "Door Direction",
       "info": "The direction the main door opens from inside the house.",
@@ -93,8 +57,8 @@
           "label": "Seeing stove upon entry",
           "suggestion": "Use a screen or relocate the stove to avoid fire qi rushing towards the door."
         },
-        "doorSeeToilet": {
-          "label": "Seeing toilet upon entry",
+        "doorSeeBathroom": {
+          "label": "Seeing bathroom upon entry",
           "suggestion": "Set up a partition or adjust the door orientation to reduce filthy air entering the room."
         },
         "doorSeeMirror": {
@@ -108,10 +72,6 @@
       "items": {
         "livingSofaWall": {
           "label": "Sofa backed against solid wall",
-          "suggestion": ""
-        },
-        "livingSofaCurve": {
-          "label": "Sofa arranged in curved shape (L-shape, U-shape)",
           "suggestion": ""
         },
         "livingSofaBackWater": {
@@ -180,13 +140,13 @@
           "label": "Water plants on desk",
           "suggestion": ""
         },
-        "studyDoorKitchenToilet": {
-          "label": "Door facing kitchen or toilet",
+        "studyDoorKitchenBathroom": {
+          "label": "Door facing kitchen or bathroom",
           "suggestion": "Adjust study door orientation or add screen to block water-fire conflict."
         },
-        "studyWallToilet": {
-          "label": "Desk back or face wall of toilet",
-          "suggestion": "Move desk to avoid toilet wall."
+        "studyWallBathroom": {
+          "label": "Desk back or face wall of bathroom",
+          "suggestion": "Move desk to avoid bathroom wall."
         }
       }
     },
@@ -206,12 +166,8 @@
           "suggestion": "Consider adjusting kitchen position or adding partition to reduce fire qi."
         },
         "kitchenStoveBadFacing": {
-          "label": "Stove directly facing door, bedroom, or toilet",
+          "label": "Stove directly facing door, bedroom, or bathroom",
           "suggestion": "Adjust stove position to avoid collision with door."
-        },
-        "kitchenStoveNoBack": {
-          "label": "Stove without back support",
-          "suggestion": "Add solid wall or cabinet to enhance stability and safety."
         }
       }
     },
@@ -222,20 +178,12 @@
           "label": "Dining table is round or square",
           "suggestion": ""
         },
-        "diningSoftLight": {
-          "label": "Soft lighting",
-          "suggestion": ""
-        },
-        "diningSoftColor": {
-          "label": "Elegant color scheme",
-          "suggestion": ""
-        },
         "diningSharpTable": {
           "label": "Dining table is triangular or has sharp corners",
           "suggestion": "Replace table with round or square to improve qi field."
         },
         "diningDoorCollision": {
-          "label": "Dining table directly hit by door or toilet",
+          "label": "Dining table directly hit by door or bathroom",
           "suggestion": "Adjust table position or set up screen to resolve evil qi."
         }
       }
@@ -243,15 +191,11 @@
     "bathroom": {
       "label": "Bathroom",
       "items": {
-        "toiletGoodPosition": {
-          "label": "Toilet door not facing door or kitchen",
+        "bathroomGoodPosition": {
+          "label": "Bathroom door not facing door or kitchen",
           "suggestion": ""
         },
-        "toiletDryVent": {
-          "label": "Dry and well-ventilated",
-          "suggestion": ""
-        },
-        "toiletSameDoorKitchen": {
+        "bathroomSameDoorKitchen": {
           "label": "Same door as kitchen",
           "suggestion": "Change door or add partition to avoid water-fire collision."
         }

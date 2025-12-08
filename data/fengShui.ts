@@ -17,62 +17,6 @@ export type FengShuiCategory = {
 
 export const fengShuiCategories: FengShuiCategory[] = [
   {
-    id: "light",
-    inputType: "radio",
-    labelKey: "fengShuiCategories.light.label",
-    infoKey: "fengShuiCategories.light.info",
-    items: [
-      {
-        id: "lightGood",
-        labelKey: "fengShuiCategories.light.items.lightGood.label",
-        suggestionKey: "fengShuiCategories.light.items.lightGood.suggestion",
-        score: 3,
-      },
-      {
-        id: "lightAverage",
-        labelKey: "fengShuiCategories.light.items.lightAverage.label",
-        suggestionKey: "fengShuiCategories.light.items.lightAverage.suggestion",
-        score: 1,
-      },
-      {
-        id: "lightPoor",
-        labelKey: "fengShuiCategories.light.items.lightPoor.label",
-        suggestionKey: "fengShuiCategories.light.items.lightPoor.suggestion",
-        score: -3,
-      },
-    ],
-  },
-  {
-    id: "ventilation",
-    inputType: "radio",
-    labelKey: "fengShuiCategories.ventilation.label",
-    infoKey: "fengShuiCategories.ventilation.info",
-    items: [
-      {
-        id: "ventilationGood",
-        labelKey: "fengShuiCategories.ventilation.items.ventilationGood.label",
-        suggestionKey:
-          "fengShuiCategories.ventilation.items.ventilationGood.suggestion",
-        score: 3,
-      },
-      {
-        id: "ventilationAverage",
-        labelKey:
-          "fengShuiCategories.ventilation.items.ventilationAverage.label",
-        suggestionKey:
-          "fengShuiCategories.ventilation.items.ventilationAverage.suggestion",
-        score: 1,
-      },
-      {
-        id: "ventilationPoor",
-        labelKey: "fengShuiCategories.ventilation.items.ventilationPoor.label",
-        suggestionKey:
-          "fengShuiCategories.ventilation.items.ventilationPoor.suggestion",
-        score: -3,
-      },
-    ],
-  },
-  {
     id: "doorDirection",
     inputType: "radio",
     labelKey: "fengShuiCategories.doorDirection.label",
@@ -147,9 +91,10 @@ export const fengShuiCategories: FengShuiCategory[] = [
         score: -3,
       },
       {
-        id: "doorSeeToilet",
-        labelKey: "fengShuiCategories.door.items.doorSeeToilet.label",
-        suggestionKey: "fengShuiCategories.door.items.doorSeeToilet.suggestion",
+        id: "doorSeeBathroom",
+        labelKey: "fengShuiCategories.door.items.doorSeeBathroom.label",
+        suggestionKey:
+          "fengShuiCategories.door.items.doorSeeBathroom.suggestion",
         score: -3,
       },
       {
@@ -171,13 +116,6 @@ export const fengShuiCategories: FengShuiCategory[] = [
         suggestionKey:
           "fengShuiCategories.livingRoom.items.livingSofaWall.suggestion",
         score: 3,
-      },
-      {
-        id: "livingSofaCurve",
-        labelKey: "fengShuiCategories.livingRoom.items.livingSofaCurve.label",
-        suggestionKey:
-          "fengShuiCategories.livingRoom.items.livingSofaCurve.suggestion",
-        score: 2,
       },
       {
         id: "livingSofaBackWater",
@@ -294,17 +232,18 @@ export const fengShuiCategories: FengShuiCategory[] = [
         score: 2,
       },
       {
-        id: "studyDoorKitchenToilet",
-        labelKey: "fengShuiCategories.study.items.studyDoorKitchenToilet.label",
+        id: "studyDoorKitchenBathroom",
+        labelKey:
+          "fengShuiCategories.study.items.studyDoorKitchenBathroom.label",
         suggestionKey:
-          "fengShuiCategories.study.items.studyDoorKitchenToilet.suggestion",
+          "fengShuiCategories.study.items.studyDoorKitchenBathroom.suggestion",
         score: -3,
       },
       {
-        id: "studyWallToilet",
-        labelKey: "fengShuiCategories.study.items.studyWallToilet.label",
+        id: "studyWallBathroom",
+        labelKey: "fengShuiCategories.study.items.studyWallBathroom.label",
         suggestionKey:
-          "fengShuiCategories.study.items.studyWallToilet.suggestion",
+          "fengShuiCategories.study.items.studyWallBathroom.suggestion",
         score: -2,
       },
     ],
@@ -343,13 +282,6 @@ export const fengShuiCategories: FengShuiCategory[] = [
           "fengShuiCategories.kitchen.items.kitchenStoveBadFacing.suggestion",
         score: -3,
       },
-      {
-        id: "kitchenStoveNoBack",
-        labelKey: "fengShuiCategories.kitchen.items.kitchenStoveNoBack.label",
-        suggestionKey:
-          "fengShuiCategories.kitchen.items.kitchenStoveNoBack.suggestion",
-        score: -2,
-      },
     ],
   },
   {
@@ -363,20 +295,6 @@ export const fengShuiCategories: FengShuiCategory[] = [
         suggestionKey:
           "fengShuiCategories.diningRoom.items.diningRoundSquare.suggestion",
         score: 3,
-      },
-      {
-        id: "diningSoftLight",
-        labelKey: "fengShuiCategories.diningRoom.items.diningSoftLight.label",
-        suggestionKey:
-          "fengShuiCategories.diningRoom.items.diningSoftLight.suggestion",
-        score: 2,
-      },
-      {
-        id: "diningSoftColor",
-        labelKey: "fengShuiCategories.diningRoom.items.diningSoftColor.label",
-        suggestionKey:
-          "fengShuiCategories.diningRoom.items.diningSoftColor.suggestion",
-        score: 2,
       },
       {
         id: "diningSharpTable",
@@ -401,25 +319,19 @@ export const fengShuiCategories: FengShuiCategory[] = [
     labelKey: "fengShuiCategories.bathroom.label",
     items: [
       {
-        id: "toiletGoodPosition",
-        labelKey: "fengShuiCategories.bathroom.items.toiletGoodPosition.label",
-        suggestionKey:
-          "fengShuiCategories.bathroom.items.toiletGoodPosition.suggestion",
-        score: 3,
-      },
-      {
-        id: "toiletDryVent",
-        labelKey: "fengShuiCategories.bathroom.items.toiletDryVent.label",
-        suggestionKey:
-          "fengShuiCategories.bathroom.items.toiletDryVent.suggestion",
-        score: 3,
-      },
-      {
-        id: "toiletSameDoorKitchen",
+        id: "bathroomGoodPosition",
         labelKey:
-          "fengShuiCategories.bathroom.items.toiletSameDoorKitchen.label",
+          "fengShuiCategories.bathroom.items.bathroomGoodPosition.label",
         suggestionKey:
-          "fengShuiCategories.bathroom.items.toiletSameDoorKitchen.suggestion",
+          "fengShuiCategories.bathroom.items.bathroomGoodPosition.suggestion",
+        score: 3,
+      },
+      {
+        id: "bathroomSameDoorKitchen",
+        labelKey:
+          "fengShuiCategories.bathroom.items.bathroomSameDoorKitchen.label",
+        suggestionKey:
+          "fengShuiCategories.bathroom.items.bathroomSameDoorKitchen.suggestion",
         score: -3,
       },
     ],

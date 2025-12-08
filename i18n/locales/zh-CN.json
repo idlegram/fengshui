@@ -12,42 +12,6 @@
   "poorFengShui": "较差风水（建议调整布局）",
   "badFengShui": "不利风水（需大幅调整或化解）",
   "fengShuiCategories": {
-    "light": {
-      "label": "采光",
-      "info": "打开所有窗户和窗帘，评估自然光线覆盖面积。",
-      "items": {
-        "lightGood": {
-          "label": "采光良好（自然光线覆盖全屋大于70%）",
-          "suggestion": ""
-        },
-        "lightAverage": {
-          "label": "采光适中（自然光线覆盖全屋30%-70%）",
-          "suggestion": ""
-        },
-        "lightPoor": {
-          "label": "采光较差（自然光线覆盖全屋小于30%）",
-          "suggestion": "增加窗户或照明设备，改善采光。"
-        }
-      }
-    },
-    "ventilation": {
-      "label": "通风",
-      "info": "打开所有门窗，贴近感受风流，评估空气流通情况。",
-      "items": {
-        "ventilationGood": {
-          "label": "通风良好（空气流通顺畅）",
-          "suggestion": ""
-        },
-        "ventilationAverage": {
-          "label": "通风适中（空气流通一般）",
-          "suggestion": ""
-        },
-        "ventilationPoor": {
-          "label": "通风较差（空气流通不畅）",
-          "suggestion": "安装通风系统或打开对流通道增强空气流动。"
-        }
-      }
-    },
     "doorDirection": {
       "label": "大门朝向",
       "info": "从屋内打开大门的方向。",
@@ -93,8 +57,8 @@
           "label": "入门见灶台",
           "suggestion": "用屏风或移位灶台，避免火气直冲门口。"
         },
-        "doorSeeToilet": {
-          "label": "入门见厕所",
+        "doorSeeBathroom": {
+          "label": "入门见卫生间",
           "suggestion": "设置隔断或调整门向，减少秽气入室。"
         },
         "doorSeeMirror": {
@@ -108,10 +72,6 @@
       "items": {
         "livingSofaWall": {
           "label": "沙发背靠实墙",
-          "suggestion": ""
-        },
-        "livingSofaCurve": {
-          "label": "沙发摆放弯形（L形、U形）",
           "suggestion": ""
         },
         "livingSofaBackWater": {
@@ -180,13 +140,13 @@
           "label": "书桌上有水养植物",
           "suggestion": ""
         },
-        "studyDoorKitchenToilet": {
-          "label": "书房门对厨房、厕所",
+        "studyDoorKitchenBathroom": {
+          "label": "书房门对厨房、卫生间",
           "suggestion": "调整书房门向或加屏风阻隔水火冲煞。"
         },
-        "studyWallToilet": {
-          "label": "书桌背或面对厕所墙",
-          "suggestion": "移动桌位避开厕所墙面。"
+        "studyWallBathroom": {
+          "label": "书桌背或面对卫生间墙",
+          "suggestion": "移动桌位避开卫生间墙面。"
         }
       }
     },
@@ -206,12 +166,8 @@
           "suggestion": "考虑调整厨房方位或增加隔断降低火气。"
         },
         "kitchenStoveBadFacing": {
-          "label": "灶正对大门、卧室、厕所",
+          "label": "灶台正对大门、卧室、卫生间",
           "suggestion": "调整灶位避免与门相冲。"
-        },
-        "kitchenStoveNoBack": {
-          "label": "灶台后背无靠",
-          "suggestion": "加设实墙或柜体增强稳定和安全性。"
         }
       }
     },
@@ -222,20 +178,12 @@
           "label": "餐桌圆形、方形",
           "suggestion": ""
         },
-        "diningSoftLight": {
-          "label": "灯光柔和（暖色温）",
-          "suggestion": ""
-        },
-        "diningSoftColor": {
-          "label": "色调素雅（灰色、白色、暖色调）",
-          "suggestion": ""
-        },
         "diningSharpTable": {
           "label": "餐桌三角形、尖角形",
           "suggestion": "更换餐桌为圆形或方形以改善气场。"
         },
         "diningDoorCollision": {
-          "label": "餐桌对大门、厕所",
+          "label": "餐桌对大门、卫生间",
           "suggestion": "调整餐桌位置或设置隔屏化解冲煞。"
         }
       }
@@ -243,15 +191,11 @@
     "bathroom": {
       "label": "卫生间",
       "items": {
-        "toiletGoodPosition": {
+        "bathroomGoodPosition": {
           "label": "卫生间门不对大门、厨房",
           "suggestion": ""
         },
-        "toiletDryVent": {
-          "label": "干燥通风",
-          "suggestion": ""
-        },
-        "toiletSameDoorKitchen": {
+        "bathroomSameDoorKitchen": {
           "label": "卫生间与厨房同门",
           "suggestion": "改门或设置隔板避免水火相冲。"
         }
