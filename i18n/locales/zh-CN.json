@@ -4,175 +4,167 @@
   "description": "这风水好不好",
   "disclaimer": "这只是为了好玩，请不要过分认真对待测算结果！",
   "score": "分数",
-  "suggestions": "建议",
-  "noSuggestions": "暂无建议",
   "excellentFengShui": "极佳风水（旺宅）",
   "goodFengShui": "良好风水（稳中有升）",
   "fairFengShui": "一般风水（需改进）",
   "poorFengShui": "较差风水（建议调整布局）",
   "badFengShui": "不利风水（需大幅调整或化解）",
-  "fengShuiCategories": {
-    "doorDirection": {
-      "label": "大门朝向",
-      "info": "从屋内打开大门的方向。",
-      "items": {
-        "doorSouth": {
-          "label": "入户大门朝南（在南半球朝北）",
-          "suggestion": ""
+  "externalEnvironment": "外部环境",
+  "internalLayout": "内部格局",
+  "fengShuiItems": {
+    "1": {
+      "title": "四灵山诀",
+      "info": "左青龙、右白虎、前朱雀、后玄武。",
+      "options": {
+        "1": {
+          "label": "左青龙",
+          "description": "房屋左侧建筑略高"
         },
-        "doorEast": {
-          "label": "入户大门朝东",
-          "suggestion": ""
+        "2": {
+          "label": "右白虎",
+          "description": "房屋右侧建筑略低"
         },
-        "doorWest": {
-          "label": "入户大门朝西",
-          "suggestion": "考虑调整门向或增加屏障改善气流。"
+        "3": {
+          "label": "前朱雀",
+          "description": "房屋前方开阔、有水（如公园、河流）"
         },
-        "doorNorth": {
-          "label": "入户大门朝北（在南半球朝南）",
-          "suggestion": "请咨询风水师根据实际情况来解决。"
+        "4": {
+          "label": "后玄武",
+          "description": "房屋后方有靠山（如山体、高大建筑）"
         }
       }
     },
-    "door": {
-      "label": "大门",
-      "items": {
-        "doorMingTang": {
-          "label": "大门前有明堂（平地、水池、绿茵）",
-          "suggestion": ""
+    "2": {
+      "title": "形煞",
+      "info": "房屋周围的不合理的自然景观。",
+      "options": {
+        "1": {
+          "label": "路冲",
+          "description": "大门或主要窗户正对直路、楼梯、走廊。"
         },
-        "doorLongCorridorStreet": {
-          "label": "大门直对长走廊、街道（包括门前和门后）",
-          "suggestion": "在门内设置屏风或大型植物阻隔，减少直冲气流。"
+        "2": {
+          "label": "角煞",
+          "description": "被其他建筑的尖角、墙角正对。"
         },
-        "doorElevatorStaircase": {
-          "label": "大门直对电梯、楼梯（包括门前和门后）",
-          "suggestion": "在门口摆放圆润大型绿植或屏风缓冲。"
+        "3": {
+          "label": "反弓煞",
+          "description": "道路或河流呈弓形背对房屋，如同战弓射箭。"
         },
-        "doorPlantPainting": {
-          "label": "入门见植物、字画",
-          "suggestion": ""
+        "4": {
+          "label": "天斩煞",
+          "description": "两栋高楼之间的狭窄缝隙正对房屋。"
         },
-        "doorSeeMirror": {
-          "label": "入门见镜子",
-          "suggestion": "调整镜子位置，使其不直接反射入门之景。"
+        "5": {
+          "label": "穿心煞",
+          "description": "地下通道、地铁、车道从建筑下方穿过。"
         },
-        "entrywaySharpCorner": {
-          "label": "玄关有尖角（不包括直角墙、直角物品）",
-          "suggestion": "在尖角摆放高大植物或设置屏风化解煞气。"
+        "6": {
+          "label": "光煞",
+          "description": "被玻璃幕墙、强光长期照射。"
         }
       }
     },
-    "livingRoom": {
-      "label": "客厅",
-      "items": {
-        "livingSofaWall": {
-          "label": "沙发背靠实墙",
-          "suggestion": ""
+    "3": {
+      "title": "周边",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "阴",
+          "description": "医院、垃圾场、变电站、高压塔、寺庙。"
         },
-        "livingSofaBackWater": {
-          "label": "沙发背对水、鱼缸",
-          "suggestion": "调整沙发让背靠实墙或添加屏风补靠。"
-        },
-        "livingSofaFaceDoor": {
-          "label": "沙发正对大门",
-          "suggestion": "调整沙发角度或用隔断降低冲煞。"
-        },
-        "livingDirectLight": {
-          "label": "顶灯直照头部",
-          "suggestion": "更换灯具位置或使用柔光灯罩。"
-        },
-        "livingSquareShape": {
-          "label": "客厅方正",
-          "suggestion": ""
-        },
-        "livingColumn": {
-          "label": "柱子阻碍流通",
-          "suggestion": "用家具围合柱体或贴山水画化解。"
+        "2": {
+          "label": "阳",
+          "description": "公园、绿地、河流、学校、图书馆。"
         }
       }
     },
-    "bedroom": {
-      "label": "卧室",
-      "items": {
-        "bedHeadWall": {
-          "label": "床头靠墙",
-          "suggestion": ""
+    "4": {
+      "title": "整体",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "户型方正",
+          "description": ""
         },
-        "bedNorthSouth": {
+        "2": {
+          "label": "光线充足",
+          "description": ""
+        },
+        "3": {
+          "label": "空气流通",
+          "description": ""
+        },
+        "4": {
+          "label": "干净整洁",
+          "description": ""
+        }
+      }
+    },
+    "5": {
+      "title": "大门",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "不正对电梯、楼梯",
+          "description": ""
+        },
+        "2": {
+          "label": "不正对厕所门、厨房门、阳台门",
+          "description": ""
+        }
+      }
+    },
+    "6": {
+      "title": "客厅",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "位于房屋前半部",
+          "description": ""
+        },
+        "2": {
+          "label": "沙发背后有靠",
+          "description": ""
+        }
+      }
+    },
+    "7": {
+      "title": "厨房",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "灶台与水槽不相邻",
+          "description": ""
+        },
+        "2": {
+          "label": "灶台背后有靠",
+          "description": ""
+        },
+        "3": {
+          "label": "与厕所不相邻",
+          "description": ""
+        }
+      }
+    },
+    "8": {
+      "title": "卧室",
+      "info": "",
+      "options": {
+        "1": {
           "label": "床南北朝向",
-          "suggestion": ""
+          "description": ""
         },
-        "bedAirConditioner": {
-          "label": "空调挂头",
-          "suggestion": "移动床位。"
+        "2": {
+          "label": "床头靠实墙",
+          "description": ""
         },
-        "bedFaceWest": {
-          "label": "床头朝西",
-          "suggestion": "调整床头方向，避免血冲头部。"
+        "3": {
+          "label": "床不对门",
+          "description": ""
         },
-        "bedFaceMirror": {
-          "label": "床对镜子",
-          "suggestion": "调整镜子位置或加布帘遮挡。"
-        }
-      }
-    },
-    "study": {
-      "label": "书房",
-      "items": {
-        "studyDeskWall": {
-          "label": "书桌背靠实墙",
-          "suggestion": ""
-        },
-        "studyPlant": {
-          "label": "书桌上有水养植物",
-          "suggestion": ""
-        },
-        "studyDoorKitchenBathroom": {
-          "label": "书房门对厨房、卫生间",
-          "suggestion": "调整书房门向或加屏风阻隔水火冲煞。"
-        },
-        "studyWallBathroom": {
-          "label": "书桌背或面对卫生间墙",
-          "suggestion": "移动桌位避开卫生间墙面。"
-        }
-      }
-    },
-    "kitchen": {
-      "label": "厨房",
-      "items": {
-        "kitchenEast": {
-          "label": "厨房位于东或东南",
-          "suggestion": ""
-        },
-        "kitchenStoveWall": {
-          "label": "灶台背靠实墙",
-          "suggestion": ""
-        },
-        "kitchenSouth": {
-          "label": "厨房朝南",
-          "suggestion": "考虑调整厨房方位或增加隔断降低火气。"
-        },
-        "kitchenStoveBadFacing": {
-          "label": "灶台正对大门、卧室、卫生间",
-          "suggestion": "调整灶位避免与门相冲。"
-        }
-      }
-    },
-    "diningRoom": {
-      "label": "餐厅",
-      "items": {
-        "diningRoundSquare": {
-          "label": "餐桌圆形、方形",
-          "suggestion": ""
-        },
-        "diningSharpTable": {
-          "label": "餐桌三角形、尖角形",
-          "suggestion": "更换餐桌为圆形或方形以改善气场。"
-        },
-        "diningDoorCollision": {
-          "label": "餐桌对大门、卫生间",
-          "suggestion": "调整餐桌位置或设置隔屏化解冲煞。"
+        "4": {
+          "label": "床不对镜子",
+          "description": ""
         }
       }
     }

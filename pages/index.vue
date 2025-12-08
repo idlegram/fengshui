@@ -1,12 +1,11 @@
 <script setup lang="ts">
-const { score, rating, suggestions, fengShuiCategories } = useFengShui();
+const { score, rating } = useFengShui();
 </script>
 
 <template>
   <UContainer class="my-6">
     <FengShuiHeader />
-    <FengShuiOptions :categories="fengShuiCategories" />
+    <FengShuiOptions />
     <FengShuiScore :score="score" :rating="rating" />
-    <FengShuiSuggestions :suggestions="suggestions" />
   </UContainer>
 </template>

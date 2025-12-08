@@ -1,74 +1,57 @@
-import type { FengShuiItem, Rating } from "~/types/fengshui";
-import {
-  fengShuiCategories,
-  fengShuiItems,
-  calculateScore,
-} from "~/data/fengShui";
+import { fengShuiItems, calculateScore, optionsMap } from "~/data/fengShui";
+import type { Rating } from "~/types/fengshui";
+
+type FengShuiItemId = string;
+type FengShuiOptionId = string;
+
+export interface FengShuiState {
+  selectedOptions: Map<FengShuiItemId, FengShuiOptionId[]>;
+  unselectedOptions: Map<FengShuiItemId, FengShuiOptionId[]>;
+}
 
 export function useFengShui() {
   const { t } = useI18n();
 
-  // Use useState for shared state across components
-  const selections = useState<Map<string, string[]>>(
-    "fengshui-selections",
-    () => new Map()
-  );
+  const state = useState<FengShuiState>("fengshui-state", () => ({
+    selectedOptions: new Map<FengShuiItemId, FengShuiOptionId[]>(
+      fengShuiItems.map((item) => [item.id, []])
+    ),
+    unselectedOptions: new Map<FengShuiItemId, FengShuiOptionId[]>(
+      fengShuiItems.map((item) => [
+        item.id,
+        item.options.map((option) => option.id),
+      ])
+    ),
+  }));
 
-  // Create item map for quick lookups
-  const itemMap = computed(() => {
-    const map = new Map<string, FengShuiItem>();
-    fengShuiItems.forEach((item) => map.set(item.id, item));
-    return map;
-  });
-
-  // Get all selected items (flatten all selections)
-  const allSelectedItems = computed(() => {
-    const items: string[] = [];
-    selections.value.forEach((value) => {
-      items.push(...value);
-    });
-    return items;
-  });
-
-  // Calculate total score
   const score = computed(() => {
-    const score = calculateScore(allSelectedItems.value);
+    const score = calculateScore(
+      Array.from(state.value.selectedOptions.values()).flatMap((optionIds) =>
+        optionIds.map((id) => optionsMap.get(id)!)
+      )
+    );
     return parseFloat(score.toPrecision(5));
   });
 
-  // Get score rating based on total score
   const rating = computed<Rating>(() => {
     const ratings: Rating[] = [
-      { threshold: 90, labelKey: "excellentFengShui", color: "emerald" },
-      { threshold: 70, labelKey: "goodFengShui", color: "emerald" },
-      { threshold: 50, labelKey: "fairFengShui", color: "yellow" },
-      { threshold: 30, labelKey: "poorFengShui", color: "orange" },
+      { threshold: 90, label: t("excellentFengShui"), color: "emerald" },
+      { threshold: 70, label: t("goodFengShui"), color: "emerald" },
+      { threshold: 50, label: t("fairFengShui"), color: "yellow" },
+      { threshold: 30, label: t("poorFengShui"), color: "orange" },
     ];
 
     return (
       ratings.find((rating) => score.value >= rating.threshold!) || {
-        labelKey: "badFengShui",
+        label: t("badFengShui"),
         color: "red",
       }
     );
   });
 
-  // Get selected items with suggestion
-  const suggestions = computed(() => {
-    return allSelectedItems.value
-      .map((itemId) => itemMap.value.get(itemId))
-      .filter((item) => {
-        if (!item?.suggestionKey) return false;
-        const suggestion = t(item.suggestionKey);
-        return suggestion && suggestion !== item.suggestionKey;
-      });
-  });
-
   return {
-    selections,
+    state,
     score,
     rating,
-    suggestions,
-    fengShuiCategories,
   };
 }

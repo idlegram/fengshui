@@ -1,22 +1,24 @@
-export type FengShuiInputType = "radio" | "checkbox";
-
-export type FengShuiItem = {
+export type FengShuiOption = {
   id: string;
-  labelKey: string;
-  suggestionKey: string;
+  label: string;
+  description: string;
   score: number;
 };
 
-export type FengShuiCategory = {
+export type FengShuiItem = {
   id: string;
-  inputType: FengShuiInputType;
-  labelKey: string;
-  infoKey?: string;
+  title: string;
+  info?: string;
+  options: FengShuiOption[];
+};
+
+export type FengShuiCategory = {
+  title: string;
   items: FengShuiItem[];
 };
 
 export type Rating = {
   threshold?: number;
-  labelKey: string;
+  label: string;
   color: "emerald" | "yellow" | "orange" | "red";
 };

@@ -29,7 +29,7 @@ const getColorClass = (color: string) => {
         </span>
         <div class="flex items-center gap-2">
           <span class="font-semibold" :class="getColorClass(rating.color)">
-            {{ $t(rating.labelKey) }}
+            {{ rating.label }}
           </span>
         </div>
       </div>

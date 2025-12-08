@@ -4,175 +4,167 @@
   "description": "Is the Feng Shui good?",
   "disclaimer": "It's just for fun. Please don't take the results too seriously!",
   "score": "Score",
-  "suggestions": "Suggestions",
-  "noSuggestions": "No suggestions",
   "excellentFengShui": "Excellent Feng Shui (Prosperous Home)",
   "goodFengShui": "Good Feng Shui (Steady Progress)",
   "fairFengShui": "Fair Feng Shui (Needs Improvement)",
   "poorFengShui": "Poor Feng Shui (Layout Adjustment Recommended)",
   "badFengShui": "Bad Feng Shui (Major Adjustment or Remediation Needed)",
-  "fengShuiCategories": {
-    "doorDirection": {
-      "label": "Door Direction",
-      "info": "The direction the main door opens from inside the house.",
-      "items": {
-        "doorSouth": {
-          "label": "Door facing south",
-          "suggestion": ""
+  "externalEnvironment": "External Environment",
+  "internalLayout": "Internal Layout",
+  "fengShuiItems": {
+    "1": {
+      "title": "Four Celestial Guardians",
+      "info": "Green Dragon on left, White Tiger on right, Red Phoenix in front, Black Tortoise behind.",
+      "options": {
+        "1": {
+          "label": "Green Dragon (Left)",
+          "description": "Buildings on the left side of the house are slightly taller"
         },
-        "doorEast": {
-          "label": "Door facing east",
-          "suggestion": ""
+        "2": {
+          "label": "White Tiger (Right)",
+          "description": "Buildings on the right side of the house are slightly lower"
         },
-        "doorWest": {
-          "label": "Door facing west",
-          "suggestion": "Consider adjusting the door orientation or adding barriers to improve air flow."
+        "3": {
+          "label": "Red Phoenix (Front)",
+          "description": "Open space in front of the house with water features (park, river)"
         },
-        "doorNorth": {
-          "label": "Door facing north",
-          "suggestion": "Consult a Feng Shui master for solutions based on actual situation."
+        "4": {
+          "label": "Black Tortoise (Back)",
+          "description": "Mountains or tall buildings behind the house for support"
         }
       }
     },
-    "door": {
-      "label": "Door",
-      "items": {
-        "doorMingTang": {
-          "label": "Bright hall in front of door (flat ground, pond, or green grass)",
-          "suggestion": ""
+    "2": {
+      "title": "Negative Formations (Xing Sha)",
+      "info": "Unreasonable natural landscapes around the house.",
+      "options": {
+        "1": {
+          "label": "Road Rush",
+          "description": "Main door or windows directly facing a straight road, stairs, or corridor"
         },
-        "doorLongCorridorStreet": {
-          "label": "Door directly facing long corridor or street (including both inside and outside)",
-          "suggestion": "Set up a screen or large plant inside the door to block and reduce direct air rush."
+        "2": {
+          "label": "Sharp Corner Sha",
+          "description": "Sharp corner or wall edge of another building pointing directly at the house"
         },
-        "doorElevatorStaircase": {
-          "label": "Door directly facing elevator or staircase (including both inside and outside)",
-          "suggestion": "Place round, large plants or screens at the door to cushion."
+        "3": {
+          "label": "Reverse Bow Sha",
+          "description": "Road or river curves away from the house like an arrow being shot"
         },
-        "doorPlantPainting": {
-          "label": "Seeing plants or inspiring artwork upon entry",
-          "suggestion": ""
+        "4": {
+          "label": "Heaven's Blade Sha",
+          "description": "Narrow gap between two tall buildings directly facing the house"
         },
-        "doorSeeMirror": {
-          "label": "Seeing mirror upon entry",
-          "suggestion": "Adjust the mirror position so it doesn't directly reflect the view from the door."
+        "5": {
+          "label": "Piercing Heart Sha",
+          "description": "Underground passage, subway, or roadway passing beneath the building"
         },
-        "entrywaySharpCorner": {
-          "label": "Sharp corner in entryway (excluding right-angle walls or objects)",
-          "suggestion": "Place tall plants or set up a screen at the sharp corner to neutralize negative energy."
+        "6": {
+          "label": "Light Sha",
+          "description": "Direct exposure to glass facades or strong light for prolonged periods"
         }
       }
     },
-    "livingRoom": {
-      "label": "Living Room",
-      "items": {
-        "livingSofaWall": {
-          "label": "Sofa backed against solid wall",
-          "suggestion": ""
+    "3": {
+      "title": "Surroundings",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "Negative (Yin)",
+          "description": "Hospital, garbage dump, electrical substation, high-voltage tower, temple"
         },
-        "livingSofaBackWater": {
-          "label": "Sofa backed by water or fish tank",
-          "suggestion": "Adjust the sofa to back against solid wall or add screen for support."
-        },
-        "livingSofaFaceDoor": {
-          "label": "Sofa directly facing door",
-          "suggestion": "Adjust sofa angle or use partition to reduce evil qi."
-        },
-        "livingDirectLight": {
-          "label": "Overhead light shining directly on head",
-          "suggestion": "Relocate the light or use soft light shade."
-        },
-        "livingSquareShape": {
-          "label": "Living room has square shape",
-          "suggestion": ""
-        },
-        "livingColumn": {
-          "label": "Isolated column blocking air flow",
-          "suggestion": "Enclose the column with furniture or attach landscape painting to resolve."
+        "2": {
+          "label": "Positive (Yang)",
+          "description": "Park, greenery, river, school, library"
         }
       }
     },
-    "bedroom": {
-      "label": "Bedroom",
-      "items": {
-        "bedHeadWall": {
-          "label": "Bed head against wall",
-          "suggestion": ""
+    "4": {
+      "title": "Overall",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "Rectangular Layout",
+          "description": ""
         },
-        "bedNorthSouth": {
-          "label": "Bed facing north-south direction",
-          "suggestion": ""
+        "2": {
+          "label": "Ample Natural Light",
+          "description": ""
         },
-        "bedAirConditioner": {
-          "label": "Air conditioner hanging over head",
-          "suggestion": "Move bed."
+        "3": {
+          "label": "Good Air Circulation",
+          "description": ""
         },
-        "bedFaceWest": {
-          "label": "Bed head facing west",
-          "suggestion": "Adjust bed head direction to avoid blood rushing to head."
-        },
-        "bedFaceMirror": {
-          "label": "Bed facing mirror",
-          "suggestion": "Adjust mirror position or cover with cloth."
+        "4": {
+          "label": "Clean and Tidy",
+          "description": ""
         }
       }
     },
-    "study": {
-      "label": "Study",
-      "items": {
-        "studyDeskWall": {
-          "label": "Desk backed against solid wall",
-          "suggestion": ""
+    "5": {
+      "title": "Main Door",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "Not Facing Elevator or Stairs",
+          "description": ""
         },
-        "studyPlant": {
-          "label": "Water plants on desk",
-          "suggestion": ""
-        },
-        "studyDoorKitchenBathroom": {
-          "label": "Door facing kitchen or bathroom",
-          "suggestion": "Adjust study door orientation or add screen to block water-fire conflict."
-        },
-        "studyWallBathroom": {
-          "label": "Desk back or face wall of bathroom",
-          "suggestion": "Move desk to avoid bathroom wall."
+        "2": {
+          "label": "Not Facing Bathroom, Kitchen, or Balcony Door",
+          "description": ""
         }
       }
     },
-    "kitchen": {
-      "label": "Kitchen",
-      "items": {
-        "kitchenEast": {
-          "label": "Kitchen located east or southeast",
-          "suggestion": ""
+    "6": {
+      "title": "Living Room",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "Located in Front Half of House",
+          "description": ""
         },
-        "kitchenStoveWall": {
-          "label": "Stove backed against solid wall",
-          "suggestion": ""
-        },
-        "kitchenSouth": {
-          "label": "Kitchen facing south",
-          "suggestion": "Consider adjusting kitchen position or adding partition to reduce fire qi."
-        },
-        "kitchenStoveBadFacing": {
-          "label": "Stove directly facing door, bedroom, or bathroom",
-          "suggestion": "Adjust stove position to avoid collision with door."
+        "2": {
+          "label": "Sofa Has Solid Back Support",
+          "description": ""
         }
       }
     },
-    "diningRoom": {
-      "label": "Dining Room",
-      "items": {
-        "diningRoundSquare": {
-          "label": "Dining table is round or square",
-          "suggestion": ""
+    "7": {
+      "title": "Kitchen",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "Stove and Sink Not Adjacent",
+          "description": ""
         },
-        "diningSharpTable": {
-          "label": "Dining table is triangular or has sharp corners",
-          "suggestion": "Replace table with round or square to improve qi field."
+        "2": {
+          "label": "Stove Has Solid Back Support",
+          "description": ""
         },
-        "diningDoorCollision": {
-          "label": "Dining table directly hit by door or bathroom",
-          "suggestion": "Adjust table position or set up screen to resolve evil qi."
+        "3": {
+          "label": "Not Adjacent to Bathroom",
+          "description": ""
+        }
+      }
+    },
+    "8": {
+      "title": "Bedroom",
+      "info": "",
+      "options": {
+        "1": {
+          "label": "Bed Facing South-North",
+          "description": ""
+        },
+        "2": {
+          "label": "Bed Head Against Solid Wall",
+          "description": ""
+        },
+        "3": {
+          "label": "Bed Not Facing Door",
+          "description": ""
+        },
+        "4": {
+          "label": "Bed Not Facing Mirror",
+          "description": ""
         }
       }
     }

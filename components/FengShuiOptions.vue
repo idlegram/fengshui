@@ -1,68 +1,65 @@
 <script setup lang="ts">
-import type { FengShuiCategory, FengShuiItem } from "~/types/fengshui";
-
-defineProps<{
-  categories: FengShuiCategory[];
-}>();
+import { fengShuiItems } from "~/data/fengShui";
+import type { FengShuiCategory } from "~/types/fengshui";
 
 const { t } = useI18n();
-const { selections } = useFengShui();
+const { state } = useFengShui();
 
-// Computed v-model for radio (single value)
-const getRadioModel = (categoryId: string) =>
-  computed({
-    get: () => selections.value.get(categoryId)?.[0],
-    set: (value: string | undefined) => {
-      if (value) {
-        selections.value.set(categoryId, [value]);
-      } else {
-        selections.value.delete(categoryId);
-      }
-    },
-  });
+const items = fengShuiItems.map((item) => ({
+  ...item,
+  title: t(item.title),
+  info: item.info ? t(item.info) : undefined,
+  options: item.options.map((option) => ({
+    ...option,
+    label: t(option.label),
+    description: option.description ? t(option.description) : "",
+  })),
+}));
 
-// Computed v-model for checkbox (array)
-const getCheckboxModel = (categoryId: string) =>
+const categories: FengShuiCategory[] = [
+  {
+    title: t("externalEnvironment"),
+    items: items.slice(0, 3),
+  },
+  {
+    title: t("internalLayout"),
+    items: items.slice(3),
+  },
+];
+
+const getCheckboxModel = (id: string) =>
   computed({
-    get: () => selections.value.get(categoryId) || [],
+    get: () => state.value.selectedOptions.get(id) || [],
     set: (value: string[]) => {
       if (value.length > 0) {
-        selections.value.set(categoryId, value);
+        state.value.selectedOptions.set(id, value);
       } else {
-        selections.value.delete(categoryId);
+        state.value.selectedOptions.delete(id);
       }
     },
   });
 </script>
 
 <template>
-  <UCard class="mb-3" variant="subtle">
-    <div
-      class="not-last-of-type:mb-4"
-      v-for="category in categories"
-      :key="category.id"
-    >
+  <UCard class="mb-3" variant="subtle" v-for="category in categories">
+    <h1 class="text-lg font-semibold mb-4">{{ category.title }}</h1>
+    <div class="not-last-of-type:mb-4" v-for="item in category.items">
       <div class="flex items-center gap-1 mb-1">
-        <h2 class="font-semibold">
-          {{ t(category.labelKey) }}
-        </h2>
-        <UPopover v-if:="category.infoKey">
+        <h2 class="font-semibold">{{ item.title }}</h2>
+        <UPopover v-if="item.info" placement="top">
           <UIcon
             name="i-lucide-info"
             class="size-5 text-muted cursor-pointer"
           />
           <template #content>
             <div class="p-4 max-w-xs">
-              <p>{{ t(category.infoKey) }}</p>
+              <p>{{ item.info }}</p>
             </div>
           </template>
         </UPopover>
       </div>
-
-      <!-- Radio Group -->
-      <URadioGroup
-        v-if="category.inputType === 'radio'"
-        v-model="getRadioModel(category.id).value"
+      <UCheckboxGroup
+        v-model="getCheckboxModel(item.id).value"
         color="primary"
         variant="card"
         orientation="vertical"
@@ -72,33 +69,8 @@ const getCheckboxModel = (categoryId: string) =>
           item: 'bg-elevated',
         }"
         value-key="id"
-        :items="
-          category.items.map((item: FengShuiItem) => ({
-            ...item,
-            label: t(item.labelKey),
-          }))
-        "
-      />
-
-      <!-- Checkbox Group -->
-      <UCheckboxGroup
-        v-else-if="category.inputType === 'checkbox'"
-        v-model="getCheckboxModel(category.id).value"
-        color="primary"
-        variant="card"
-        orientation="horizontal"
-        indicator="start"
-        :ui="{
-          fieldset: 'grid grid-cols-1 sm:grid-cols-2 gap-1',
-          item: 'bg-elevated',
-        }"
-        value-key="id"
-        :items="
-          category.items.map((item: FengShuiItem) => ({
-            ...item,
-            label: t(item.labelKey),
-          }))
-        "
+        description-key="description"
+        :items="item.options"
       />
     </div>
   </UCard>
