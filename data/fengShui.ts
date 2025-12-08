@@ -229,15 +229,15 @@ fengShuiItems.forEach((item) => {
 });
 
 // Calculate theoretical min and max scores based on available options
-let minPossible = 0;
-let maxPossible = 0;
+let minTotalScore = 0;
+let maxTotalScore = 0;
 
 fengShuiItems.forEach((item) => {
   item.options.forEach((option) => {
     if (option.score < 0) {
-      minPossible += option.score;
+      minTotalScore += option.score;
     } else if (option.score > 0) {
-      maxPossible += option.score;
+      maxTotalScore += option.score;
     }
   });
 });
@@ -251,16 +251,16 @@ export const calculateScore = (selectedOptions: FengShuiOption[]): number => {
     rawScore += option.score;
   });
 
-  // Linear normalization: map [minPossible, maxPossible] to [0, 100]
+  // Linear normalization: map [minTotalScore, maxTotalScore] to [0, 100]
   // Formula: score = ((rawScore - min) / (max - min)) * 100
   let normalizedScore: number;
 
   if (rawScore >= 0) {
-    // Positive scores: map [0, maxPossible] to [50, 100]
-    normalizedScore = 50 + (rawScore / maxPossible) * 50;
+    // Positive scores: map [0, maxTotalScore] to [50, 100]
+    normalizedScore = 50 + (rawScore / maxTotalScore) * 50;
   } else {
-    // Negative scores: map [minPossible, 0] to [0, 50]
-    normalizedScore = 50 + (rawScore / Math.abs(minPossible)) * 50;
+    // Negative scores: map [minTotalScore, 0] to [0, 50]
+    normalizedScore = 50 + (rawScore / Math.abs(minTotalScore)) * 50;
   }
 
   // Clamp to [0, 100] range
