@@ -8,7 +8,7 @@ const { state } = useFengShui();
 const items = fengShuiItems.map((item) => ({
   ...item,
   title: t(item.title),
-  info: item.info ? t(item.info) : undefined,
+  info: t(item.info),
   options: item.options.map((option) => ({
     ...option,
     label: t(option.label),

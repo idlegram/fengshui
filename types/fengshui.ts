@@ -8,7 +8,7 @@ export type FengShuiOption = {
 export type FengShuiItem = {
   id: string;
   title: string;
-  info?: string;
+  info: string;
   options: FengShuiOption[];
 };
 
