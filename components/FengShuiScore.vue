@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { Rating } from "~/types/fengshui";
+import type { FengShuiRating } from "~/types/fengshui";
 
 defineProps<{
   score: number;
-  rating: Rating;
+  rating: FengShuiRating;
 }>();
 
 const getColorClass = (color: string) => {

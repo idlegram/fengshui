@@ -17,7 +17,7 @@ export type FengShuiCategory = {
   items: FengShuiItem[];
 };
 
-export type Rating = {
+export type FengShuiRating = {
   threshold?: number;
   label: string;
   color: "emerald" | "yellow" | "orange" | "red";

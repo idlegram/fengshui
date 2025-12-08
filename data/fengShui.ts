@@ -228,6 +228,20 @@ fengShuiItems.forEach((item) => {
   });
 });
 
+// Calculate theoretical min and max scores based on available options
+let minPossible = 0;
+let maxPossible = 0;
+
+fengShuiItems.forEach((item) => {
+  item.options.forEach((option) => {
+    if (option.score < 0) {
+      minPossible += option.score;
+    } else if (option.score > 0) {
+      maxPossible += option.score;
+    }
+  });
+});
+
 export const calculateScore = (selectedOptions: FengShuiOption[]): number => {
   if (selectedOptions.length === 0) return 50; // Neutral score when nothing selected
 
@@ -235,20 +249,6 @@ export const calculateScore = (selectedOptions: FengShuiOption[]): number => {
   let rawScore = 0;
   selectedOptions.forEach((option) => {
     rawScore += option.score;
-  });
-
-  // Calculate theoretical min and max scores based on available options
-  let minPossible = 0;
-  let maxPossible = 0;
-
-  fengShuiItems.forEach((item) => {
-    item.options.forEach((option) => {
-      if (option.score < 0) {
-        minPossible += option.score;
-      } else if (option.score > 0) {
-        maxPossible += option.score;
-      }
-    });
   });
 
   // Linear normalization: map [minPossible, maxPossible] to [0, 100]

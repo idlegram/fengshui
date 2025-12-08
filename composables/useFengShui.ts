@@ -1,5 +1,5 @@
 import { fengShuiItems, calculateScore, optionsMap } from "~/data/fengShui";
-import type { Rating } from "~/types/fengshui";
+import type { FengShuiRating } from "~/types/fengshui";
 
 type FengShuiItemId = string;
 type FengShuiOptionId = string;
@@ -33,8 +33,8 @@ export function useFengShui() {
     return parseFloat(score.toPrecision(5));
   });
 
-  const rating = computed<Rating>(() => {
-    const ratings: Rating[] = [
+  const rating = computed<FengShuiRating>(() => {
+    const ratings: FengShuiRating[] = [
       { threshold: 90, label: t("excellentFengShui"), color: "emerald" },
       { threshold: 70, label: t("goodFengShui"), color: "emerald" },
       { threshold: 50, label: t("fairFengShui"), color: "yellow" },
